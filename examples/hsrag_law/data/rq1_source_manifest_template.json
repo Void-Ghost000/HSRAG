@@ -1,0 +1,56 @@
+[
+  {
+    "corpus_id": "EU_AI_ACT",
+    "jurisdiction": "EU",
+    "source_title": "Regulation (EU) 2024/1689 — Artificial Intelligence Act",
+    "source_url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+    "source_type": "OFFICIAL_REFERENCE_CANDIDATE",
+    "hard_gate": false,
+    "notes": "EUR-Lex may return JS/bot-verification HTML in simple fetch environments."
+  },
+  {
+    "corpus_id": "EU_DMA",
+    "jurisdiction": "EU",
+    "source_title": "Regulation (EU) 2022/1925 — Digital Markets Act",
+    "source_url": "https://eur-lex.europa.eu/eli/reg/2022/1925/oj/eng",
+    "source_type": "OFFICIAL_REFERENCE_CANDIDATE",
+    "hard_gate": false,
+    "notes": "EUR-Lex may return JS/bot-verification HTML in simple fetch environments."
+  },
+  {
+    "corpus_id": "US_COPPA",
+    "jurisdiction": "US",
+    "source_title": "FTC — Children's Online Privacy Protection Rule",
+    "source_url": "https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa",
+    "source_type": "OFFICIAL_REFERENCE_CANDIDATE",
+    "hard_gate": false,
+    "notes": "FTC legal-library page for COPPA rule information."
+  },
+  {
+    "corpus_id": "US_CDA230",
+    "jurisdiction": "US",
+    "source_title": "47 U.S.C. Section 230",
+    "source_url": "https://www.govinfo.gov/link/uscode/47/230",
+    "source_type": "OFFICIAL_REFERENCE_CANDIDATE",
+    "hard_gate": false,
+    "notes": "GovInfo U.S. Code link endpoint."
+  },
+  {
+    "corpus_id": "US_FTC_ACT5",
+    "jurisdiction": "US",
+    "source_title": "15 U.S.C. Section 45 — FTC Act Section 5",
+    "source_url": "https://www.govinfo.gov/link/uscode/15/45",
+    "source_type": "OFFICIAL_REFERENCE_CANDIDATE",
+    "hard_gate": false,
+    "notes": "GovInfo U.S. Code link endpoint."
+  },
+  {
+    "corpus_id": "US_CCPA",
+    "jurisdiction": "US-CA",
+    "source_title": "California Attorney General — CCPA",
+    "source_url": "https://oag.ca.gov/privacy/ccpa",
+    "source_type": "OFFICIAL_REFERENCE_CANDIDATE",
+    "hard_gate": false,
+    "notes": "California Attorney General CCPA overview page."
+  }
+]

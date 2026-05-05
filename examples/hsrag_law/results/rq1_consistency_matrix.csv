@@ -1,0 +1,2 @@
+rq,benchmark_role,requires_mc,mc_cases,mc_scope_decision,source_hash_gate,url_fetch_smoke,audit_chain_complete,notes
+RQ1,publication_grade_real_corpus_gate,False,N/A,MC_NOT_REQUIRED_FOR_RQ1_PASS,RQ1_VERIFICATION_PASS,FETCH_SMOKE_PASS_WITH_WARN,1.0,RQ1 is a corpus/source/provenance gate. MC mutation robustness belongs to RQ2/RQ3 retrieval tests or future RQ4/RQ5 source-drift tests.

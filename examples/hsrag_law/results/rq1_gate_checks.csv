@@ -1,0 +1,12 @@
+gate_id,description,expected,actual,passed,severity
+RQ1_DECISION,RQ1 frozen decision must be publication-grade pass.,RQ1_PUBLICATION_GRADE_PASS,RQ1_PUBLICATION_GRADE_PASS,True,HARD
+REAL_PRIMARY_CORPUS_RATE,All corpora must be classified as real primary corpora.,1.0,1.0,True,HARD
+REAL_PRIMARY_CHUNK_RATE,All chunks must be tied to real primary corpus records.,1.0,1.0,True,HARD
+SOURCE_HASH_FINAL_PRESENT_RATE,Every chunk must have source_hash_final present.,1.0,1.0,True,HARD
+PRIMARY_REAL_TARGET_CORRECT,Primary real target correctness must equal 1.0.,1.0,1.0,True,HARD
+PRIMARY_REAL_WRONG_COLLISION,Primary real wrong collision rate must equal 0.0.,0.0,0.0,True,HARD
+SC1_REGRESSION_TARGET_CORRECT,SC1 regression target correctness must equal 1.0.,1.0,1.0,True,HARD
+FAIL_COUNT_ZERO,fail_count must equal 0.,0,0,True,HARD
+WARN_COUNT_ZERO,warn_count must equal 0.,0,0,True,HARD
+QSVCS_HASH_PRESENT,QSVCS hash must be present for audit reproducibility.,present sha256,sha256:3ba8ac0785db02d01f5eda32aec9a5d6915488e5334f4af8a664c6450b242af8,True,HARD
+ZIP_HASH_PRESENT,Package zip hash must be present for artifact reproducibility.,present sha256,sha256:fc5f63c9fe53f7144f0c717190425f0070e3107739e1c0541814042612422fa3,True,HARD
