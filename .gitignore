@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Heavy experiment artifacts
+*.zip
+*.pdf
+*.log
+*.tmp
+cache/
+raw_data/
+large_outputs/
