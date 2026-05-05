@@ -27,11 +27,11 @@ RQ1 verifies the publication-grade real-corpus gate before retrieval benchmarkin
 
 ## URL Fetch Smoke
 
-- decision: `FETCH_SMOKE_PASS_WITH_WARN`
-- fetch_count: `6`
-- fetch_ok_count: `3`
-- fetch_warn_count: `2`
-- fetch_error_count: `1`
+- decision: `FETCH_SKIPPED`
+- fetch_count: `0`
+- fetch_ok_count: `0`
+- fetch_warn_count: `0`
+- fetch_error_count: `0`
 
 Fetch records are written to `rq1_url_fetch_records.csv`.
 
@@ -40,12 +40,3 @@ Fetch records are written to `rq1_url_fetch_records.csv`.
 - This verifier does not reproduce the full RQ2/RQ3 MC benchmarks.
 - URL fetch smoke is intentionally not a hard gate unless `--strict-fetch` is used.
 - If official sites block scripted fetching, create a dedicated RQ4 fetch reproducibility pipeline.
-
-## Fetch Record Preview
-
-- `EU_AI_ACT`: `FETCH_WARN_GATE_PAGE` status=`202` bytes=`2035`
-- `EU_DMA`: `FETCH_WARN_GATE_PAGE` status=`202` bytes=`2035`
-- `US_COPPA`: `FETCH_OK` status=`200` bytes=`1012296`
-- `US_CDA230`: `FETCH_OK` status=`200` bytes=`142083`
-- `US_FTC_ACT5`: `FETCH_OK` status=`200` bytes=`172748`
-- `US_CCPA`: `FETCH_ERROR` status=`None` bytes=`0`

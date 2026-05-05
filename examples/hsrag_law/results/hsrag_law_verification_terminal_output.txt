@@ -1,0 +1,153 @@
+================================================================================
+RQ1 — Publication-grade real corpus gate
+================================================================================
+$ C:\Users\himit\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe C:\Users\himit\Desktop\HSRAG\examples\hsrag_law\scripts\verify_rq1.py --skip-fetch
+
+[STDOUT]
+================================================================================
+HSRAG LAW �X RQ1 VERIFICATION
+================================================================================
+core_decision: RQ1_VERIFICATION_PASS
+audit_chain_complete: 1.0
+
+RQ1 frozen gates:
+  decision: RQ1_PUBLICATION_GRADE_PASS
+  corpus_count: 6
+  real_primary_corpus_rate: 1.0
+  real_primary_chunk_rate: 1.0
+  source_hash_final_present_rate: 1.0
+  primary_real_rows: 1211
+  primary_real_target_correct_rate: 1.0
+  primary_real_wrong_collision_rate: 0.0
+  sc1_regression_target_correct_rate: 1.0
+  fail_count: 0
+  warn_count: 0
+
+MC scope:
+  decision: MC_NOT_REQUIRED_FOR_RQ1_PASS
+  mc_cases: None
+
+URL fetch smoke:
+  decision: FETCH_SKIPPED
+  fetch_count: 0
+  fetch_ok_count: 0
+  fetch_warn_count: 0
+  fetch_error_count: 0
+  strict_fetch: False
+
+results_dir: C:\Users\himit\Desktop\HSRAG\examples\hsrag_law\results
+================================================================================
+
+[STDERR]
+
+
+return_code: 0
+elapsed_ms: 387.818
+
+================================================================================
+RQ2.2 — Real EU Law + four baselines + 10k MC
+================================================================================
+$ C:\Users\himit\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe C:\Users\himit\Desktop\HSRAG\examples\hsrag_law\scripts\verify_rq2_2.py
+
+[STDOUT]
+================================================================================
+HSRAG LAW �X RQ2.2 VERIFICATION
+================================================================================
+core_decision: RQ2_2_VERIFICATION_PASS
+audit_chain_complete: 1.0
+
+Scope:
+  decision: RQ2_2_FOUR_BASELINES_10KMC_PASS
+  semantic_label: REAL_UPLOADED_PDF_WITH_OFFICIAL_REFERENCE
+  chunks: 188
+  base_queries: 424
+  mc_seeds: 24
+  mc_cases: 10176
+  baseline_modes: 4
+  fail_count: 0
+
+HSRAG:
+  target_correct: 1.0
+  wrong_collision: 0.0
+  no_evidence_false_allow: 0.0
+  ambiguous_false_allow: 0.0
+  mismatch_escape: 0.0
+  audit_chain_complete: 1.0
+  p95_latency_ms: 4.03891924997879
+
+Best baseline:
+  target_correct: 0.9391705974842768
+  wrong_collision: 0.0376375786163522
+  no_evidence_false_allow: 1.0
+  ambiguous_false_allow: 1.0
+  mismatch_escape: 1.0
+  token_reduction_pct_max: 78.26886681010008
+  cost_reduction_pct_max: 73.33315332219127
+  p95_latency_ms: 6.851546500001859
+
+results_dir: C:\Users\himit\Desktop\HSRAG\examples\hsrag_law\results
+================================================================================
+
+[STDERR]
+
+
+return_code: 0
+elapsed_ms: 250.457
+
+================================================================================
+RQ3_FIX2 — EU × US real-law collision benchmark
+================================================================================
+$ C:\Users\himit\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe C:\Users\himit\Desktop\HSRAG\examples\hsrag_law\scripts\verify_rq3_fix2.py
+
+[STDOUT]
+================================================================================
+HSRAG LAW �X RQ3 FIX2 VERIFICATION
+================================================================================
+core_decision: RQ3_FIX2_VERIFICATION_PASS
+audit_chain_complete: 1.0
+
+Scope:
+  decision: RQ3_EU_US_REALLAW_COLLISION_PASS
+  semantic_label: REAL_EU_US_PUBLIC_LEGAL_REFERENCE_WITH_OFFICIAL_URLS
+  chunks: 244
+  base_queries: 592
+  mc_cases: 14208
+  corpora: 6
+  jurisdictions: 3
+  baseline_modes: 4
+  fail_count: 0
+
+FIX2:
+  raw_fix1_wrong_jurisdiction_escape: 0.0033783783783783786
+  fix2_normalized_wrong_jurisdiction_escape: 0.0
+
+HSRAG:
+  target_correct: 1.0
+  wrong_corpus_collision: 0.0
+  wrong_jurisdiction_escape: 0.0
+  no_evidence_false_allow: 0.0
+  ambiguous_false_allow: 0.0
+  mismatch_escape: 0.0
+  audit_chain_complete: 1.0
+  p95_latency_ms: 5.924376599796233
+
+Best baseline:
+  target_correct: 0.9079391891891891
+  wrong_corpus_collision: 0.019566441441441443
+  wrong_jurisdiction_escape: 0.01097972972972973
+  no_evidence_false_allow: 0.9666666666666667
+  ambiguous_false_allow: 1.0
+  mismatch_escape: 1.0
+  token_reduction_pct_max: 78.70881065021146
+  cost_reduction_pct_max: 73.55123408683025
+  p95_latency_ms: 6.7050616002234165
+
+results_dir: C:\Users\himit\Desktop\HSRAG\examples\hsrag_law\results
+================================================================================
+
+[STDERR]
+
+
+return_code: 0
+elapsed_ms: 212.840
+

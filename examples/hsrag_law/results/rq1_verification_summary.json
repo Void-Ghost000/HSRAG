@@ -121,17 +121,16 @@
     "recommendation": "Keep MC as N/A for RQ1, and reserve adversarial mutation MC for RQ2/RQ3/RQ4/RQ5 retrieval or source-drift benchmarks."
   },
   "fetch_summary": {
-    "decision": "FETCH_SMOKE_PASS_WITH_WARN",
+    "decision": "FETCH_SKIPPED",
     "strict_fetch": false,
-    "fetch_count": 6,
-    "fetch_ok_count": 3,
-    "fetch_warn_count": 2,
-    "fetch_error_count": 1,
+    "fetch_count": 0,
+    "fetch_ok_count": 0,
+    "fetch_warn_count": 0,
+    "fetch_error_count": 0,
     "hard_gate_failed_count": 0,
     "notes": [
-      "URL fetch is a smoke test, not the RQ1 hard gate.",
-      "Some official legal sources may block simple scripted fetches or return JS verification pages.",
-      "For publication-grade reproduction, add a dedicated RQ4 official-source fetch pipeline."
+      "URL fetch smoke test was skipped.",
+      "RQ1 core verification does not depend on URL fetch in this script."
     ]
   },
   "audit_chain_complete": 1.0,
@@ -143,7 +142,7 @@
       "mc_cases": "N/A",
       "mc_scope_decision": "MC_NOT_REQUIRED_FOR_RQ1_PASS",
       "source_hash_gate": "RQ1_VERIFICATION_PASS",
-      "url_fetch_smoke": "FETCH_SMOKE_PASS_WITH_WARN",
+      "url_fetch_smoke": "FETCH_SKIPPED",
       "audit_chain_complete": 1.0,
       "notes": "RQ1 is a corpus/source/provenance gate. MC mutation robustness belongs to RQ2/RQ3 retrieval tests or future RQ4/RQ5 source-drift tests."
     }
