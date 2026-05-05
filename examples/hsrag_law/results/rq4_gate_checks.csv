@@ -1,0 +1,7 @@
+gate_id,description,expected,actual,passed,severity
+RQ4_REBUILD_OK_MINIMUM,At least min_ok sources must be rebuild-usable.,>= 2,5,True,HARD
+RQ4_CHUNK_COUNT_POSITIVE,Rebuild must produce at least one chunk.,> 0,110,True,HARD
+RQ4_CHUNK_HASH_COMPLETENESS,"All rebuilt chunks must have source_hash, normalized_text_sha256, and chunk_hash.",True,True,True,HARD
+RQ4_AUDIT_CHAIN_COMPLETE,RQ4 audit chain must verify.,1.0,1.0,True,HARD
+RQ4_HARD_GATE_SOURCES,Any hard_gate source must be rebuild-usable.,0,0,True,HARD
+RQ4_FETCH_OK_OBSERVATION,"Number of clean FETCH_OK sources. Informational, not required.",informational,5,True,SOFT

@@ -1,0 +1,116 @@
+[
+  {
+    "corpus_id": "EU_AI_ACT",
+    "jurisdiction": "EU",
+    "source_title": "Regulation (EU) 2024/1689 — Artificial Intelligence Act",
+    "source_type": "OFFICIAL_EU_EUR_LEX_ELI_WITH_PUBLIC_REFERENCE_FALLBACK",
+    "hard_gate": false,
+    "candidate_urls": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng",
+        "candidate_type": "OFFICIAL_EU_EUR_LEX_ELI",
+        "notes": "Official EUR-Lex ELI URL; may return JavaScript / robot verification page in simple fetch clients."
+      },
+      {
+        "url": "https://artificialintelligenceact.eu/the-act/",
+        "candidate_type": "PUBLIC_REFERENCE_AI_ACT_EXPLORER",
+        "notes": "Public reference fallback for extractability smoke test."
+      }
+    ]
+  },
+  {
+    "corpus_id": "EU_DMA",
+    "jurisdiction": "EU",
+    "source_title": "Regulation (EU) 2022/1925 — Digital Markets Act",
+    "source_type": "OFFICIAL_EU_EUR_LEX_ELI_WITH_PUBLIC_REFERENCE_FALLBACK",
+    "hard_gate": false,
+    "candidate_urls": [
+      {
+        "url": "https://eur-lex.europa.eu/eli/reg/2022/1925/oj/eng",
+        "candidate_type": "OFFICIAL_EU_EUR_LEX_ELI",
+        "notes": "Official EUR-Lex ELI URL; may return JavaScript / robot verification page in simple fetch clients."
+      },
+      {
+        "url": "https://digital-markets-act.ec.europa.eu/about-dma_en",
+        "candidate_type": "OFFICIAL_EC_PUBLIC_REFERENCE",
+        "notes": "European Commission public reference page, not full legal text."
+      }
+    ]
+  },
+  {
+    "corpus_id": "US_COPPA",
+    "jurisdiction": "US",
+    "source_title": "16 CFR Part 312 — Children's Online Privacy Protection Rule",
+    "source_type": "OFFICIAL_US_ECFR_WITH_PUBLIC_REFERENCE_FALLBACK",
+    "hard_gate": false,
+    "candidate_urls": [
+      {
+        "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-C/part-312",
+        "candidate_type": "OFFICIAL_US_ECFR",
+        "notes": "Official eCFR page for COPPA Rule."
+      },
+      {
+        "url": "https://www.law.cornell.edu/cfr/text/16/part-312",
+        "candidate_type": "PUBLIC_REFERENCE_CORNELL_LII_CFR",
+        "notes": "Cornell LII CFR reference fallback."
+      }
+    ]
+  },
+  {
+    "corpus_id": "US_CDA230",
+    "jurisdiction": "US",
+    "source_title": "47 U.S.C. Section 230",
+    "source_type": "OFFICIAL_US_CODE_WITH_PUBLIC_REFERENCE_FALLBACK",
+    "hard_gate": false,
+    "candidate_urls": [
+      {
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim",
+        "candidate_type": "OFFICIAL_US_CODE_HOUSE",
+        "notes": "U.S. Code House page; simple urllib may fail on some machines."
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/47/230",
+        "candidate_type": "PUBLIC_REFERENCE_CORNELL_LII_USCODE",
+        "notes": "Cornell LII U.S. Code reference fallback."
+      }
+    ]
+  },
+  {
+    "corpus_id": "US_FTC_ACT5",
+    "jurisdiction": "US",
+    "source_title": "15 U.S.C. Section 45 — FTC Act Section 5",
+    "source_type": "OFFICIAL_US_CODE_WITH_PUBLIC_REFERENCE_FALLBACK",
+    "hard_gate": false,
+    "candidate_urls": [
+      {
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section45&num=0&edition=prelim",
+        "candidate_type": "OFFICIAL_US_CODE_HOUSE",
+        "notes": "U.S. Code House page; simple urllib may fail on some machines."
+      },
+      {
+        "url": "https://www.law.cornell.edu/uscode/text/15/45",
+        "candidate_type": "PUBLIC_REFERENCE_CORNELL_LII_USCODE",
+        "notes": "Cornell LII U.S. Code reference fallback."
+      }
+    ]
+  },
+  {
+    "corpus_id": "US_CCPA",
+    "jurisdiction": "US-CA",
+    "source_title": "California Consumer Privacy Act / CCPA",
+    "source_type": "OFFICIAL_CA_REFERENCE_WITH_PUBLIC_REFERENCE_FALLBACK",
+    "hard_gate": false,
+    "candidate_urls": [
+      {
+        "url": "https://oag.ca.gov/privacy/ccpa",
+        "candidate_type": "OFFICIAL_CA_OAG_REFERENCE",
+        "notes": "California Attorney General CCPA public reference page."
+      },
+      {
+        "url": "https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&part=4.&lawCode=CIV&title=1.81.5",
+        "candidate_type": "OFFICIAL_CA_LEGINFO_REFERENCE",
+        "notes": "California Legislative Information CCPA code page; may be dynamic."
+      }
+    ]
+  }
+]
