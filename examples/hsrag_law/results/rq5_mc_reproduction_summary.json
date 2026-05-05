@@ -11,11 +11,11 @@
     "cost_per_1k": 0.0001,
     "max_p95_latency_ms": 20.0,
     "benchmark_salt": "HSRAG_LAW_RQ5_5_PUBLIC_REPRODUCIBLE_SALT_v1",
-    "elapsed_ms_total": 47934.94049995206
+    "elapsed_ms_total": 69809.8601999227
   },
   "corpus_summary": {
     "corpus_source": "rq4_rebuilt_chunks",
-    "chunk_count": 110,
+    "chunk_count": 257,
     "corpus_count": 5,
     "corpora": "EU_AI_ACT|EU_DMA|US_CDA230|US_COPPA|US_FTC_ACT5",
     "jurisdiction_count": 2,
@@ -25,7 +25,7 @@
   "case_count": 50000,
   "case_audit_chain_complete": 1.0,
   "summary_audit_chain_complete": 1.0,
-  "final_case_hash": "sha256:90cc68e000cf8dc0fb3e37fa4d45397715c516b6d1c1926328d9bcb572f2f0f0",
+  "final_case_hash": "sha256:d45fe9e8546d3f7cf3146c22303e6bf2fae5dc5dc8f6d77ccdbd4b383e773d14",
   "hsrag_metrics": {
     "target_cases": 27500,
     "unsupported_query_cases": 7500,
@@ -37,27 +37,27 @@
     "unsupported_query_false_allow": 0.0,
     "ambiguous_query_false_allow": 0.0,
     "conflict_query_false_allow": 0.0,
-    "p50_latency_ms": 0.3147998359054327,
-    "p95_latency_ms": 0.5602999590337276,
-    "total_tokens": 7152376,
-    "avg_tokens": 143.04752,
-    "total_cost": 0.7152376,
-    "avg_cost": 1.4304752000000001e-05
+    "p50_latency_ms": 0.3637999761849642,
+    "p95_latency_ms": 0.6840050802566107,
+    "total_tokens": 7187467,
+    "avg_tokens": 143.74934,
+    "total_cost": 0.7187467000000001,
+    "avg_cost": 1.4374934e-05
   },
   "global_lexical_baseline": {
     "mode": "global",
-    "target_correct": 0.9178545454545455,
-    "wrong_corpus_misrouting": 0.08214545454545455,
-    "wrong_jurisdiction_misrouting": 0.0,
+    "target_correct": 0.9247636363636363,
+    "wrong_corpus_misrouting": 0.07523636363636364,
+    "wrong_jurisdiction_misrouting": 0.0017454545454545455,
     "unsupported_query_false_allow": 1.0,
     "ambiguous_query_false_allow": 1.0,
     "conflict_query_false_allow": 1.0,
-    "p50_latency_ms": 0.14050002209842205,
-    "p95_latency_ms": 0.25819988222792745,
-    "total_tokens": 50210848,
-    "avg_tokens": 1004.21696,
-    "total_cost": 5.021084800000001,
-    "avg_cost": 0.000100421696
+    "p50_latency_ms": 0.3564499784260988,
+    "p95_latency_ms": 0.6506100646220139,
+    "total_tokens": 50038521,
+    "avg_tokens": 1000.77042,
+    "total_cost": 5.0038521000000005,
+    "avg_cost": 0.000100077042
   },
   "domain_hint_lexical_baseline": {
     "mode": "domain_hint",
@@ -67,29 +67,29 @@
     "unsupported_query_false_allow": 1.0,
     "ambiguous_query_false_allow": 1.0,
     "conflict_query_false_allow": 1.0,
-    "p50_latency_ms": 0.34300005063414574,
-    "p95_latency_ms": 0.6696998607367277,
-    "total_tokens": 50242378,
-    "avg_tokens": 1004.84756,
-    "total_cost": 5.0242378,
-    "avg_cost": 0.000100484756
+    "p50_latency_ms": 0.4635999212041497,
+    "p95_latency_ms": 0.9535099263302973,
+    "total_tokens": 50111587,
+    "avg_tokens": 1002.23174,
+    "total_cost": 5.0111587,
+    "avg_cost": 0.000100223174
   },
   "baseline_comparison": [
     {
       "baseline_mode": "global",
       "hsrag_target_correct": 1.0,
-      "baseline_target_correct": 0.9178545454545455,
+      "baseline_target_correct": 0.9247636363636363,
       "hsrag_wrong_corpus_misrouting": 0.0,
-      "baseline_wrong_corpus_misrouting": 0.08214545454545455,
+      "baseline_wrong_corpus_misrouting": 0.07523636363636364,
       "hsrag_unsupported_query_false_allow": 0.0,
       "baseline_unsupported_query_false_allow": 1.0,
       "hsrag_ambiguous_query_false_allow": 0.0,
       "baseline_ambiguous_query_false_allow": 1.0,
       "hsrag_conflict_query_false_allow": 0.0,
       "baseline_conflict_query_false_allow": 1.0,
-      "token_reduction_pct": 85.75531725733849,
-      "cost_reduction_pct": 85.75531725733849,
-      "p95_latency_ratio_baseline_over_hsrag": 0.46082438177080953
+      "token_reduction_pct": 85.63613221102199,
+      "cost_reduction_pct": 85.63613221102199,
+      "p95_latency_ratio_baseline_over_hsrag": 0.9511772403472963
     },
     {
       "baseline_mode": "domain_hint",
@@ -103,9 +103,9 @@
       "baseline_ambiguous_query_false_allow": 1.0,
       "hsrag_conflict_query_false_allow": 0.0,
       "baseline_conflict_query_false_allow": 1.0,
-      "token_reduction_pct": 85.76425662017829,
-      "cost_reduction_pct": 85.76425662017829,
-      "p95_latency_ratio_baseline_over_hsrag": 1.1952523821198686
+      "token_reduction_pct": 85.65707567792654,
+      "cost_reduction_pct": 85.65707567792654,
+      "p95_latency_ratio_baseline_over_hsrag": 1.3940100064353023
     }
   ],
   "gate_checks": [
@@ -177,7 +177,7 @@
       "gate_id": "HSRAG_P95_LATENCY_BOUND",
       "description": "HSRAG p95 latency bound.",
       "expected": "< 20.0 ms",
-      "actual": 0.5602999590337276,
+      "actual": 0.6840050802566107,
       "passed": true,
       "severity": "HARD"
     },

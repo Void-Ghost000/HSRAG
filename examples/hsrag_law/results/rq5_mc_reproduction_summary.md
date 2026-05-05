@@ -13,11 +13,11 @@ Summary audit chain complete: `1.0`
 - cost_per_1k: `0.0001`
 - max_p95_latency_ms: `20.0`
 - benchmark_salt: `HSRAG_LAW_RQ5_5_PUBLIC_REPRODUCIBLE_SALT_v1`
-- elapsed_ms_total: `47934.94049995206`
+- elapsed_ms_total: `69809.8601999227`
 
 ## Corpus Summary
 - corpus_source: `rq4_rebuilt_chunks`
-- chunk_count: `110`
+- chunk_count: `257`
 - corpus_count: `5`
 - corpora: `EU_AI_ACT|EU_DMA|US_CDA230|US_COPPA|US_FTC_ACT5`
 - jurisdiction_count: `2`
@@ -35,27 +35,27 @@ Summary audit chain complete: `1.0`
 - unsupported_query_false_allow: `0.0`
 - ambiguous_query_false_allow: `0.0`
 - conflict_query_false_allow: `0.0`
-- p50_latency_ms: `0.3147998359054327`
-- p95_latency_ms: `0.5602999590337276`
-- total_tokens: `7152376`
-- avg_tokens: `143.04752`
-- total_cost: `0.7152376`
-- avg_cost: `1.4304752000000001e-05`
+- p50_latency_ms: `0.3637999761849642`
+- p95_latency_ms: `0.6840050802566107`
+- total_tokens: `7187467`
+- avg_tokens: `143.74934`
+- total_cost: `0.7187467000000001`
+- avg_cost: `1.4374934e-05`
 
 ## Global Lexical Baseline
 - mode: `global`
-- target_correct: `0.9178545454545455`
-- wrong_corpus_misrouting: `0.08214545454545455`
-- wrong_jurisdiction_misrouting: `0.0`
+- target_correct: `0.9247636363636363`
+- wrong_corpus_misrouting: `0.07523636363636364`
+- wrong_jurisdiction_misrouting: `0.0017454545454545455`
 - unsupported_query_false_allow: `1.0`
 - ambiguous_query_false_allow: `1.0`
 - conflict_query_false_allow: `1.0`
-- p50_latency_ms: `0.14050002209842205`
-- p95_latency_ms: `0.25819988222792745`
-- total_tokens: `50210848`
-- avg_tokens: `1004.21696`
-- total_cost: `5.021084800000001`
-- avg_cost: `0.000100421696`
+- p50_latency_ms: `0.3564499784260988`
+- p95_latency_ms: `0.6506100646220139`
+- total_tokens: `50038521`
+- avg_tokens: `1000.77042`
+- total_cost: `5.0038521000000005`
+- avg_cost: `0.000100077042`
 
 ## Domain-Hint Lexical Baseline
 - mode: `domain_hint`
@@ -65,19 +65,19 @@ Summary audit chain complete: `1.0`
 - unsupported_query_false_allow: `1.0`
 - ambiguous_query_false_allow: `1.0`
 - conflict_query_false_allow: `1.0`
-- p50_latency_ms: `0.34300005063414574`
-- p95_latency_ms: `0.6696998607367277`
-- total_tokens: `50242378`
-- avg_tokens: `1004.84756`
-- total_cost: `5.0242378`
-- avg_cost: `0.000100484756`
+- p50_latency_ms: `0.4635999212041497`
+- p95_latency_ms: `0.9535099263302973`
+- total_tokens: `50111587`
+- avg_tokens: `1002.23174`
+- total_cost: `5.0111587`
+- avg_cost: `0.000100223174`
 
 ## Baseline Comparison
 
 | baseline | token_reduction_pct | cost_reduction_pct | p95_latency_ratio |
 |---|---:|---:|---:|
-| global | 85.75531725733849 | 85.75531725733849 | 0.46082438177080953 |
-| domain_hint | 85.76425662017829 | 85.76425662017829 | 1.1952523821198686 |
+| global | 85.63613221102199 | 85.63613221102199 | 0.9511772403472963 |
+| domain_hint | 85.65707567792654 | 85.65707567792654 | 1.3940100064353023 |
 
 ## Gate Checks
 
@@ -91,7 +91,7 @@ Summary audit chain complete: `1.0`
 | HSRAG_AMBIGUOUS_QUERY_FALSE_ALLOW_ZERO | `True` | `0.0` | `0.0` | `HARD` |
 | HSRAG_CONFLICT_QUERY_FALSE_ALLOW_ZERO | `True` | `0.0` | `0.0` | `HARD` |
 | HSRAG_AUDIT_CHAIN_COMPLETE | `True` | `1.0` | `1.0` | `HARD` |
-| HSRAG_P95_LATENCY_BOUND | `True` | `< 20.0 ms` | `0.5602999590337276` | `HARD` |
+| HSRAG_P95_LATENCY_BOUND | `True` | `< 20.0 ms` | `0.6840050802566107` | `HARD` |
 | BASELINE_FALSE_ALLOW_PRESENT | `True` | `> 0` | `1.0` | `SOFT` |
 
 ## Notes

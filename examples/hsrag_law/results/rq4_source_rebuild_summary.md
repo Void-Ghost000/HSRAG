@@ -10,12 +10,12 @@ RQ4.1 tests whether HSRAG LAW can fetch official or public legal sources, normal
 ## Summary
 
 - source_count: `6`
-- attempt_count: `11`
+- attempt_count: `9`
 - fetch_ok_count: `5`
 - rebuild_ok_count: `5`
 - fetch_warn_count: `0`
 - fetch_error_count: `1`
-- rebuilt_chunk_count: `110`
+- rebuilt_chunk_count: `889`
 - min_ok: `2`
 - strict: `False`
 
@@ -23,8 +23,8 @@ RQ4.1 tests whether HSRAG LAW can fetch official or public legal sources, normal
 
 | corpus_id | jurisdiction | selected_candidate_type | fetch_decision | rebuild_usable | status | text_len | chunks |
 |---|---|---|---|---:|---:|---:|---:|
-| EU_AI_ACT | EU | PUBLIC_REFERENCE_AI_ACT_EXPLORER | `FETCH_OK` | `True` | 200 | 7183 | 7 |
-| EU_DMA | EU | OFFICIAL_EC_PUBLIC_REFERENCE | `FETCH_OK` | `True` | 200 | 6032 | 6 |
+| EU_AI_ACT | EU | OFFICIAL_EU_EUR_LEX_ELI | `FETCH_OK` | `True` | 200 | 590129 | 547 |
+| EU_DMA | EU | OFFICIAL_EU_EUR_LEX_ELI | `FETCH_OK` | `True` | 200 | 264583 | 245 |
 | US_COPPA | US | OFFICIAL_US_ECFR | `FETCH_OK` | `True` | 200 | 52389 | 49 |
 | US_CDA230 | US | PUBLIC_REFERENCE_CORNELL_LII_USCODE | `FETCH_OK` | `True` | 200 | 11691 | 11 |
 | US_FTC_ACT5 | US | PUBLIC_REFERENCE_CORNELL_LII_USCODE | `FETCH_OK` | `True` | 200 | 39692 | 37 |
@@ -35,7 +35,7 @@ RQ4.1 tests whether HSRAG LAW can fetch official or public legal sources, normal
 | gate_id | passed | expected | actual |
 |---|---:|---|---|
 | RQ4_REBUILD_OK_MINIMUM | `True` | `>= 2` | `5` |
-| RQ4_CHUNK_COUNT_POSITIVE | `True` | `> 0` | `110` |
+| RQ4_CHUNK_COUNT_POSITIVE | `True` | `> 0` | `889` |
 | RQ4_CHUNK_HASH_COMPLETENESS | `True` | `True` | `True` |
 | RQ4_AUDIT_CHAIN_COMPLETE | `True` | `1.0` | `1.0` |
 | RQ4_HARD_GATE_SOURCES | `True` | `0` | `0` |

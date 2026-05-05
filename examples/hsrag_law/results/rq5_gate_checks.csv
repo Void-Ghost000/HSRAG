@@ -7,5 +7,5 @@ HSRAG_UNSUPPORTED_QUERY_FALSE_ALLOW_ZERO,Unsupported-query false allow.,0.0,0.0,
 HSRAG_AMBIGUOUS_QUERY_FALSE_ALLOW_ZERO,Ambiguous-query false allow.,0.0,0.0,True,HARD
 HSRAG_CONFLICT_QUERY_FALSE_ALLOW_ZERO,Conflict-query false allow.,0.0,0.0,True,HARD
 HSRAG_AUDIT_CHAIN_COMPLETE,Per-case audit chain.,1.0,1.0,True,HARD
-HSRAG_P95_LATENCY_BOUND,HSRAG p95 latency bound.,< 20.0 ms,0.5602999590337276,True,HARD
+HSRAG_P95_LATENCY_BOUND,HSRAG p95 latency bound.,< 20.0 ms,0.6840050802566107,True,HARD
 BASELINE_FALSE_ALLOW_PRESENT,At least one lexical baseline exposes non-target false allow.,> 0,1.0,True,SOFT
