@@ -1,0 +1,16 @@
+gate_id,description,expected,actual,passed,severity
+RQ2_2_DECISION,Frozen RQ2.2 decision must be pass.,RQ2_2_FOUR_BASELINES_10KMC_PASS,RQ2_2_FOUR_BASELINES_10KMC_PASS,True,HARD
+FAIL_COUNT_ZERO,fail_count must equal 0.,0,0,True,HARD
+MC_CASES_MINIMUM,"RQ2.2 must include at least 10,000 MC mutation cases.",>= 10000,10176,True,HARD
+BASELINE_MODES_MINIMUM,RQ2.2 must include at least four baseline modes.,>= 4,4,True,HARD
+MUTATION_MODES_PRESENT,Mutation modes must be present for MC robustness scope.,>= 1,8,True,HARD
+HSRAG_TARGET_CORRECT,HSRAG target correctness must be at least 0.995.,>= 0.995,1.0,True,HARD
+HSRAG_WRONG_COLLISION_ZERO,HSRAG wrong collision rate must equal 0.0.,0.0,0.0,True,HARD
+HSRAG_NO_EVIDENCE_FALSE_ALLOW_ZERO,HSRAG no-evidence false allow rate must equal 0.0.,0.0,0.0,True,HARD
+HSRAG_AMBIGUOUS_FALSE_ALLOW_ZERO,HSRAG ambiguous false allow rate must equal 0.0.,0.0,0.0,True,HARD
+HSRAG_MISMATCH_ESCAPE_ZERO,HSRAG mismatch escape rate must equal 0.0.,0.0,0.0,True,HARD
+HSRAG_AUDIT_CHAIN_COMPLETE,HSRAG audit-chain completion rate must equal 1.0.,1.0,1.0,True,HARD
+HSRAG_P95_LATENCY_LT_10MS,HSRAG p95 latency must be below 10ms.,< 10ms,4.03891924997879,True,HARD
+BASELINE_HAS_NONZERO_WRONG_COLLISION,Best lexical baseline should expose nonzero wrong-collision risk in this benchmark comparison.,> 0.0,0.0376375786163522,True,SOFT
+ARTIFACT_HASH_PRESENT,artifact_content_hash must be present.,present sha256,sha256:f56269a35fb300c48b3a5da620f8e2ac3b1e1729323514b18380252619fc8680,True,HARD
+ZIP_HASH_PRESENT,zip_sha256 must be present.,present sha256,sha256:8bbe1400e8e619331c6de2e74cfdb13e5205db3af5176aa804bcc6e01e511ca2,True,HARD

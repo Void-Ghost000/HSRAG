@@ -1,0 +1,276 @@
+{
+  "name": "HSRAG-LAW-RQ2.2-Verifier",
+  "core_decision": "RQ2_2_VERIFICATION_PASS",
+  "failures": [],
+  "rq2_2_frozen_result": {
+    "name": "HSRAG-RQ2.2-RealEU-Law-FourBaselines-10kMC-v0.1",
+    "parent_baseline": "HSRAG-RQ2.1-Provenance-UnifiedTable-v0.1",
+    "semantic_label": "REAL_UPLOADED_PDF_WITH_OFFICIAL_REFERENCE",
+    "real_primary_verified": false,
+    "purpose": "Extend HSRAG LAW on real uploaded EU AI Act + DMA PDFs with official references to four lexical baselines and 10k+ MC mutation cases.",
+    "decision": "RQ2_2_FOUR_BASELINES_10KMC_PASS",
+    "fail_count": 0,
+    "artifact_content_hash": "sha256:f56269a35fb300c48b3a5da620f8e2ac3b1e1729323514b18380252619fc8680",
+    "zip_sha256": "sha256:8bbe1400e8e619331c6de2e74cfdb13e5205db3af5176aa804bcc6e01e511ca2",
+    "chunks": 188,
+    "base_queries": 424,
+    "mc_seeds": 24,
+    "mc_cases": 10176,
+    "mutation_modes": [
+      "case_punctuation_noise",
+      "jurisdiction_distractor",
+      "pointer_injection",
+      "legalese_paraphrase",
+      "typo_light",
+      "irrelevant_tail",
+      "polite_prefix",
+      "order_shuffle"
+    ],
+    "baseline_modes": [
+      "bm25_domain_hint_topk",
+      "bm25_global_topk",
+      "tfidf_domain_hint_topk",
+      "tfidf_global_topk"
+    ],
+    "hsrag_metrics": {
+      "target_correct": 1.0,
+      "wrong_collision": 0.0,
+      "no_evidence_false_allow": 0.0,
+      "ambiguous_false_allow": 0.0,
+      "mismatch_escape": 0.0,
+      "audit_chain_complete": 1.0,
+      "p95_latency_ms": 4.03891924997879
+    },
+    "best_baseline_metrics": {
+      "target_correct": 0.9391705974842768,
+      "wrong_collision": 0.0376375786163522,
+      "no_evidence_false_allow": 1.0,
+      "ambiguous_false_allow": 1.0,
+      "mismatch_escape": 1.0,
+      "token_reduction_pct_max": 78.26886681010008,
+      "cost_reduction_pct_max": 73.33315332219127,
+      "p95_latency_ms": 6.851546500001859,
+      "latency_ratio_max": 2.6526404925955656
+    },
+    "baseline_details": [
+      {
+        "mode": "bm25_domain_hint_topk",
+        "target_correct": 0.9391705974842768,
+        "wrong_collision": 0.0376375786163522,
+        "p95_latency_ms": 6.851546500001859
+      },
+      {
+        "mode": "bm25_global_topk",
+        "target_correct": 0.9300314465408805,
+        "wrong_collision": 0.5593553459119497,
+        "p95_latency_ms": 10.713801
+      },
+      {
+        "mode": "tfidf_domain_hint_topk",
+        "target_correct": 0.9387775157232704,
+        "wrong_collision": 0.03803066037735849,
+        "p95_latency_ms": 6.419456
+      },
+      {
+        "mode": "tfidf_global_topk",
+        "target_correct": 0.9216776729559748,
+        "wrong_collision": 0.5677083333333334,
+        "p95_latency_ms": 6.708151
+      }
+    ]
+  },
+  "gate_checks": [
+    {
+      "gate_id": "RQ2_2_DECISION",
+      "description": "Frozen RQ2.2 decision must be pass.",
+      "expected": "RQ2_2_FOUR_BASELINES_10KMC_PASS",
+      "actual": "RQ2_2_FOUR_BASELINES_10KMC_PASS",
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "FAIL_COUNT_ZERO",
+      "description": "fail_count must equal 0.",
+      "expected": 0,
+      "actual": 0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "MC_CASES_MINIMUM",
+      "description": "RQ2.2 must include at least 10,000 MC mutation cases.",
+      "expected": ">= 10000",
+      "actual": 10176,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "BASELINE_MODES_MINIMUM",
+      "description": "RQ2.2 must include at least four baseline modes.",
+      "expected": ">= 4",
+      "actual": 4,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "MUTATION_MODES_PRESENT",
+      "description": "Mutation modes must be present for MC robustness scope.",
+      "expected": ">= 1",
+      "actual": 8,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_TARGET_CORRECT",
+      "description": "HSRAG target correctness must be at least 0.995.",
+      "expected": ">= 0.995",
+      "actual": 1.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_WRONG_COLLISION_ZERO",
+      "description": "HSRAG wrong collision rate must equal 0.0.",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_NO_EVIDENCE_FALSE_ALLOW_ZERO",
+      "description": "HSRAG no-evidence false allow rate must equal 0.0.",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_AMBIGUOUS_FALSE_ALLOW_ZERO",
+      "description": "HSRAG ambiguous false allow rate must equal 0.0.",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_MISMATCH_ESCAPE_ZERO",
+      "description": "HSRAG mismatch escape rate must equal 0.0.",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_AUDIT_CHAIN_COMPLETE",
+      "description": "HSRAG audit-chain completion rate must equal 1.0.",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_P95_LATENCY_LT_10MS",
+      "description": "HSRAG p95 latency must be below 10ms.",
+      "expected": "< 10ms",
+      "actual": 4.03891924997879,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "BASELINE_HAS_NONZERO_WRONG_COLLISION",
+      "description": "Best lexical baseline should expose nonzero wrong-collision risk in this benchmark comparison.",
+      "expected": "> 0.0",
+      "actual": 0.0376375786163522,
+      "passed": true,
+      "severity": "SOFT"
+    },
+    {
+      "gate_id": "ARTIFACT_HASH_PRESENT",
+      "description": "artifact_content_hash must be present.",
+      "expected": "present sha256",
+      "actual": "sha256:f56269a35fb300c48b3a5da620f8e2ac3b1e1729323514b18380252619fc8680",
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "ZIP_HASH_PRESENT",
+      "description": "zip_sha256 must be present.",
+      "expected": "present sha256",
+      "actual": "sha256:8bbe1400e8e619331c6de2e74cfdb13e5205db3af5176aa804bcc6e01e511ca2",
+      "passed": true,
+      "severity": "HARD"
+    }
+  ],
+  "baseline_comparison": [
+    {
+      "mode": "bm25_domain_hint_topk",
+      "target_correct": 0.9391705974842768,
+      "wrong_collision": 0.0376375786163522,
+      "p95_latency_ms": 6.851546500001859,
+      "target_correct_gap_vs_hsrag": 0.06082940251572322,
+      "wrong_collision_gap_vs_hsrag": 0.0376375786163522,
+      "latency_gap_vs_hsrag_ms": 2.81262725002307
+    },
+    {
+      "mode": "bm25_global_topk",
+      "target_correct": 0.9300314465408805,
+      "wrong_collision": 0.5593553459119497,
+      "p95_latency_ms": 10.713801,
+      "target_correct_gap_vs_hsrag": 0.06996855345911945,
+      "wrong_collision_gap_vs_hsrag": 0.5593553459119497,
+      "latency_gap_vs_hsrag_ms": 6.6748817500212105
+    },
+    {
+      "mode": "tfidf_domain_hint_topk",
+      "target_correct": 0.9387775157232704,
+      "wrong_collision": 0.03803066037735849,
+      "p95_latency_ms": 6.419456,
+      "target_correct_gap_vs_hsrag": 0.061222484276729605,
+      "wrong_collision_gap_vs_hsrag": 0.03803066037735849,
+      "latency_gap_vs_hsrag_ms": 2.3805367500212107
+    },
+    {
+      "mode": "tfidf_global_topk",
+      "target_correct": 0.9216776729559748,
+      "wrong_collision": 0.5677083333333334,
+      "p95_latency_ms": 6.708151,
+      "target_correct_gap_vs_hsrag": 0.0783223270440252,
+      "wrong_collision_gap_vs_hsrag": 0.5677083333333334,
+      "latency_gap_vs_hsrag_ms": 2.6692317500212104
+    }
+  ],
+  "audit_chain_complete": 1.0,
+  "consistency_matrix": [
+    {
+      "rq": "RQ2.2",
+      "benchmark_role": "real_eu_law_retrieval_robustness",
+      "corpora": "EU_AI_ACT|EU_DMA",
+      "requires_mc": true,
+      "mc_cases": 10176,
+      "baseline_modes": 4,
+      "source_status": "REAL_UPLOADED_PDF_WITH_OFFICIAL_REFERENCE",
+      "real_primary_verified": false,
+      "core_decision": "RQ2_2_VERIFICATION_PASS",
+      "hsrag_target_correct": 1.0,
+      "hsrag_wrong_collision": 0.0,
+      "hsrag_no_evidence_false_allow": 0.0,
+      "hsrag_ambiguous_false_allow": 0.0,
+      "hsrag_mismatch_escape": 0.0,
+      "hsrag_audit_chain_complete": 1.0,
+      "local_verifier_audit_chain_complete": 1.0,
+      "best_baseline_target_correct": 0.9391705974842768,
+      "best_baseline_wrong_collision": 0.0376375786163522,
+      "token_reduction_pct_max": 78.26886681010008,
+      "cost_reduction_pct_max": 73.33315332219127,
+      "notes": "RQ2.2 is an adversarial retrieval benchmark with 10k+ MC cases. It uses real uploaded EU legal PDFs with official references, but does not claim official URL fetch reproduction as a hard gate."
+    }
+  ],
+  "outputs": {
+    "summary_json": "rq2_2_verification_summary.json",
+    "summary_md": "rq2_2_verification_summary.md",
+    "gate_checks_csv": "rq2_2_gate_checks.csv",
+    "baseline_comparison_csv": "rq2_2_baseline_comparison.csv",
+    "audit_chain_jsonl": "rq2_2_audit_chain.jsonl",
+    "consistency_matrix_csv": "rq2_2_consistency_matrix.csv"
+  }
+}
