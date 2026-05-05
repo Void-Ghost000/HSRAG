@@ -1,0 +1,201 @@
+{
+  "name": "HSRAG-LAW-RQ5.5-CTHC-Typed-Salted-Domain-Routing",
+  "core_decision": "RQ5_5_CTHC_SALTED_DOMAIN_ROUTING_PASS",
+  "failures": [],
+  "config": {
+    "cases": 10000,
+    "seed": 20260505,
+    "top_k": 5,
+    "max_chunks_per_corpus": 80,
+    "min_cases": 10000,
+    "cost_per_1k": 0.0001,
+    "max_p95_latency_ms": 20.0,
+    "benchmark_salt": "HSRAG_LAW_RQ5_5_PUBLIC_REPRODUCIBLE_SALT_v1",
+    "elapsed_ms_total": 9838.736600009724
+  },
+  "corpus_summary": {
+    "corpus_source": "rq4_rebuilt_chunks",
+    "chunk_count": 110,
+    "corpus_count": 5,
+    "corpora": "EU_AI_ACT|EU_DMA|US_CDA230|US_COPPA|US_FTC_ACT5",
+    "jurisdiction_count": 2,
+    "jurisdictions": "EU|US",
+    "domain_hash_count": 5
+  },
+  "case_count": 10000,
+  "case_audit_chain_complete": 1.0,
+  "summary_audit_chain_complete": 1.0,
+  "final_case_hash": "sha256:8da4543dddf656570412d4bf82bcddb1110a517ac7e906e880e82bd8ebfcbd4d",
+  "hsrag_metrics": {
+    "target_cases": 5500,
+    "unsupported_query_cases": 1500,
+    "ambiguous_query_cases": 1500,
+    "conflict_query_cases": 1500,
+    "target_correct": 1.0,
+    "wrong_corpus_misrouting": 0.0,
+    "wrong_jurisdiction_misrouting": 0.0,
+    "unsupported_query_false_allow": 0.0,
+    "ambiguous_query_false_allow": 0.0,
+    "conflict_query_false_allow": 0.0,
+    "p50_latency_ms": 0.3155999584123492,
+    "p95_latency_ms": 0.5798799917101849,
+    "total_tokens": 1429788,
+    "avg_tokens": 142.9788,
+    "total_cost": 0.14297880000000002,
+    "avg_cost": 1.4297880000000001e-05
+  },
+  "global_lexical_baseline": {
+    "mode": "global",
+    "target_correct": 0.9163636363636364,
+    "wrong_corpus_misrouting": 0.08363636363636363,
+    "wrong_jurisdiction_misrouting": 0.0,
+    "unsupported_query_false_allow": 1.0,
+    "ambiguous_query_false_allow": 1.0,
+    "conflict_query_false_allow": 1.0,
+    "p50_latency_ms": 0.1425000373274088,
+    "p95_latency_ms": 0.2655000425875187,
+    "total_tokens": 10044275,
+    "avg_tokens": 1004.4275,
+    "total_cost": 1.0044275,
+    "avg_cost": 0.00010044275
+  },
+  "domain_hint_lexical_baseline": {
+    "mode": "domain_hint",
+    "target_correct": 1.0,
+    "wrong_corpus_misrouting": 0.0,
+    "wrong_jurisdiction_misrouting": 0.0,
+    "unsupported_query_false_allow": 1.0,
+    "ambiguous_query_false_allow": 1.0,
+    "conflict_query_false_allow": 1.0,
+    "p50_latency_ms": 0.3446500049903989,
+    "p95_latency_ms": 0.7112148334272204,
+    "total_tokens": 10050364,
+    "avg_tokens": 1005.0364,
+    "total_cost": 1.0050364,
+    "avg_cost": 0.00010050364
+  },
+  "baseline_comparison": [
+    {
+      "baseline_mode": "global",
+      "hsrag_target_correct": 1.0,
+      "baseline_target_correct": 0.9163636363636364,
+      "hsrag_wrong_corpus_misrouting": 0.0,
+      "baseline_wrong_corpus_misrouting": 0.08363636363636363,
+      "hsrag_unsupported_query_false_allow": 0.0,
+      "baseline_unsupported_query_false_allow": 1.0,
+      "hsrag_ambiguous_query_false_allow": 0.0,
+      "baseline_ambiguous_query_false_allow": 1.0,
+      "hsrag_conflict_query_false_allow": 0.0,
+      "baseline_conflict_query_false_allow": 1.0,
+      "token_reduction_pct": 85.76514482130368,
+      "cost_reduction_pct": 85.76514482130368,
+      "p95_latency_ratio_baseline_over_hsrag": 0.4578534289560581
+    },
+    {
+      "baseline_mode": "domain_hint",
+      "hsrag_target_correct": 1.0,
+      "baseline_target_correct": 1.0,
+      "hsrag_wrong_corpus_misrouting": 0.0,
+      "baseline_wrong_corpus_misrouting": 0.0,
+      "hsrag_unsupported_query_false_allow": 0.0,
+      "baseline_unsupported_query_false_allow": 1.0,
+      "hsrag_ambiguous_query_false_allow": 0.0,
+      "baseline_ambiguous_query_false_allow": 1.0,
+      "hsrag_conflict_query_false_allow": 0.0,
+      "baseline_conflict_query_false_allow": 1.0,
+      "token_reduction_pct": 85.77376898985946,
+      "cost_reduction_pct": 85.77376898985946,
+      "p95_latency_ratio_baseline_over_hsrag": 1.2264862447309177
+    }
+  ],
+  "gate_checks": [
+    {
+      "gate_id": "RQ5_MC_CASES_MINIMUM",
+      "description": "Minimum perturbation cases.",
+      "expected": ">= 10000",
+      "actual": 10000,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_TARGET_CORRECT",
+      "description": "Target correctness.",
+      "expected": ">= 0.995",
+      "actual": 1.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_WRONG_CORPUS_MISROUTING_ZERO",
+      "description": "Wrong-corpus misrouting.",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_WRONG_JURISDICTION_MISROUTING_ZERO",
+      "description": "Wrong-jurisdiction misrouting.",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_UNSUPPORTED_QUERY_FALSE_ALLOW_ZERO",
+      "description": "Unsupported-query false allow.",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_AMBIGUOUS_QUERY_FALSE_ALLOW_ZERO",
+      "description": "Ambiguous-query false allow.",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_CONFLICT_QUERY_FALSE_ALLOW_ZERO",
+      "description": "Conflict-query false allow.",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_AUDIT_CHAIN_COMPLETE",
+      "description": "Per-case audit chain.",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_P95_LATENCY_BOUND",
+      "description": "HSRAG p95 latency bound.",
+      "expected": "< 20.0 ms",
+      "actual": 0.5798799917101849,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "BASELINE_FALSE_ALLOW_PRESENT",
+      "description": "At least one lexical baseline exposes non-target false allow.",
+      "expected": "> 0",
+      "actual": 1.0,
+      "passed": true,
+      "severity": "SOFT"
+    }
+  ],
+  "outputs": {
+    "summary_json": "rq5_mc_reproduction_summary.json",
+    "summary_md": "rq5_mc_reproduction_summary.md",
+    "case_results_csv": "rq5_case_results.csv",
+    "gate_checks_csv": "rq5_gate_checks.csv",
+    "baseline_comparison_csv": "rq5_baseline_comparison.csv",
+    "audit_chain_jsonl": "rq5_audit_chain.jsonl"
+  }
+}

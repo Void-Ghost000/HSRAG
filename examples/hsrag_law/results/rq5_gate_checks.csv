@@ -1,0 +1,11 @@
+gate_id,description,expected,actual,passed,severity
+RQ5_MC_CASES_MINIMUM,Minimum perturbation cases.,>= 10000,10000,True,HARD
+HSRAG_TARGET_CORRECT,Target correctness.,>= 0.995,1.0,True,HARD
+HSRAG_WRONG_CORPUS_MISROUTING_ZERO,Wrong-corpus misrouting.,0.0,0.0,True,HARD
+HSRAG_WRONG_JURISDICTION_MISROUTING_ZERO,Wrong-jurisdiction misrouting.,0.0,0.0,True,HARD
+HSRAG_UNSUPPORTED_QUERY_FALSE_ALLOW_ZERO,Unsupported-query false allow.,0.0,0.0,True,HARD
+HSRAG_AMBIGUOUS_QUERY_FALSE_ALLOW_ZERO,Ambiguous-query false allow.,0.0,0.0,True,HARD
+HSRAG_CONFLICT_QUERY_FALSE_ALLOW_ZERO,Conflict-query false allow.,0.0,0.0,True,HARD
+HSRAG_AUDIT_CHAIN_COMPLETE,Per-case audit chain.,1.0,1.0,True,HARD
+HSRAG_P95_LATENCY_BOUND,HSRAG p95 latency bound.,< 20.0 ms,0.5798799917101849,True,HARD
+BASELINE_FALSE_ALLOW_PRESENT,At least one lexical baseline exposes non-target false allow.,> 0,1.0,True,SOFT
