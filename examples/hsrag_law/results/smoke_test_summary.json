@@ -1,0 +1,70 @@
+{
+  "name": "HSRAG-LAW-Smoke-Demo",
+  "decision": "SMOKE_TEST_PASS",
+  "failures": [],
+  "hsrag_metrics": {
+    "target_cases": 6.0,
+    "total_cases": 9.0,
+    "target_correct": 1.0,
+    "wrong_corpus_collision": 0.0,
+    "wrong_jurisdiction_escape": 0.0,
+    "no_evidence_false_allow": 0.0,
+    "ambiguous_false_allow": 0.0,
+    "mismatch_escape": 0.0,
+    "audit_chain_complete": 1.0,
+    "p50_latency_ms": 0.023999949917197227,
+    "p95_latency_ms": 0.1103199552744627
+  },
+  "lexical_baseline_metrics": {
+    "target_correct": 1.0,
+    "wrong_corpus_collision": 0.0,
+    "no_evidence_false_allow": 1.0,
+    "ambiguous_false_allow": 1.0,
+    "mismatch_escape": 1.0,
+    "p50_latency_ms": 0.11229980736970901,
+    "p95_latency_ms": 0.3532799892127514
+  },
+  "official_reference_results_not_recomputed": {
+    "RQ1": {
+      "decision": "RQ1_PUBLICATION_GRADE_PASS",
+      "real_primary_corpus_rate": 1.0,
+      "source_hash_final_present_rate": 1.0,
+      "primary_real_target_correct_rate": 1.0,
+      "primary_real_wrong_collision_rate": 0.0,
+      "fail_count": 0,
+      "warn_count": 0
+    },
+    "RQ2_2": {
+      "decision": "RQ2_2_FOUR_BASELINES_10KMC_PASS",
+      "chunks": 188,
+      "base_queries": 424,
+      "mc_cases": 10176,
+      "hsrag_target_correct": 1.0,
+      "hsrag_wrong_collision": 0.0,
+      "hsrag_no_evidence_false_allow": 0.0,
+      "hsrag_ambiguous_false_allow": 0.0,
+      "hsrag_mismatch_escape": 0.0,
+      "audit_chain_complete": 1.0,
+      "p95_latency_ms": 4.03891924997879
+    },
+    "RQ3_FIX2": {
+      "decision": "RQ3_EU_US_REALLAW_COLLISION_PASS",
+      "chunks": 244,
+      "base_queries": 592,
+      "mc_cases": 14208,
+      "hsrag_target_correct": 1.0,
+      "hsrag_wrong_corpus_collision": 0.0,
+      "hsrag_wrong_jurisdiction_escape": 0.0,
+      "hsrag_no_evidence_false_allow": 0.0,
+      "hsrag_ambiguous_false_allow": 0.0,
+      "hsrag_mismatch_escape": 0.0,
+      "audit_chain_complete": 1.0,
+      "p95_latency_ms": 5.924376599796233
+    }
+  },
+  "notes": [
+    "This smoke test is deterministic and self-contained.",
+    "It does not reproduce the full RQ1/RQ2/RQ3 benchmark packages.",
+    "It is intended to validate repository wiring and HSRAG LAW control flow."
+  ]
+}
