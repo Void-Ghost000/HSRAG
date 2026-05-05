@@ -1,0 +1,360 @@
+{
+  "name": "HSRAG-LAW-RQ3-FIX2-Verifier",
+  "core_decision": "RQ3_FIX2_VERIFICATION_PASS",
+  "failures": [],
+  "rq3_fix2_frozen_result": {
+    "name": "HSRAG-RQ3-EU-US-RealLaw-Collision-10kMC-v0.1-FIX2-JurisdictionNormalization",
+    "parent_baseline": "HSRAG-RQ2.2-RealEU-Law-FourBaselines-10kMC-v0.1",
+    "semantic_label": "REAL_EU_US_PUBLIC_LEGAL_REFERENCE_WITH_OFFICIAL_URLS",
+    "real_primary_verified": false,
+    "purpose": "Extend HSRAG LAW from EU-only legal retrieval to EU × US real-law collision testing across AI Act, DMA, COPPA, CDA Section 230, FTC Act Section 5, and CCPA.",
+    "decision": "RQ3_EU_US_REALLAW_COLLISION_PASS",
+    "fail_count": 0,
+    "fix_label": "FIX2_JURISDICTION_HIERARCHY_NORMALIZATION",
+    "fix_description": "Expected US jurisdiction accepts US-* subjurisdictions such as US-CA. This patch does not change retrieval output; it only corrects the jurisdiction hierarchy metric.",
+    "raw_fix1_hsrag_wrong_jurisdiction_escape": 0.0033783783783783786,
+    "fix2_normalized_hsrag_wrong_jurisdiction_escape": 0.0,
+    "artifact_content_hash": "sha256:4433e52b30e445b5fb9cea0ad1dcdd9e965362680a5068312589bb20981be7ab",
+    "zip_sha256": "sha256:8a71378a56fdf4a8824e4057a5bd22e678b475081afe58a9dd6812fe18abf858",
+    "chunks": 244,
+    "corpus_distribution": {
+      "EU_AI_ACT": 130,
+      "EU_DMA": 58,
+      "US_CCPA": 21,
+      "US_CDA230": 6,
+      "US_COPPA": 5,
+      "US_FTC_ACT5": 24
+    },
+    "base_queries": 592,
+    "mc_cases": 14208,
+    "corpora": [
+      "EU_AI_ACT",
+      "EU_DMA",
+      "US_CCPA",
+      "US_CDA230",
+      "US_COPPA",
+      "US_FTC_ACT5"
+    ],
+    "jurisdictions": [
+      "EU",
+      "US",
+      "US-CA"
+    ],
+    "mutation_modes": [
+      "pointer_injection",
+      "jurisdiction_distractor",
+      "case_punctuation_noise",
+      "legalese_paraphrase",
+      "polite_prefix",
+      "irrelevant_tail",
+      "typo_light",
+      "order_shuffle"
+    ],
+    "baseline_modes": [
+      "bm25_domain_hint_topk",
+      "bm25_global_topk",
+      "tfidf_domain_hint_topk",
+      "tfidf_global_topk"
+    ],
+    "hsrag_metrics": {
+      "target_correct": 1.0,
+      "wrong_corpus_collision": 0.0,
+      "wrong_jurisdiction_escape": 0.0,
+      "no_evidence_false_allow": 0.0,
+      "ambiguous_false_allow": 0.0,
+      "mismatch_escape": 0.0,
+      "audit_chain_complete": 1.0,
+      "p95_latency_ms": 5.924376599796233
+    },
+    "best_baseline_metrics": {
+      "target_correct": 0.9079391891891891,
+      "wrong_corpus_collision": 0.019566441441441443,
+      "wrong_jurisdiction_escape": 0.01097972972972973,
+      "no_evidence_false_allow": 0.9666666666666667,
+      "ambiguous_false_allow": 1.0,
+      "mismatch_escape": 1.0,
+      "token_reduction_pct_max": 78.70881065021146,
+      "cost_reduction_pct_max": 73.55123408683025,
+      "p95_latency_ms": 6.7050616002234165,
+      "latency_ratio_max": 1.242680580221719
+    },
+    "baseline_details": [
+      {
+        "mode": "bm25_domain_hint_topk",
+        "target_correct": 0.9079391891891891,
+        "wrong_corpus_collision": 0.019566441441441443,
+        "wrong_jurisdiction_escape": 0.01097972972972973,
+        "p95_latency_ms": 6.7050616002234165
+      },
+      {
+        "mode": "bm25_global_topk",
+        "target_correct": 0.8760557432432432,
+        "wrong_corpus_collision": 0.47740709459459457,
+        "wrong_jurisdiction_escape": 0.03265765765765766,
+        "p95_latency_ms": 7.362108
+      },
+      {
+        "mode": "tfidf_domain_hint_topk",
+        "target_correct": 0.9066019144144144,
+        "wrong_corpus_collision": 0.02005855855855856,
+        "wrong_jurisdiction_escape": 0.011050112612612613,
+        "p95_latency_ms": 6.127217
+      },
+      {
+        "mode": "tfidf_global_topk",
+        "target_correct": 0.8669763513513513,
+        "wrong_corpus_collision": 0.5244228603603603,
+        "wrong_jurisdiction_escape": 0.04490427927927928,
+        "p95_latency_ms": 6.699384
+      }
+    ]
+  },
+  "gate_checks": [
+    {
+      "gate_id": "RQ3_DECISION",
+      "description": "Frozen RQ3 FIX2 decision must be pass.",
+      "expected": "RQ3_EU_US_REALLAW_COLLISION_PASS",
+      "actual": "RQ3_EU_US_REALLAW_COLLISION_PASS",
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "FAIL_COUNT_ZERO",
+      "description": "fail_count must equal 0.",
+      "expected": 0,
+      "actual": 0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "MC_CASES_MINIMUM",
+      "description": "RQ3 must include at least 10,000 MC mutation cases.",
+      "expected": ">= 10000",
+      "actual": 14208,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "CORPORA_MINIMUM",
+      "description": "RQ3 must include at least 6 corpora.",
+      "expected": ">= 6",
+      "actual": 6,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "BASELINE_MODES_MINIMUM",
+      "description": "RQ3 must include at least 4 baseline modes.",
+      "expected": ">= 4",
+      "actual": 4,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "MUTATION_MODES_PRESENT",
+      "description": "Mutation modes must be present for adversarial scope.",
+      "expected": ">= 1",
+      "actual": 8,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "FIX2_JURISDICTION_NORMALIZATION_APPLIED",
+      "description": "FIX2 normalized jurisdiction escape must equal 0.0.",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "FIX1_RAW_JURISDICTION_ESCAPE_RECORDED",
+      "description": "FIX1 raw jurisdiction escape should be recorded for audit traceability.",
+      "expected": "present",
+      "actual": 0.0033783783783783786,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_TARGET_CORRECT",
+      "description": "HSRAG target correctness must be at least 0.995.",
+      "expected": ">= 0.995",
+      "actual": 1.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_WRONG_CORPUS_COLLISION_ZERO",
+      "description": "HSRAG wrong corpus collision must equal 0.0.",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_WRONG_JURISDICTION_ESCAPE_ZERO",
+      "description": "HSRAG wrong jurisdiction escape must equal 0.0 after hierarchy normalization.",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_NO_EVIDENCE_FALSE_ALLOW_ZERO",
+      "description": "HSRAG no-evidence false allow must equal 0.0.",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_AMBIGUOUS_FALSE_ALLOW_ZERO",
+      "description": "HSRAG ambiguous false allow must equal 0.0.",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_MISMATCH_ESCAPE_ZERO",
+      "description": "HSRAG mismatch escape must equal 0.0.",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_AUDIT_CHAIN_COMPLETE",
+      "description": "HSRAG audit chain completion must equal 1.0.",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "HSRAG_P95_LATENCY_LT_15MS",
+      "description": "HSRAG p95 latency must be below 15ms.",
+      "expected": "< 15ms",
+      "actual": 5.924376599796233,
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "BEST_BASELINE_NONZERO_WRONG_CORPUS",
+      "description": "Best baseline should expose nonzero wrong-corpus collision risk.",
+      "expected": "> 0.0",
+      "actual": 0.019566441441441443,
+      "passed": true,
+      "severity": "SOFT"
+    },
+    {
+      "gate_id": "BEST_BASELINE_NONZERO_WRONG_JURISDICTION",
+      "description": "Best baseline should expose nonzero wrong-jurisdiction escape risk.",
+      "expected": "> 0.0",
+      "actual": 0.01097972972972973,
+      "passed": true,
+      "severity": "SOFT"
+    },
+    {
+      "gate_id": "ARTIFACT_HASH_PRESENT",
+      "description": "artifact_content_hash must be present.",
+      "expected": "present sha256",
+      "actual": "sha256:4433e52b30e445b5fb9cea0ad1dcdd9e965362680a5068312589bb20981be7ab",
+      "passed": true,
+      "severity": "HARD"
+    },
+    {
+      "gate_id": "ZIP_HASH_PRESENT",
+      "description": "zip_sha256 must be present.",
+      "expected": "present sha256",
+      "actual": "sha256:8a71378a56fdf4a8824e4057a5bd22e678b475081afe58a9dd6812fe18abf858",
+      "passed": true,
+      "severity": "HARD"
+    }
+  ],
+  "baseline_comparison": [
+    {
+      "mode": "bm25_domain_hint_topk",
+      "target_correct": 0.9079391891891891,
+      "wrong_corpus_collision": 0.019566441441441443,
+      "wrong_jurisdiction_escape": 0.01097972972972973,
+      "p95_latency_ms": 6.7050616002234165,
+      "target_correct_gap_vs_hsrag": 0.09206081081081086,
+      "wrong_corpus_collision_gap_vs_hsrag": 0.019566441441441443,
+      "wrong_jurisdiction_escape_gap_vs_hsrag": 0.01097972972972973,
+      "latency_gap_vs_hsrag_ms": 0.7806850004271837
+    },
+    {
+      "mode": "bm25_global_topk",
+      "target_correct": 0.8760557432432432,
+      "wrong_corpus_collision": 0.47740709459459457,
+      "wrong_jurisdiction_escape": 0.03265765765765766,
+      "p95_latency_ms": 7.362108,
+      "target_correct_gap_vs_hsrag": 0.1239442567567568,
+      "wrong_corpus_collision_gap_vs_hsrag": 0.47740709459459457,
+      "wrong_jurisdiction_escape_gap_vs_hsrag": 0.03265765765765766,
+      "latency_gap_vs_hsrag_ms": 1.4377314002037673
+    },
+    {
+      "mode": "tfidf_domain_hint_topk",
+      "target_correct": 0.9066019144144144,
+      "wrong_corpus_collision": 0.02005855855855856,
+      "wrong_jurisdiction_escape": 0.011050112612612613,
+      "p95_latency_ms": 6.127217,
+      "target_correct_gap_vs_hsrag": 0.0933980855855856,
+      "wrong_corpus_collision_gap_vs_hsrag": 0.02005855855855856,
+      "wrong_jurisdiction_escape_gap_vs_hsrag": 0.011050112612612613,
+      "latency_gap_vs_hsrag_ms": 0.20284040020376715
+    },
+    {
+      "mode": "tfidf_global_topk",
+      "target_correct": 0.8669763513513513,
+      "wrong_corpus_collision": 0.5244228603603603,
+      "wrong_jurisdiction_escape": 0.04490427927927928,
+      "p95_latency_ms": 6.699384,
+      "target_correct_gap_vs_hsrag": 0.13302364864864868,
+      "wrong_corpus_collision_gap_vs_hsrag": 0.5244228603603603,
+      "wrong_jurisdiction_escape_gap_vs_hsrag": 0.04490427927927928,
+      "latency_gap_vs_hsrag_ms": 0.7750074002037675
+    }
+  ],
+  "audit_chain_complete": 1.0,
+  "consistency_matrix": [
+    {
+      "rq": "RQ3_FIX2",
+      "benchmark_role": "eu_us_real_law_collision_control",
+      "corpora": "EU_AI_ACT|EU_DMA|US_CCPA|US_CDA230|US_COPPA|US_FTC_ACT5",
+      "jurisdictions": "EU|US|US-CA",
+      "requires_mc": true,
+      "mc_cases": 14208,
+      "baseline_modes": 4,
+      "source_status": "REAL_EU_US_PUBLIC_LEGAL_REFERENCE_WITH_OFFICIAL_URLS",
+      "real_primary_verified": false,
+      "core_decision": "RQ3_FIX2_VERIFICATION_PASS",
+      "fix_label": "FIX2_JURISDICTION_HIERARCHY_NORMALIZATION",
+      "raw_fix1_wrong_jurisdiction_escape": 0.0033783783783783786,
+      "fix2_normalized_wrong_jurisdiction_escape": 0.0,
+      "hsrag_target_correct": 1.0,
+      "hsrag_wrong_corpus_collision": 0.0,
+      "hsrag_wrong_jurisdiction_escape": 0.0,
+      "hsrag_no_evidence_false_allow": 0.0,
+      "hsrag_ambiguous_false_allow": 0.0,
+      "hsrag_mismatch_escape": 0.0,
+      "hsrag_audit_chain_complete": 1.0,
+      "local_verifier_audit_chain_complete": 1.0,
+      "best_baseline_target_correct": 0.9079391891891891,
+      "best_baseline_wrong_corpus_collision": 0.019566441441441443,
+      "best_baseline_wrong_jurisdiction_escape": 0.01097972972972973,
+      "token_reduction_pct_max": 78.70881065021146,
+      "cost_reduction_pct_max": 73.55123408683025,
+      "notes": "RQ3 FIX2 is an EU x US collision benchmark. Jurisdiction hierarchy normalization accepts US-* subjurisdictions for expected US labels. This fixes metric semantics without changing retrieval outputs."
+    }
+  ],
+  "outputs": {
+    "summary_json": "rq3_fix2_verification_summary.json",
+    "summary_md": "rq3_fix2_verification_summary.md",
+    "gate_checks_csv": "rq3_fix2_gate_checks.csv",
+    "baseline_comparison_csv": "rq3_fix2_baseline_comparison.csv",
+    "audit_chain_jsonl": "rq3_fix2_audit_chain.jsonl",
+    "consistency_matrix_csv": "rq3_fix2_consistency_matrix.csv"
+  }
+}

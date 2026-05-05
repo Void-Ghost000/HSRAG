@@ -1,0 +1,21 @@
+gate_id,description,expected,actual,passed,severity
+RQ3_DECISION,Frozen RQ3 FIX2 decision must be pass.,RQ3_EU_US_REALLAW_COLLISION_PASS,RQ3_EU_US_REALLAW_COLLISION_PASS,True,HARD
+FAIL_COUNT_ZERO,fail_count must equal 0.,0,0,True,HARD
+MC_CASES_MINIMUM,"RQ3 must include at least 10,000 MC mutation cases.",>= 10000,14208,True,HARD
+CORPORA_MINIMUM,RQ3 must include at least 6 corpora.,>= 6,6,True,HARD
+BASELINE_MODES_MINIMUM,RQ3 must include at least 4 baseline modes.,>= 4,4,True,HARD
+MUTATION_MODES_PRESENT,Mutation modes must be present for adversarial scope.,>= 1,8,True,HARD
+FIX2_JURISDICTION_NORMALIZATION_APPLIED,FIX2 normalized jurisdiction escape must equal 0.0.,0.0,0.0,True,HARD
+FIX1_RAW_JURISDICTION_ESCAPE_RECORDED,FIX1 raw jurisdiction escape should be recorded for audit traceability.,present,0.0033783783783783786,True,HARD
+HSRAG_TARGET_CORRECT,HSRAG target correctness must be at least 0.995.,>= 0.995,1.0,True,HARD
+HSRAG_WRONG_CORPUS_COLLISION_ZERO,HSRAG wrong corpus collision must equal 0.0.,0.0,0.0,True,HARD
+HSRAG_WRONG_JURISDICTION_ESCAPE_ZERO,HSRAG wrong jurisdiction escape must equal 0.0 after hierarchy normalization.,0.0,0.0,True,HARD
+HSRAG_NO_EVIDENCE_FALSE_ALLOW_ZERO,HSRAG no-evidence false allow must equal 0.0.,0.0,0.0,True,HARD
+HSRAG_AMBIGUOUS_FALSE_ALLOW_ZERO,HSRAG ambiguous false allow must equal 0.0.,0.0,0.0,True,HARD
+HSRAG_MISMATCH_ESCAPE_ZERO,HSRAG mismatch escape must equal 0.0.,0.0,0.0,True,HARD
+HSRAG_AUDIT_CHAIN_COMPLETE,HSRAG audit chain completion must equal 1.0.,1.0,1.0,True,HARD
+HSRAG_P95_LATENCY_LT_15MS,HSRAG p95 latency must be below 15ms.,< 15ms,5.924376599796233,True,HARD
+BEST_BASELINE_NONZERO_WRONG_CORPUS,Best baseline should expose nonzero wrong-corpus collision risk.,> 0.0,0.019566441441441443,True,SOFT
+BEST_BASELINE_NONZERO_WRONG_JURISDICTION,Best baseline should expose nonzero wrong-jurisdiction escape risk.,> 0.0,0.01097972972972973,True,SOFT
+ARTIFACT_HASH_PRESENT,artifact_content_hash must be present.,present sha256,sha256:4433e52b30e445b5fb9cea0ad1dcdd9e965362680a5068312589bb20981be7ab,True,HARD
+ZIP_HASH_PRESENT,zip_sha256 must be present.,present sha256,sha256:8a71378a56fdf4a8824e4057a5bd22e678b475081afe58a9dd6812fe18abf858,True,HARD
