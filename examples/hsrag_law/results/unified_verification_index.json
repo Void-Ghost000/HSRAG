@@ -1,0 +1,134 @@
+{
+  "name": "HSRAG-LAW-Unified-Verification-Index",
+  "final_decision": "HSRAG_LAW_UNIFIED_VERIFICATION_INDEX_PASS",
+  "unified_audit_chain_complete": 1.0,
+  "failures": [],
+  "config": {
+    "name": "HSRAG-LAW-Unified-Verification-Index",
+    "run_started_utc": "2026-05-05T16:30:39.263964+00:00",
+    "repo_root": "C:\\Users\\himit\\Desktop\\HSRAG",
+    "example_root": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law",
+    "results_dir": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\results",
+    "rq5_cases": 50000,
+    "seed": 20260505,
+    "rq4_min_ok": 2,
+    "python": "C:\\Users\\himit\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe"
+  },
+  "steps": [
+    {
+      "key": "RQ1",
+      "title": "Publication-grade real corpus gate",
+      "script": "verify_rq1.py",
+      "args": [],
+      "command": [
+        "C:\\Users\\himit\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe",
+        "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\scripts\\verify_rq1.py"
+      ],
+      "return_code": 0,
+      "core_decision": "RQ1_VERIFICATION_PASS",
+      "audit_chain_complete": 1.0,
+      "summary_loaded": true,
+      "elapsed_ms": 29120.197599986568,
+      "stdout_hash": "sha256:0b8305cea946f5e49f5a06e257ab78dec7c404d3f0362ed98b7213ed96f5663a",
+      "stderr_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "================================================================================\nHSRAG LAW �X RQ1 VERIFICATION\n================================================================================\ncore_decision: RQ1_VERIFICATION_PASS\naudit_chain_complete: 1.0\n\nRQ1 frozen gates:\n  decision: RQ1_PUBLICATION_GRADE_PASS\n  corpus_count: 6\n  real_primary_corpus_rate: 1.0\n  real_primary_chunk_rate: 1.0\n  source_hash_final_present_rate: 1.0\n  primary_real_rows: 1211\n  primary_real_target_correct_rate: 1.0\n  primary_real_wrong_collision_rate: 0.0\n  sc1_regression_target_correct_rate: 1.0\n  fail_count: 0\n  warn_count: 0\n\nMC scope:\n  decision: MC_NOT_REQUIRED_FOR_RQ1_PASS\n  mc_cases: None\n\nURL fetch smoke:\n  decision: FETCH_SMOKE_PASS_WITH_WARN\n  fetch_count: 6\n  fetch_ok_count: 3\n  fetch_warn_count: 2\n  fetch_error_count: 1\n  strict_fetch: False\n\nresults_dir: C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\results\n================================================================================",
+      "stderr_tail": ""
+    },
+    {
+      "key": "RQ2.2",
+      "title": "Real EU law + four baselines + 10k MC",
+      "script": "verify_rq2_2.py",
+      "args": [],
+      "command": [
+        "C:\\Users\\himit\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe",
+        "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\scripts\\verify_rq2_2.py"
+      ],
+      "return_code": 0,
+      "core_decision": "RQ2_2_VERIFICATION_PASS",
+      "audit_chain_complete": 1.0,
+      "summary_loaded": true,
+      "elapsed_ms": 287.8407998941839,
+      "stdout_hash": "sha256:c035f9139e2d20fde12bd4efdbe704e99222e01e41465d196b5061abc37f50dd",
+      "stderr_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "================================================================================\nHSRAG LAW �X RQ2.2 VERIFICATION\n================================================================================\ncore_decision: RQ2_2_VERIFICATION_PASS\naudit_chain_complete: 1.0\n\nScope:\n  decision: RQ2_2_FOUR_BASELINES_10KMC_PASS\n  semantic_label: REAL_UPLOADED_PDF_WITH_OFFICIAL_REFERENCE\n  chunks: 188\n  base_queries: 424\n  mc_seeds: 24\n  mc_cases: 10176\n  baseline_modes: 4\n  fail_count: 0\n\nHSRAG:\n  target_correct: 1.0\n  wrong_collision: 0.0\n  no_evidence_false_allow: 0.0\n  ambiguous_false_allow: 0.0\n  mismatch_escape: 0.0\n  audit_chain_complete: 1.0\n  p95_latency_ms: 4.03891924997879\n\nBest baseline:\n  target_correct: 0.9391705974842768\n  wrong_collision: 0.0376375786163522\n  no_evidence_false_allow: 1.0\n  ambiguous_false_allow: 1.0\n  mismatch_escape: 1.0\n  token_reduction_pct_max: 78.26886681010008\n  cost_reduction_pct_max: 73.33315332219127\n  p95_latency_ms: 6.851546500001859\n\nresults_dir: C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\results\n================================================================================",
+      "stderr_tail": ""
+    },
+    {
+      "key": "RQ3_FIX2",
+      "title": "EU × US real-law collision benchmark",
+      "script": "verify_rq3_fix2.py",
+      "args": [],
+      "command": [
+        "C:\\Users\\himit\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe",
+        "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\scripts\\verify_rq3_fix2.py"
+      ],
+      "return_code": 0,
+      "core_decision": "RQ3_FIX2_VERIFICATION_PASS",
+      "audit_chain_complete": 1.0,
+      "summary_loaded": true,
+      "elapsed_ms": 300.49200006760657,
+      "stdout_hash": "sha256:5279aee6530e989e2370d93ea94e7e2e120fc52b1d095e5a0813058f157beff4",
+      "stderr_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "================================================================================\nHSRAG LAW �X RQ3 FIX2 VERIFICATION\n================================================================================\ncore_decision: RQ3_FIX2_VERIFICATION_PASS\naudit_chain_complete: 1.0\n\nScope:\n  decision: RQ3_EU_US_REALLAW_COLLISION_PASS\n  semantic_label: REAL_EU_US_PUBLIC_LEGAL_REFERENCE_WITH_OFFICIAL_URLS\n  chunks: 244\n  base_queries: 592\n  mc_cases: 14208\n  corpora: 6\n  jurisdictions: 3\n  baseline_modes: 4\n  fail_count: 0\n\nFIX2:\n  raw_fix1_wrong_jurisdiction_escape: 0.0033783783783783786\n  fix2_normalized_wrong_jurisdiction_escape: 0.0\n\nHSRAG:\n  target_correct: 1.0\n  wrong_corpus_collision: 0.0\n  wrong_jurisdiction_escape: 0.0\n  no_evidence_false_allow: 0.0\n  ambiguous_false_allow: 0.0\n  mismatch_escape: 0.0\n  audit_chain_complete: 1.0\n  p95_latency_ms: 5.924376599796233\n\nBest baseline:\n  target_correct: 0.9079391891891891\n  wrong_corpus_collision: 0.019566441441441443\n  wrong_jurisdiction_escape: 0.01097972972972973\n  no_evidence_false_allow: 0.9666666666666667\n  ambiguous_false_allow: 1.0\n  mismatch_escape: 1.0\n  token_reduction_pct_max: 78.70881065021146\n  cost_reduction_pct_max: 73.55123408683025\n  p95_latency_ms: 6.7050616002234165\n\nresults_dir: C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\results\n================================================================================",
+      "stderr_tail": ""
+    },
+    {
+      "key": "RQ4.1",
+      "title": "Official/public source fetch and rebuild",
+      "script": "verify_rq4_official_fetch.py",
+      "args": [
+        "--min-ok",
+        "2"
+      ],
+      "command": [
+        "C:\\Users\\himit\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe",
+        "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\scripts\\verify_rq4_official_fetch.py",
+        "--min-ok",
+        "2"
+      ],
+      "return_code": 0,
+      "core_decision": "RQ4_SOURCE_REBUILD_PASS",
+      "audit_chain_complete": 1.0,
+      "summary_loaded": true,
+      "elapsed_ms": 57662.24230010994,
+      "stdout_hash": "sha256:8d10f2eb50d97776889005b9f5b31a98aac6a169ca7b71d257386a0e00eacb9d",
+      "stderr_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "================================================================================\nHSRAG LAW �X RQ4.1 OFFICIAL/PUBLIC SOURCE FETCH & REBUILD\n================================================================================\ncore_decision: RQ4_SOURCE_REBUILD_PASS\naudit_chain_complete: 1.0\n\nScope:\n  source_count: 6\n  attempt_count: 9\n  fetch_ok_count: 5\n  rebuild_ok_count: 5\n  fetch_warn_count: 0\n  fetch_error_count: 1\n  rebuilt_chunk_count: 889\n  min_ok: 2\n  strict: False\n\nSources:\n  EU_AI_ACT: FETCH_OK rebuild_usable=True candidate=OFFICIAL_EU_EUR_LEX_ELI status=200 text_len=590129 chunks=547\n  EU_DMA: FETCH_OK rebuild_usable=True candidate=OFFICIAL_EU_EUR_LEX_ELI status=200 text_len=264583 chunks=245\n  US_COPPA: FETCH_OK rebuild_usable=True candidate=OFFICIAL_US_ECFR status=200 text_len=52389 chunks=49\n  US_CDA230: FETCH_OK rebuild_usable=True candidate=PUBLIC_REFERENCE_CORNELL_LII_USCODE status=200 text_len=11691 chunks=11\n  US_FTC_ACT5: FETCH_OK rebuild_usable=True candidate=PUBLIC_REFERENCE_CORNELL_LII_USCODE status=200 text_len=39692 chunks=37\n  US_CCPA: FETCH_ERROR rebuild_usable=False candidate=OFFICIAL_CA_OAG_REFERENCE status=None text_len=0 chunks=0\n\nresults_dir: C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\results\n================================================================================",
+      "stderr_tail": ""
+    },
+    {
+      "key": "RQ5.5",
+      "title": "CTHC-typed salted-domain routing robustness",
+      "script": "verify_rq5_mc_reproduction.py",
+      "args": [
+        "--cases",
+        "50000",
+        "--seed",
+        "20260505"
+      ],
+      "command": [
+        "C:\\Users\\himit\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe",
+        "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\scripts\\verify_rq5_mc_reproduction.py",
+        "--cases",
+        "50000",
+        "--seed",
+        "20260505"
+      ],
+      "return_code": 0,
+      "core_decision": "RQ5_5_CTHC_SALTED_DOMAIN_ROUTING_PASS",
+      "audit_chain_complete": 1.0,
+      "summary_loaded": true,
+      "elapsed_ms": 74580.41790011339,
+      "stdout_hash": "sha256:4b7113d0e2f88671a621e145e77433f387d25e3ad22ac63a87afdffdfb2e4d3e",
+      "stderr_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "================================================================================\nHSRAG LAW �X RQ5.5 CTHC-TYPED SALTED DOMAIN ROUTING\n================================================================================\ncore_decision: RQ5_5_CTHC_SALTED_DOMAIN_ROUTING_PASS\ncase_audit_chain_complete: 1.0\nsummary_audit_chain_complete: 1.0\n\nConfig:\n  cases: 50000\n  seed: 20260505\n  top_k: 5\n  max_chunks_per_corpus: 80\n  min_cases: 10000\n  cost_per_1k: 0.0001\n  max_p95_latency_ms: 20.0\n  benchmark_salt: HSRAG_LAW_RQ5_5_PUBLIC_REPRODUCIBLE_SALT_v1\n  elapsed_ms_total: 69809.8601999227\n\nCorpus:\n  corpus_source: rq4_rebuilt_chunks\n  chunk_count: 257\n  corpus_count: 5\n  corpora: EU_AI_ACT|EU_DMA|US_CDA230|US_COPPA|US_FTC_ACT5\n  jurisdiction_count: 2\n  jurisdictions: EU|US\n  domain_hash_count: 5\n\nHSRAG:\n  target_correct: 1.0\n  wrong_corpus_misrouting: 0.0\n  wrong_jurisdiction_misrouting: 0.0\n  unsupported_query_false_allow: 0.0\n  ambiguous_query_false_allow: 0.0\n  conflict_query_false_allow: 0.0\n  p95_latency_ms: 0.6840050802566107\n  total_tokens: 7187467\n  total_cost: 0.7187467000000001\n\nGlobal lexical baseline:\n  target_correct: 0.9247636363636363\n  wrong_corpus_misrouting: 0.07523636363636364\n  unsupported_query_false_allow: 1.0\n  ambiguous_query_false_allow: 1.0\n  conflict_query_false_allow: 1.0\n  p95_latency_ms: 0.6506100646220139\n  total_tokens: 50038521\n  total_cost: 5.0038521000000005\n\nDomain-hint lexical baseline:\n  target_correct: 1.0\n  wrong_corpus_misrouting: 0.0\n  unsupported_query_false_allow: 1.0\n  ambiguous_query_false_allow: 1.0\n  conflict_query_false_allow: 1.0\n  p95_latency_ms: 0.9535099263302973\n  total_tokens: 50111587\n  total_cost: 5.0111587\n\nresults_dir: C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\results\n================================================================================",
+      "stderr_tail": ""
+    }
+  ],
+  "outputs": {
+    "json": "unified_verification_index.json",
+    "markdown": "unified_verification_index.md",
+    "audit_chain": "unified_verification_audit_chain.jsonl",
+    "terminal_output": "unified_verification_terminal_output.txt"
+  }
+}

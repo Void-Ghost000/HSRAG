@@ -1,0 +1,44 @@
+========================================================================================
+HSRAG LAW — UNIFIED VERIFICATION INDEX
+========================================================================================
+final_decision: HSRAG_LAW_UNIFIED_VERIFICATION_INDEX_PASS
+
+RQ1:
+  title: Publication-grade real corpus gate
+  return_code: 0
+  core_decision: RQ1_VERIFICATION_PASS
+  audit_chain_complete: 1.0
+  summary_loaded: True
+  elapsed_ms: 29120.198
+
+RQ2.2:
+  title: Real EU law + four baselines + 10k MC
+  return_code: 0
+  core_decision: RQ2_2_VERIFICATION_PASS
+  audit_chain_complete: 1.0
+  summary_loaded: True
+  elapsed_ms: 287.841
+
+RQ3_FIX2:
+  title: EU × US real-law collision benchmark
+  return_code: 0
+  core_decision: RQ3_FIX2_VERIFICATION_PASS
+  audit_chain_complete: 1.0
+  summary_loaded: True
+  elapsed_ms: 300.492
+
+RQ4.1:
+  title: Official/public source fetch and rebuild
+  return_code: 0
+  core_decision: RQ4_SOURCE_REBUILD_PASS
+  audit_chain_complete: 1.0
+  summary_loaded: True
+  elapsed_ms: 57662.242
+
+RQ5.5:
+  title: CTHC-typed salted-domain routing robustness
+  return_code: 0
+  core_decision: RQ5_5_CTHC_SALTED_DOMAIN_ROUTING_PASS
+  audit_chain_complete: 1.0
+  summary_loaded: True
+  elapsed_ms: 74580.418
