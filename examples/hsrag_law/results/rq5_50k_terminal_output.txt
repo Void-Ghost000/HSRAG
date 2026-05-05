@@ -1,0 +1,60 @@
+================================================================================
+HSRAG LAW — RQ5.5 CTHC-TYPED SALTED DOMAIN ROUTING
+================================================================================
+core_decision: RQ5_5_CTHC_SALTED_DOMAIN_ROUTING_PASS
+case_audit_chain_complete: 1.0
+summary_audit_chain_complete: 1.0
+
+Config:
+  cases: 50000
+  seed: 20260505
+  top_k: 5
+  max_chunks_per_corpus: 80
+  min_cases: 10000
+  cost_per_1k: 0.0001
+  max_p95_latency_ms: 20.0
+  benchmark_salt: HSRAG_LAW_RQ5_5_PUBLIC_REPRODUCIBLE_SALT_v1
+  elapsed_ms_total: 47934.94049995206
+
+Corpus:
+  corpus_source: rq4_rebuilt_chunks
+  chunk_count: 110
+  corpus_count: 5
+  corpora: EU_AI_ACT|EU_DMA|US_CDA230|US_COPPA|US_FTC_ACT5
+  jurisdiction_count: 2
+  jurisdictions: EU|US
+  domain_hash_count: 5
+
+HSRAG:
+  target_correct: 1.0
+  wrong_corpus_misrouting: 0.0
+  wrong_jurisdiction_misrouting: 0.0
+  unsupported_query_false_allow: 0.0
+  ambiguous_query_false_allow: 0.0
+  conflict_query_false_allow: 0.0
+  p95_latency_ms: 0.5602999590337276
+  total_tokens: 7152376
+  total_cost: 0.7152376
+
+Global lexical baseline:
+  target_correct: 0.9178545454545455
+  wrong_corpus_misrouting: 0.08214545454545455
+  unsupported_query_false_allow: 1.0
+  ambiguous_query_false_allow: 1.0
+  conflict_query_false_allow: 1.0
+  p95_latency_ms: 0.25819988222792745
+  total_tokens: 50210848
+  total_cost: 5.021084800000001
+
+Domain-hint lexical baseline:
+  target_correct: 1.0
+  wrong_corpus_misrouting: 0.0
+  unsupported_query_false_allow: 1.0
+  ambiguous_query_false_allow: 1.0
+  conflict_query_false_allow: 1.0
+  p95_latency_ms: 0.6696998607367277
+  total_tokens: 50242378
+  total_cost: 5.0242378
+
+results_dir: C:\Users\himit\Desktop\HSRAG\examples\hsrag_law\results
+================================================================================
