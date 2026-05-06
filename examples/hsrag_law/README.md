@@ -1,50 +1,154 @@
 # HSRAG LAW
 
-**HSRAG LAW** is a legal-text retrieval demonstration for **HSRAG**  
+![RQ5.5](https://img.shields.io/badge/RQ5.5-50k_PASS-green)
+![target_correct](https://img.shields.io/badge/target_correct-1.000-brightgreen)
+![false_allow](https://img.shields.io/badge/false_allow-0.000-brightgreen)
+![cost_reduction](https://img.shields.io/badge/cost_reduction-85.76%25-blue)
+![audit_chain](https://img.shields.io/badge/audit_chain-complete-brightgreen)
+
+Legal AI retrieval systems can fail in predictable ways:
+
+- they retrieve from the wrong legal corpus,
+- they mix evidence across jurisdictions,
+- they answer unsupported or ambiguous queries,
+- and they often leave weak audit trails.
+
+**HSRAG LAW** demonstrates a different approach:
+
+```text
+CTHC-typed legal addresses
++ salted domain-hash routing
++ bounded retrieval
++ evidence gating before retrieval
++ complete audit chain
+```
+
+On the current 50,000-case robustness benchmark:
+
+```text
+target_correct: 1.000
+wrong_corpus_misrouting: 0.000
+wrong_jurisdiction_misrouting: 0.000
+unsupported / ambiguous / conflict false allow: 0.000
+token / cost reduction vs lexical baselines: ≈ 85.76%
+```
+
+This repository is a research / benchmark demo for **HSRAG**  
 (Hash-Structured Retrieval-Augmented Generation).
 
-This example focuses on one core question:
-
-> Can legal retrieval be made more bounded, auditable, and resistant to cross-domain misrouting by using CTHC-style hierarchical legal addresses and salted domain hashes?
-
-The current implementation is a research / benchmark demo.  
 It is **not** legal advice, not a production legal search engine, and not a claim of complete official-law coverage.
 
 ---
 
-## 1. What this demo shows
+## 1. What HSRAG LAW tests
 
-HSRAG LAW demonstrates:
+HSRAG LAW focuses on one core question:
 
-- **CTHC-typed legal routing**  
-  Legal text chunks are assigned structured hierarchical addresses such as:
+> Can legal retrieval be made more bounded, auditable, and resistant to cross-domain misrouting by using CTHC-style hierarchical legal addresses and salted domain hashes?
 
-  ```text
-  LEGAL.PUBLIC_LEGAL_TEXT.EU.EU_AI_ACT.GENERAL
-  LEGAL.PUBLIC_LEGAL_TEXT.US.US_CDA230.GENERAL
-  ```
+The demo tests whether legal text retrieval can be routed through structured addresses before evidence retrieval happens.
 
-- **Salted domain-hash separation**  
-  Each corpus domain receives a salted hash bucket:
+A simplified flow:
 
-  ```text
-  domain_hash = sha256(salt || domain || source_type || jurisdiction || corpus_id)
-  ```
-
-  Retrieval is only allowed inside the matching salted domain bucket.
-
-- **Bounded retrieval**  
-  The system does not retrieve from the whole corpus when the query does not resolve to a stable legal identifier.
-
-- **Evidence gating**  
-  Unsupported, ambiguous, and conflict-form queries are rejected before evidence retrieval.
-
-- **Auditability**  
-  Benchmark runs output case-level and summary-level audit hashes.
+```text
+query
+→ CTHC typed route
+→ salted domain hash
+→ same-domain retrieval
+→ evidence gate
+→ audit output
+```
 
 ---
 
-## 2. Current benchmark status
+## 2. Quick Results Summary
+
+| Stage | Cases | Main purpose | HSRAG target_correct | False allow | Cost / token reduction | Status |
+|---|---:|---|---:|---:|---:|---|
+| RQ1 | corpus gate | Publication-grade real corpus gate | 1.000 | 0.000 | n/a | PASS |
+| RQ2.2 | 10,176 | Real EU law + four lexical baselines | 1.000 | 0.000 | 73.33% cost reduction | PASS |
+| RQ3_FIX2 | 14,208 | EU × US real-law collision benchmark | 1.000 | 0.000 | 73.55% cost reduction | PASS |
+| RQ4.1 | source rebuild | Official/public source fetch + rebuild smoke test | n/a | n/a | n/a | PASS |
+| RQ5.5 | 50,000 | CTHC salted-domain routing robustness | 1.000 | 0.000 | ≈ 85.76% token / cost reduction | PASS |
+
+Unified verification result:
+
+```text
+final_decision: HSRAG_LAW_UNIFIED_VERIFICATION_INDEX_PASS
+unified_audit_chain_complete: 1.0
+```
+
+---
+
+## 3. What this demo shows
+
+HSRAG LAW demonstrates:
+
+### CTHC-typed legal routing
+
+Legal text chunks are assigned structured hierarchical addresses such as:
+
+```text
+LEGAL.PUBLIC_LEGAL_TEXT.EU.EU_AI_ACT.GENERAL
+LEGAL.PUBLIC_LEGAL_TEXT.US.US_CDA230.GENERAL
+```
+
+The system does not treat legal text as undifferentiated plain text.  
+Each chunk carries a typed legal address.
+
+---
+
+### Salted domain-hash separation
+
+Each corpus domain receives a salted hash bucket:
+
+```text
+domain_hash = sha256(salt || domain || source_type || jurisdiction || corpus_id)
+```
+
+Retrieval is only allowed inside the matching salted domain bucket.
+
+This is used to reduce:
+
+- wrong-corpus retrieval,
+- jurisdiction mixing,
+- and cross-domain evidence collision.
+
+---
+
+### Bounded retrieval
+
+HSRAG LAW does not retrieve from the whole corpus when the query does not resolve to a stable legal identifier.
+
+Instead, it can reject:
+
+```text
+unsupported query
+ambiguous query
+conflict-form query
+unroutable query
+```
+
+before evidence retrieval.
+
+---
+
+### Auditability
+
+Benchmark runs output:
+
+```text
+case-level audit records
+summary-level audit records
+gate checks
+hash-chain outputs
+```
+
+This makes results easier to inspect, reproduce, and challenge.
+
+---
+
+## 4. Current benchmark stages
 
 The current benchmark suite contains five main verification stages.
 
@@ -52,24 +156,24 @@ The current benchmark suite contains five main verification stages.
 |---|---|---|
 | RQ1 | Publication-grade real corpus gate | PASS |
 | RQ2.2 | Real EU law benchmark with four lexical baselines and 10k+ MC cases | PASS |
-| RQ3 | EU × US real-law collision benchmark | PASS |
+| RQ3_FIX2 | EU × US real-law collision benchmark | PASS |
 | RQ4.1 | Official/public source fetch and source rebuild smoke test | PASS |
 | RQ5.5 | CTHC-typed salted-domain routing robustness benchmark | PASS |
 
 ---
 
-## 3. Important scope note
+## 5. Important scope note
 
 The benchmark stages do **not** all use the same corpus snapshot.
 
-### RQ2.2 and RQ3
+### RQ2.2 and RQ3_FIX2
 
-RQ2.2 and RQ3 verify previously generated benchmark artifacts.
+RQ2.2 and RQ3_FIX2 verify previously generated benchmark artifacts.
 
 They are used as frozen verification references for:
 
 - real-law chunk routing,
-- jurisdiction/corpus collision checks,
+- jurisdiction / corpus collision checks,
 - baseline comparison,
 - audit-chain completeness.
 
@@ -96,9 +200,87 @@ This is intentional transparency, not a hidden exclusion.
 
 ---
 
-## 4. RQ2.2 — Real EU Law + four baselines + 10k MC
+## 6. RQ5.5 headline result
 
-RQ2.2 verifies a real EU-law benchmark with four lexical baselines.
+RQ5.5 is the current strongest live robustness result in this demo.
+
+Configuration:
+
+```text
+cases: 50,000
+seed: 20260505
+chunks: 110
+corpora: 5
+domain_hash_count: 5
+```
+
+HSRAG result:
+
+```text
+target_correct: 1.0
+wrong_corpus_misrouting: 0.0
+wrong_jurisdiction_misrouting: 0.0
+unsupported_query_false_allow: 0.0
+ambiguous_query_false_allow: 0.0
+conflict_query_false_allow: 0.0
+case_audit_chain_complete: 1.0
+summary_audit_chain_complete: 1.0
+p95_latency_ms: 0.5603
+total_tokens: 7,152,376
+estimated_total_cost: 0.7152376
+```
+
+Global lexical baseline:
+
+```text
+target_correct: 0.9179
+wrong_corpus_misrouting: 0.0821
+unsupported_query_false_allow: 1.0
+ambiguous_query_false_allow: 1.0
+conflict_query_false_allow: 1.0
+p95_latency_ms: 0.2582
+total_tokens: 50,210,848
+estimated_total_cost: 5.0210848
+```
+
+Domain-hint lexical baseline:
+
+```text
+target_correct: 1.0
+wrong_corpus_misrouting: 0.0
+unsupported_query_false_allow: 1.0
+ambiguous_query_false_allow: 1.0
+conflict_query_false_allow: 1.0
+p95_latency_ms: 0.6697
+total_tokens: 50,242,378
+estimated_total_cost: 5.0242378
+```
+
+Compared with lexical baselines, HSRAG reduced token usage and estimated cost by approximately:
+
+```text
+≈ 85.76%
+```
+
+The global lexical baseline is faster in raw p95 latency, but it has non-zero misrouting and always retrieves for unsupported, ambiguous, and conflict-form queries.
+
+HSRAG prioritizes:
+
+```text
+bounded retrieval
+zero false allow
+zero wrong-domain routing
+auditability
+lower token cost
+```
+
+rather than raw unbounded lookup speed alone.
+
+---
+
+## 7. Earlier benchmark results
+
+### RQ2.2 — Real EU Law + four baselines + 10k MC
 
 Summary:
 
@@ -137,9 +319,7 @@ cost_reduction_pct_max: 73.33%
 
 ---
 
-## 5. RQ3 — EU × US real-law collision benchmark
-
-RQ3 extends the benchmark to EU × US legal-corpus collision testing.
+### RQ3_FIX2 — EU × US real-law collision benchmark
 
 Summary:
 
@@ -193,7 +373,7 @@ cost_reduction_pct_max: 73.55%
 
 ---
 
-## 6. RQ4.1 — Official/public source fetch and rebuild
+### RQ4.1 — Official/public source fetch and rebuild
 
 RQ4.1 tests whether the repo can fetch official or public legal references, normalize the text, rebuild chunks, and write auditable source manifests.
 
@@ -228,128 +408,63 @@ Some public legal websites may require browser automation, PDF extraction, or of
 
 ---
 
-## 7. RQ5.5 — CTHC salted-domain routing robustness
+## 8. How to run
 
-RQ5.5 is the current strongest live robustness result in this demo.
+### Requirements
 
-It evaluates:
-
-```text
-query
-→ CTHC typed route
-→ salted domain hash
-→ same-domain retrieval
-→ evidence gate
-→ audit output
-```
-
-The benchmark uses the RQ4.1 rebuilt chunks:
+Recommended environment:
 
 ```text
-chunks: 110
-corpora: 5
-domain_hash_count: 5
-cases: 50,000
-seed: 20260505
+Python 3.10+
+pip
+Git
 ```
 
-Result:
+Install dependencies from the repository root:
 
-```text
-decision: RQ5_5_CTHC_SALTED_DOMAIN_ROUTING_PASS
-case_audit_chain_complete: 1.0
-summary_audit_chain_complete: 1.0
+```powershell
+pip install -r requirements.txt
 ```
 
-HSRAG metrics:
-
-```text
-target_correct: 1.0
-wrong_corpus_misrouting: 0.0
-wrong_jurisdiction_misrouting: 0.0
-unsupported_query_false_allow: 0.0
-ambiguous_query_false_allow: 0.0
-conflict_query_false_allow: 0.0
-p95_latency_ms: 0.5603
-total_tokens: 7,152,376
-estimated_total_cost: 0.7152376
-```
-
-Global lexical baseline:
-
-```text
-target_correct: 0.9179
-wrong_corpus_misrouting: 0.0821
-unsupported_query_false_allow: 1.0
-ambiguous_query_false_allow: 1.0
-conflict_query_false_allow: 1.0
-p95_latency_ms: 0.2582
-total_tokens: 50,210,848
-estimated_total_cost: 5.0210848
-```
-
-Domain-hint lexical baseline:
-
-```text
-target_correct: 1.0
-wrong_corpus_misrouting: 0.0
-unsupported_query_false_allow: 1.0
-ambiguous_query_false_allow: 1.0
-conflict_query_false_allow: 1.0
-p95_latency_ms: 0.6697
-total_tokens: 50,242,378
-estimated_total_cost: 5.0242378
-```
-
-Compared with lexical baselines, HSRAG reduced token usage and estimated cost by approximately:
-
-```text
-≈ 85.76%
-```
-
-The global lexical baseline is faster in raw p95 latency, but it has non-zero misrouting and always retrieves for unsupported / ambiguous / conflict-form queries.
-
-HSRAG prioritizes:
-
-```text
-bounded retrieval
-zero false allow
-zero wrong-domain routing
-auditability
-lower token cost
-```
-
-rather than raw unbounded lookup speed alone.
+If your environment already has the required standard libraries and Python available, the current demo scripts may run without additional packages.
 
 ---
 
-## 8. How to run
+### Run the full LAW verification chain
 
 From the repository root:
 
 ```powershell
-python .\examples\hsrag_law\scripts\run_all_verifiers.py
+python .\examples\hsrag_law\scripts\run_all_verifiers.py --rq5-cases 50000 --seed 20260505
 ```
 
-Run RQ4.1 source rebuild:
+Expected final output:
 
-```powershell
-python .\examples\hsrag_law\scripts\verify_rq4_official_fetch.py --min-ok 2
+```text
+HSRAG LAW — UNIFIED VERIFICATION INDEX
+final_decision: HSRAG_LAW_UNIFIED_VERIFICATION_INDEX_PASS
+unified_audit_chain_complete: 1.0
 ```
 
-Run RQ5.5 10k robustness benchmark:
+---
 
-```powershell
-python .\examples\hsrag_law\scripts\verify_rq5_mc_reproduction.py --cases 10000 --seed 20260505
-```
-
-Run RQ5.5 50k robustness benchmark:
+### Run RQ5.5 only
 
 ```powershell
 python .\examples\hsrag_law\scripts\verify_rq5_mc_reproduction.py --cases 50000 --seed 20260505
 ```
 
-Save terminal output:
+---
+
+### Run RQ4.1 source rebuild only
+
+```powershell
+python .\examples\hsrag_law\scripts\verify_rq4_official_fetch.py --min-ok 2
+```
+
+---
+
+### Save terminal output
 
 ```powershell
 python .\examples\hsrag_law\scripts\verify_rq5_mc_reproduction.py --cases 50000 --seed 20260505 | Tee-Object -FilePath .\examples\hsrag_law\results\rq5_50k_terminal_output.txt
@@ -368,14 +483,18 @@ examples/hsrag_law/results/
 Important outputs include:
 
 ```text
+unified_verification_index.json
+unified_verification_index.md
+unified_verification_audit_chain.jsonl
+unified_verification_terminal_output.txt
 rq5_mc_reproduction_summary.json
 rq5_mc_reproduction_summary.md
-rq5_case_results.csv
 rq5_gate_checks.csv
 rq5_baseline_comparison.csv
 rq5_audit_chain.jsonl
-rq5_50k_terminal_output.txt
 ```
+
+Large case-level outputs such as `rq5_case_results.csv` may be omitted from Git history to keep the repository lightweight.
 
 RQ4.1 outputs include:
 
@@ -392,7 +511,41 @@ rq4_source_rebuild_audit_chain.jsonl
 
 ---
 
-## 10. Interpretation
+## 10. Store classification summary
+
+HSRAG LAW follows a three-store governance model:
+
+| Store | Meaning | LAW usage |
+|---|---|---|
+| FHS | Fact Hash Store | Verified, source-linked, versioned legal text |
+| EHS | Ephemeral Hash Store | Pending, unverified, temporary, or user-provided material |
+| CHS | Creative / Challenge Hash Store | Synthetic, ambiguous, conflict, or failure-case material |
+
+Default rule:
+
+```text
+Verified legal text → FHS
+Unverified or pending legal text → EHS
+Synthetic, ambiguous, conflict, or failure-case material → CHS
+```
+
+For legal and regulatory retrieval:
+
+```text
+FHS > EHS > CHS
+```
+
+EHS and CHS must not override matched FHS evidence.
+
+If a query cannot be grounded in matched FHS evidence, HSRAG should reject, warn, or return a no-evidence decision rather than generate an unsupported legal answer.
+
+This is a retrieval-governance rule, not legal advice.
+
+A longer store-classification document may be added as a separate reference file.
+
+---
+
+## 11. Interpretation
 
 HSRAG LAW is not claiming that lexical retrieval is useless.
 
@@ -421,12 +574,12 @@ This makes the retrieval process more conservative, more auditable, and less pro
 
 ---
 
-## 11. Current limitations
+## 12. Current limitations
 
 Current limitations:
 
 - RQ5.5 uses the RQ4.1 rebuilt corpus, currently 110 chunks and 5 corpora.
-- RQ5.5 does not yet rerun the full RQ2.2 / RQ3 corpus from raw official source files.
+- RQ5.5 does not yet rerun the full RQ2.2 / RQ3_FIX2 corpus from raw official source files.
 - RQ4.1 uses official/public references and fallbacks where direct official fetch is difficult.
 - Some legal sources may require official bulk downloads, browser automation, PDF parsing, or manual source snapshots for full reproducibility.
 - This demo is not legal advice.
@@ -434,19 +587,20 @@ Current limitations:
 
 ---
 
-## 12. Suggested next steps
+## 13. Suggested next steps
 
 Planned improvements:
 
 1. Add a clean custom-corpus template so users can paste their own public legal text and run the same routing benchmark.
-2. Add full manifest-based corpus ingestion with explicit source license / provenance metadata.
+2. Add full manifest-based corpus ingestion with explicit source license and provenance metadata.
 3. Add optional PDF extraction pipeline.
 4. Add larger multi-jurisdiction source rebuilds.
-5. Add README-level benchmark reproduction instructions.
-6. Add a public report summarizing RQ1–RQ5.5.
+5. Add a longer store-classification reference document.
+6. Add README-level benchmark reproduction instructions.
+7. Add a public report summarizing RQ1–RQ5.5.
 
 ---
 
-## 13. One-line summary
+## 14. One-line summary
 
 HSRAG LAW demonstrates that **CTHC-typed legal addresses plus salted domain-hash retrieval** can reduce cross-domain legal retrieval risk, reject unsupported / ambiguous / conflict-form queries, preserve auditability, and significantly reduce token cost in a reproducible benchmark setting.
