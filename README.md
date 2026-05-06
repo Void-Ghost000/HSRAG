@@ -30,6 +30,16 @@ Instead, it separates **addressing** from **reasoning** so that retrieval can be
 
 ---
 
+## Quick links
+
+- [HSRAG LAW demo](examples/hsrag_law/)
+- [Custom corpus template](examples/hsrag_law/custom_template/)
+- [FAQ](docs/FAQ.md)
+- [Project Manifesto](docs/project_manifesto.md)
+- [HSRAG 6.3 × TACL Integrated Architecture](docs/hsrag_6_3_tacl_architecture.md)
+
+---
+
 ## 1. Why HSRAG matters
 
 AI retrieval can fail in predictable ways:
@@ -85,7 +95,8 @@ For legal text, a simplified CTHC path may look like:
     LEGAL.PUBLIC_LEGAL_TEXT.EU.EU_AI_ACT.GENERAL
     LEGAL.PUBLIC_LEGAL_TEXT.US.US_CDA230.GENERAL
 
-This means a chunk is not just plain text.  
+This means a chunk is not just plain text.
+
 It also carries a typed address.
 
 ---
@@ -146,7 +157,18 @@ The current repository includes:
 - RQ1–RQ5.5 verification chain,
 - CTHC salted-domain routing demo,
 - audit-chain outputs,
-- and a custom corpus template for clean public legal text.
+- custom corpus template for clean public legal text,
+- project manifesto,
+- FAQ,
+- and future HSRAG 6.3 × TACL architecture documentation.
+
+For project boundaries, update cadence, communication preference, fork policy, commercialization notes, and core invariants, see:
+
+[HSRAG Project Manifesto](docs/project_manifesto.md)
+
+For common questions about HSRAG, CTHC, RAG complementarity, benchmark meaning, custom corpus usage, edge hash pointers, AI memory, and forks, see:
+
+[HSRAG FAQ](docs/FAQ.md)
 
 ---
 
@@ -332,17 +354,34 @@ PDF extraction, browser automation, and official bulk ingestion are planned as s
 
 ---
 
-## 10. Repository layout
+## 10. Documentation map
+
+| Document | Purpose |
+|---|---|
+| [FAQ](docs/FAQ.md) | Common questions about HSRAG, RAG, CTHC, benchmarks, memory, and forks |
+| [Project Manifesto](docs/project_manifesto.md) | Project boundary, update cadence, communication style, fork policy, commercialization stance, and invariants |
+| [HSRAG 6.3 × TACL Architecture](docs/hsrag_6_3_tacl_architecture.md) | Future integrated architecture and roadmap target |
+| [Architecture](docs/architecture.md) | General architecture notes |
+| [Audit Model](docs/audit_model.md) | Audit and traceability notes |
+| [Governance](docs/governance.md) | Governance-related notes |
+| [HSRAG Overview](docs/hsrag_overview.md) | High-level project overview |
+| [EV Evidence Section](docs/ev_evidence_section.md) | Grant / evidence-oriented summary notes |
+
+---
+
+## 11. Repository layout
 
     HSRAG/
     ├─ README.md
     ├─ docs/
+    │  ├─ FAQ.md
     │  ├─ architecture.md
     │  ├─ audit_model.md
     │  ├─ ev_evidence_section.md
     │  ├─ governance.md
     │  ├─ hsrag_6_3_tacl_architecture.md
-    │  └─ hsrag_overview.md
+    │  ├─ hsrag_overview.md
+    │  └─ project_manifesto.md
     ├─ src/
     │  ├─ cthc.py
     │  ├─ evidence_assembler.py
@@ -376,7 +415,7 @@ PDF extraction, browser automation, and official bulk ingestion are planned as s
 
 ---
 
-## 11. Store classification summary
+## 12. Store classification summary
 
 HSRAG LAW follows a three-store governance model:
 
@@ -404,7 +443,7 @@ This is a retrieval-governance rule, not legal advice.
 
 ---
 
-## 12. Current limitations
+## 13. Current limitations
 
 Current limitations:
 
@@ -417,10 +456,11 @@ Current limitations:
 - The current demo is a retrieval architecture benchmark, not a legal reasoning benchmark.
 - The custom corpus template currently supports clean plaintext / markdown input first.
 - The HSRAG 6.3 × TACL document is a forward architecture target, not a claim of full implementation.
+- HSRAG is an independent, AI-assisted research project and does not promise that every roadmap item will be implemented by the original author.
 
 ---
 
-## 13. Roadmap
+## 14. Roadmap
 
 Planned next steps:
 
@@ -437,6 +477,6 @@ Planned next steps:
 
 ---
 
-## 14. One-line summary
+## 15. One-line summary
 
 HSRAG demonstrates that **typed hash-addressed retrieval** can reduce cross-domain evidence risk, reject unsupported or ambiguous queries before retrieval, preserve auditability, and significantly reduce token cost in reproducible benchmark settings.
