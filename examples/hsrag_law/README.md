@@ -469,7 +469,45 @@ python .\examples\hsrag_law\scripts\verify_rq4_official_fetch.py --min-ok 2
 ```powershell
 python .\examples\hsrag_law\scripts\verify_rq5_mc_reproduction.py --cases 50000 --seed 20260505 | Tee-Object -FilePath .\examples\hsrag_law\results\rq5_50k_terminal_output.txt
 ```
+---
 
+### Run the custom corpus template
+
+If you want to test your own clean, legally usable public legal text, use the custom corpus template:
+
+    examples/hsrag_law/custom_template/
+
+Basic workflow:
+
+1. Put clean public legal text into:
+
+    examples/hsrag_law/custom_template/input/legal_texts/
+
+2. Edit the manifest:
+
+    examples/hsrag_law/custom_template/input/manifest.example.json
+
+3. Build the custom corpus:
+
+    python .\examples\hsrag_law\custom_template\scripts\build_custom_corpus.py
+
+4. Run the custom benchmark:
+
+    python .\examples\hsrag_law\custom_template\scripts\run_custom_benchmark.py
+
+Expected smoke-test output:
+
+    decision: CUSTOM_CORPUS_BUILD_PASS
+    decision: CUSTOM_BENCHMARK_PASS
+    target_correct: 1.0
+    unsupported_query_false_allow: 0.0
+    ambiguous_query_false_allow: 0.0
+    conflict_query_false_allow: 0.0
+    audit_chain_complete: 1.0
+
+This template is designed for clean plaintext / markdown legal text first.
+
+PDF extraction, browser automation, and official bulk ingestion are planned as separate ingestion tools.
 ---
 
 ## 9. Output files
