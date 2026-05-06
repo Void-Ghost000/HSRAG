@@ -68,7 +68,7 @@ HSRAG separates two operations that are often mixed together:
 | Evidence gate | Is the result supported, ambiguous, or unsafe? | Allow / reject / warn |
 | Audit | Can the decision be reproduced? | Preserve traceability |
 
-This repo currently focuses on a research / benchmark implementation.
+This repository currently focuses on a research / benchmark implementation.
 
 It is not a production system yet.
 
@@ -140,13 +140,36 @@ Current status:
 
     Research demo / early open-source implementation
 
-The current repo includes:
+The current repository includes:
 
 - HSRAG LAW benchmark scripts,
 - RQ1–RQ5.5 verification chain,
 - CTHC salted-domain routing demo,
 - audit-chain outputs,
 - and a custom corpus template for clean public legal text.
+
+---
+
+### Future integrated architecture
+
+The long-term target architecture is documented here:
+
+[HSRAG 6.3 × TACL Integrated Architecture](docs/hsrag_6_3_tacl_architecture.md)
+
+This architecture describes **HSRAG 6.3 × TACL**, a future integrated design that separates:
+
+- governance evolution,
+- runtime query execution,
+- CTHC typed routing,
+- hash-bounded retrieval,
+- guard enforcement,
+- TACL runtime control,
+- audit telemetry,
+- and memory writeback.
+
+The current repository implements a reproducible benchmark foundation, especially through HSRAG LAW.
+
+The full HSRAG 6.3 × TACL stack remains a forward architecture target.
 
 ---
 
@@ -191,7 +214,7 @@ Unified result:
 
 ## 7. RQ5.5 headline result
 
-RQ5.5 is currently the strongest live robustness benchmark in this repo.
+RQ5.5 is currently the strongest live robustness benchmark in this repository.
 
 It runs over the RQ4.1 rebuilt public legal-text chunks.
 
@@ -316,7 +339,9 @@ PDF extraction, browser automation, and official bulk ingestion are planned as s
     ├─ docs/
     │  ├─ architecture.md
     │  ├─ audit_model.md
+    │  ├─ ev_evidence_section.md
     │  ├─ governance.md
+    │  ├─ hsrag_6_3_tacl_architecture.md
     │  └─ hsrag_overview.md
     ├─ src/
     │  ├─ cthc.py
@@ -391,6 +416,7 @@ Current limitations:
 - Some legal sources may require official bulk downloads, browser automation, PDF parsing, or manual source snapshots for full reproducibility.
 - The current demo is a retrieval architecture benchmark, not a legal reasoning benchmark.
 - The custom corpus template currently supports clean plaintext / markdown input first.
+- The HSRAG 6.3 × TACL document is a forward architecture target, not a claim of full implementation.
 
 ---
 
@@ -407,6 +433,7 @@ Planned next steps:
 7. Add a public report summarizing RQ1–RQ5.5.
 8. Separate lightweight demo scripts from heavier benchmark artifacts.
 9. Prepare an EV / grant evidence section based on the reproducible benchmark chain.
+10. Continue developing the HSRAG 6.3 × TACL target architecture.
 
 ---
 
