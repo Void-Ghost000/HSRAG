@@ -1,0 +1,15 @@
+{
+  "corpus_id": "CUSTOM_LAW_001",
+  "title": "Example Public Law",
+  "jurisdiction": "CUSTOM",
+  "source_type": "PUBLIC_LEGAL_TEXT",
+  "language": "en",
+  "source_url": "optional",
+  "version": "example-v1",
+  "license_note": "User confirms this text is legally usable for local testing.",
+  "cthc_domain": "LEGAL",
+  "cthc_topic": "GENERAL",
+  "text_files": [
+    "example_law.txt"
+  ]
+}

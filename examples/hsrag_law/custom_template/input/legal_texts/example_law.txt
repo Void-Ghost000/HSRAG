@@ -1,0 +1,13 @@
+Example Public Law Text
+
+Section 1. Purpose.
+This example text is provided only for local testing of the HSRAG LAW custom corpus template.
+
+Section 2. Definitions.
+A public legal text means a legally usable text source provided by the user for local benchmark testing.
+
+Section 3. Routing.
+The benchmark should assign this corpus a CTHC typed address and a salted domain hash.
+
+Section 4. Evidence.
+Unsupported or ambiguous queries should not be treated as grounded evidence.
