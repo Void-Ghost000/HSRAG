@@ -1,0 +1,24 @@
+{
+  "name": "HSRAG_LAW_CUSTOM_CORPUS_BUILD",
+  "decision": "CUSTOM_CORPUS_BUILD_PASS",
+  "generated_at_utc": "2026-05-06T05:44:59.421251+00:00",
+  "manifest_path": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\custom_template\\input\\manifest.example.json",
+  "manifest_hash": "sha256:3e95bb91e57d758ae656b22c9105507b3cbdda3ab8b4b7fe00a445615a2dd4cd",
+  "domain_hash": "sha256:b57d17b24e7f202aef4ea322f1d057e41701cf004b68042c0f6ddbd271a2d4f7",
+  "cthc_base": "LEGAL.PUBLIC_LEGAL_TEXT.CUSTOM.CUSTOM_LAW_001.GENERAL",
+  "source_file_count": 1,
+  "chunk_count": 1,
+  "total_chars": 475,
+  "total_token_estimate": 118,
+  "gate_passed": true,
+  "audit_chain_complete": 1.0,
+  "outputs": {
+    "custom_manifest": "custom_manifest.json",
+    "custom_source_records": "custom_source_records.csv",
+    "custom_chunks": "custom_chunks.csv",
+    "custom_gate_checks": "custom_gate_checks.csv",
+    "custom_audit_chain": "custom_audit_chain.jsonl",
+    "custom_build_summary": "custom_build_summary.json",
+    "custom_build_summary_md": "custom_build_summary.md"
+  }
+}

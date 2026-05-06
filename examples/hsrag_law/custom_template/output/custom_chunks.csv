@@ -1,0 +1,14 @@
+﻿chunk_id,chunk_index,corpus_id,title,jurisdiction,source_type,language,source_url,version,cthc_address,domain_hash,chunk_hash,char_len,token_estimate,text
+CUSTOM_LAW_001::CHUNK_0001,1,CUSTOM_LAW_001,Example Public Law,CUSTOM,PUBLIC_LEGAL_TEXT,en,optional,example-v1,LEGAL.PUBLIC_LEGAL_TEXT.CUSTOM.CUSTOM_LAW_001.GENERAL.CHUNK_0001,sha256:b57d17b24e7f202aef4ea322f1d057e41701cf004b68042c0f6ddbd271a2d4f7,sha256:d06f8520179119ca4effcb4a52a532bc3bcc5d4b82a1b7b793e15eb52ed1a132,475,118,"Example Public Law Text
+
+Section 1. Purpose.
+This example text is provided only for local testing of the HSRAG LAW custom corpus template.
+
+Section 2. Definitions.
+A public legal text means a legally usable text source provided by the user for local benchmark testing.
+
+Section 3. Routing.
+The benchmark should assign this corpus a CTHC typed address and a salted domain hash.
+
+Section 4. Evidence.
+Unsupported or ambiguous queries should not be treated as grounded evidence."

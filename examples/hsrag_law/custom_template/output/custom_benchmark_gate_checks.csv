@@ -1,0 +1,8 @@
+﻿metric,expected,actual,passed
+target_correct,1.0,1.0,True
+wrong_corpus_misrouting,0.0,0.0,True
+wrong_domain_misrouting,0.0,0.0,True
+unsupported_query_false_allow,0.0,0.0,True
+ambiguous_query_false_allow,0.0,0.0,True
+conflict_query_false_allow,0.0,0.0,True
+audit_chain_complete,1.0,1.0,True

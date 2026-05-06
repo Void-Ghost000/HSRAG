@@ -1,0 +1,15 @@
+﻿check,passed,detail
+manifest_has_corpus_id,True,corpus_id='CUSTOM_LAW_001'
+manifest_has_title,True,title='Example Public Law'
+manifest_has_jurisdiction,True,jurisdiction='CUSTOM'
+manifest_has_source_type,True,source_type='PUBLIC_LEGAL_TEXT'
+manifest_has_language,True,language='en'
+manifest_has_license_note,True,license_note='User confirms this text is legally usable for local testing.'
+manifest_has_cthc_domain,True,cthc_domain='LEGAL'
+manifest_has_cthc_topic,True,cthc_topic='GENERAL'
+manifest_has_text_files,True,text_files=['example_law.txt']
+manifest_text_files_is_list,True,type=list
+license_note_present,True,license_note should state that the user has the right to process the text locally.
+text_file_exists::example_law.txt,True,C:\Users\himit\Desktop\HSRAG\examples\hsrag_law\custom_template\input\legal_texts\example_law.txt
+combined_text_non_empty,True,combined_char_len=475
+chunk_count_positive,True,chunk_count=1
