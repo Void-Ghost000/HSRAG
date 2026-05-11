@@ -40,6 +40,99 @@ Instead, it separates **addressing** from **reasoning** so that retrieval can be
 
 ---
 
+## Quick start: run the smoke demo
+
+To run the smallest public demo from the repository root:
+
+    python .\examples\hsrag_law\run_demo.py
+
+Expected result:
+
+    SMOKE_TEST_PASS
+
+This smoke demo shows the minimal HSRAG LAW flow:
+
+    legal query
+    → CTHC-style domain classification
+    → hash-structured routing
+    → bounded retrieval
+    → guard decision
+    → audit hash chain
+    → benchmark summary
+
+For larger benchmark reproduction, see:
+
+[HSRAG LAW demo](examples/hsrag_law/)
+
+---
+
+## Plain-language analogy
+
+A normal RAG system often works like asking:
+
+    Which paragraph in the whole library sounds most similar?
+
+HSRAG first works more like a library catalog system:
+
+    Which shelf, section, jurisdiction, source, or knowledge address is this query allowed to search?
+
+Only after the query is routed to a bounded address does retrieval happen inside that allowed space.
+
+In other words:
+
+    RAG searches by similarity.
+    HSRAG first narrows the library shelf.
+
+This does not make RAG useless.
+
+Instead, HSRAG adds a structured addressing and evidence-governance layer before retrieval, so that RAG-style semantic search can operate inside a smaller, clearer, more auditable search space.
+
+If the query cannot be mapped to a stable knowledge address, HSRAG can reject, warn, or return no evidence instead of forcing an unsupported answer.
+
+---
+
+## Reproduce benchmark evidence
+
+For a full LAW verification run:
+
+    python .\examples\hsrag_law\scripts\run_all_verifiers.py --rq5-cases 50000 --seed 20260505
+
+For only the RQ5.5 robustness benchmark:
+
+    python .\examples\hsrag_law\scripts\verify_rq5_mc_reproduction.py --cases 50000 --seed 20260505
+
+For custom public legal text:
+
+    python .\examples\hsrag_law\custom_template\scripts\build_custom_corpus.py
+    python .\examples\hsrag_law\custom_template\scripts\run_custom_benchmark.py
+
+---
+
+## Benchmark artifact map
+
+Main benchmark outputs are written under:
+
+    examples/hsrag_law/results/
+
+Key files:
+
+| Artifact | Meaning |
+|---|---|
+| unified_verification_index.md | Final RQ1–RQ5.5 verification index |
+| unified_verification_index.json | Machine-readable unified verification summary |
+| rq5_mc_reproduction_summary.md | RQ5.5 benchmark summary |
+| rq5_mc_reproduction_summary.json | Machine-readable RQ5.5 summary |
+| rq5_case_results.csv | Case-level RQ5.5 results |
+| rq5_baseline_comparison.csv | Baseline comparison, token, cost, and latency metrics |
+| rq5_gate_checks.csv | Acceptance gate checks |
+| rq5_audit_chain.jsonl | RQ5.5 audit-chain trace |
+
+For detailed artifact and metric explanations, see:
+
+[HSRAG LAW demo](examples/hsrag_law/)
+
+---
+
 ## 1. Why HSRAG matters
 
 AI retrieval can fail in predictable ways:
@@ -472,7 +565,7 @@ Planned next steps:
 6. Add README-level benchmark reproduction instructions.
 7. Add a public report summarizing RQ1–RQ5.5.
 8. Separate lightweight demo scripts from heavier benchmark artifacts.
-9. Prepare an EV / grant evidence section based on the reproducible benchmark chain.
+9. Prepare a grant / evidence section based on the reproducible benchmark chain.
 10. Continue developing the HSRAG 6.3 × TACL target architecture.
 
 ---
