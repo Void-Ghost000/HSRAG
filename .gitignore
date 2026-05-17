@@ -20,3 +20,5 @@ large_outputs/
 
 runs/
 logs/
+
+local_artifacts/
