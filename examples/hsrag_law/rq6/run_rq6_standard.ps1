@@ -1,8 +1,8 @@
-# HSRAG LAW RQ6 — Smoke Demo
-# MC = 30
+# HSRAG LAW RQ6 — Standard Demo
+# MC = 3000
 #
 # Usage from repo root:
-#   powershell -ExecutionPolicy Bypass -File .\examples\hsrag_law\rq6\run_rq6_smoke.ps1
+#   powershell -ExecutionPolicy Bypass -File .\examples\hsrag_law\rq6\run_rq6_standard.ps1
 
 $ErrorActionPreference = "Stop"
 
@@ -10,7 +10,7 @@ $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $RepoRoot = Resolve-Path (Join-Path $ScriptDir "..\..\..")
 Set-Location $RepoRoot
 
-$Mc = 30
+$Mc = 3000
 $Chunks = "examples\hsrag_law\results\rq4_rebuilt_chunks.csv"
 $Runner = "examples\hsrag_law\rq6\run_rq6_conversational_collision.py"
 
@@ -27,12 +27,12 @@ if (!(Test-Path $Chunks)) {
 New-Item -ItemType Directory -Force logs | Out-Null
 
 $Stamp = Get-Date -Format "yyyyMMdd_HHmmss"
-$LogFile = "logs\rq6_smoke_mc30_$Stamp.log"
+$LogFile = "logs\rq6_standard_mc3000_$Stamp.log"
 
 Write-Host "============================================================"
-Write-Host "HSRAG LAW RQ6 Smoke Demo"
+Write-Host "HSRAG LAW RQ6 Standard Demo"
 Write-Host "MC: $Mc"
-Write-Host "Expected rows: 1080"
+Write-Host "Expected rows: 108000"
 Write-Host "Chunks: $Chunks"
 Write-Host "Log: $LogFile"
 Write-Host "============================================================"
@@ -40,7 +40,7 @@ Write-Host "============================================================"
 python $Runner --chunks $Chunks --mc $Mc 2>&1 | Tee-Object -FilePath $LogFile
 
 if ($LASTEXITCODE -ne 0) {
-    Write-Error "RQ6 smoke run failed with exit code $LASTEXITCODE"
+    Write-Error "RQ6 standard run failed with exit code $LASTEXITCODE"
     exit $LASTEXITCODE
 }
 

@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# HSRAG LAW RQ6 — Smoke Demo
-# MC = 30
+# HSRAG LAW RQ6 — Standard Demo
+# MC = 3000
 #
 # Usage from repo root:
-#   bash examples/hsrag_law/rq6/run_rq6_smoke.sh
+#   bash examples/hsrag_law/rq6/run_rq6_standard.sh
 
 set -euo pipefail
 
@@ -11,7 +11,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/../../.." && pwd)"
 cd "$REPO_ROOT"
 
-MC=30
+MC=3000
 CHUNKS="examples/hsrag_law/results/rq4_rebuilt_chunks.csv"
 RUNNER="examples/hsrag_law/rq6/run_rq6_conversational_collision.py"
 
@@ -34,12 +34,12 @@ fi
 mkdir -p logs
 
 STAMP="$(date +%Y%m%d_%H%M%S)"
-LOG_FILE="logs/rq6_smoke_mc30_${STAMP}.log"
+LOG_FILE="logs/rq6_standard_mc3000_${STAMP}.log"
 
 echo "============================================================"
-echo "HSRAG LAW RQ6 Smoke Demo"
+echo "HSRAG LAW RQ6 Standard Demo"
 echo "MC: $MC"
-echo "Expected rows: 1080"
+echo "Expected rows: 108000"
 echo "Chunks: $CHUNKS"
 echo "Log: $LOG_FILE"
 echo "============================================================"
