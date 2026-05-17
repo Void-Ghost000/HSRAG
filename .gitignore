@@ -17,3 +17,6 @@ Thumbs.db
 cache/
 raw_data/
 large_outputs/
+
+runs/
+logs/
