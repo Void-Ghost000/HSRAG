@@ -31,6 +31,7 @@ Instead, it adds a **boundary and audit layer before retrieval**, so retrieval c
 
 ## Quick Links
 
+- [HSRAG core package](src/hsrag/)
 - [HSRAG LAW demo](examples/hsrag_law/)
 - [RQ6 Conversational Legal Collision Benchmark](examples/hsrag_law/rq6/)
 - [RQ6 Smoke / Stress Report](examples/hsrag_law/rq6/RQ6_SMOKE_REPORT.md)
@@ -694,6 +695,40 @@ For common questions about HSRAG, CTHC, RAG complementarity, benchmark meaning, 
 
 ---
 
+## Core Package Status
+
+The reusable core package is located under:
+
+```text
+src/hsrag/
+```
+
+It currently contains minimal, tested primitives for:
+
+- shared benchmark types,
+- deterministic hashing,
+- audit-chain verification,
+- CTHC route-opener detection,
+- salted domain hash routing,
+- conservative route guarding,
+- and audit-ready evidence assembly.
+
+The package is intentionally minimal and is being extracted from the working RQ1–RQ6 benchmark code.
+
+Run core tests from the repository root:
+
+```powershell
+python -m pytest tests
+```
+
+The full benchmark scripts still live under:
+
+```text
+examples/hsrag_law/
+```
+
+---
+
 ## Future Integrated Architecture
 
 The long-term target architecture is documented here:
@@ -1000,6 +1035,7 @@ PDF extraction, browser automation, and official bulk ingestion are planned as s
 | [Governance](docs/governance.md) | Governance-related notes |
 | [HSRAG Overview](docs/hsrag_overview.md) | High-level project overview |
 | [EV Evidence Section](docs/ev_evidence_section.md) | Grant / evidence-oriented summary notes |
+| [HSRAG Core Package](src/hsrag/) | Minimal reusable core primitives extracted from RQ1–RQ6 |
 | [RQ6 Benchmark](examples/hsrag_law/rq6/) | Conversational legal collision benchmark |
 | [RQ6 Smoke / Stress Report](examples/hsrag_law/rq6/RQ6_SMOKE_REPORT.md) | RQ6 mc3000 / mc20000 results and claim boundary |
 
@@ -1010,6 +1046,8 @@ PDF extraction, browser automation, and official bulk ingestion are planned as s
 ```text
 HSRAG/
 ├─ README.md
+├─ LICENSE
+├─ requirements.txt
 ├─ docs/
 │  ├─ FAQ.md
 │  ├─ architecture.md
@@ -1020,17 +1058,26 @@ HSRAG/
 │  ├─ hsrag_overview.md
 │  └─ project_manifesto.md
 ├─ src/
-│  ├─ cthc.py
-│  ├─ evidence_assembler.py
-│  ├─ guard.py
-│  └─ hash_router.py
+│  └─ hsrag/
+│     ├─ README.md
+│     ├─ __init__.py
+│     ├─ audit_chain.py
+│     ├─ cthc.py
+│     ├─ evidence_assembler.py
+│     ├─ guard.py
+│     ├─ hash_router.py
+│     ├─ hashing.py
+│     └─ types.py
 ├─ tests/
 │  ├─ test_audit_chain.py
+│  ├─ test_cthc.py
+│  ├─ test_evidence_assembler.py
 │  ├─ test_guard.py
 │  └─ test_hash_router.py
 └─ examples/
    └─ hsrag_law/
       ├─ README.md
+      ├─ run_demo.py
       ├─ custom_template/
       │  ├─ README.md
       │  ├─ QSVCS_PUBLIC_TEMPLATE.md
@@ -1057,11 +1104,13 @@ HSRAG/
       │  └─ run_rq6_full.sh
       ├─ data/
       ├─ results/
-      ├─ scripts/
-      │  ├─ run_all_verifiers.py
-      │  ├─ verify_rq4_official_fetch.py
-      │  └─ verify_rq5_mc_reproduction.py
-      └─ run_demo.py
+      └─ scripts/
+         ├─ run_all_verifiers.py
+         ├─ verify_rq1.py
+         ├─ verify_rq2_2.py
+         ├─ verify_rq3_fix2.py
+         ├─ verify_rq4_official_fetch.py
+         └─ verify_rq5_mc_reproduction.py
 ```
 
 ---
@@ -1149,6 +1198,7 @@ Planned next steps:
 10. Continue developing the HSRAG 6.3 × TACL target architecture.
 11. Add RQ6.1 query decomposition layer for multi-law comparative questions.
 12. Extend RQ6 corpus coverage with EU_GDPR when available.
+13. Gradually extract BM25, TF-IDF, hybrid retrieval, corpus loading, and benchmark metrics from RQ6 into `src/hsrag/`.
 
 ---
 
