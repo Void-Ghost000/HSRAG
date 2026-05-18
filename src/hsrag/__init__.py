@@ -11,6 +11,8 @@ This package intentionally starts small:
 - deterministic hashing
 - audit-chain helpers
 - salted CTHC domain hash routing
+- CTHC route-opener detection
+- conservative route guard
 """
 
 from .audit_chain import (
@@ -19,6 +21,29 @@ from .audit_chain import (
     build_audit_chain,
     make_audit_event,
     verify_audit_chain,
+)
+from .cthc import (
+    conflict_query_signal,
+    contains_unsupported_topic,
+    detect_route_openers,
+    detect_us_code_fragment_routes,
+    generic_ambiguous_signal,
+    normalize_text,
+    token_set,
+    tokenize,
+)
+from .guard import (
+    RESULT_AMBIGUOUS,
+    RESULT_HIT,
+    RESULT_NO_EVIDENCE,
+    RESULT_ROUTE_CONFLICT,
+    ROUTE_BLOCK_AMBIGUOUS,
+    ROUTE_BLOCK_CONFLICT,
+    ROUTE_BLOCK_UNSUPPORTED,
+    ROUTE_ROUTABLE,
+    classify_query_to_cthc_route,
+    evaluate_gate,
+    route_status_to_result_status,
 )
 from .hash_router import (
     BENCHMARK_SALT,
@@ -65,6 +90,27 @@ __all__ = [
     "build_audit_chain",
     "make_audit_event",
     "verify_audit_chain",
+    # CTHC
+    "conflict_query_signal",
+    "contains_unsupported_topic",
+    "detect_route_openers",
+    "detect_us_code_fragment_routes",
+    "generic_ambiguous_signal",
+    "normalize_text",
+    "token_set",
+    "tokenize",
+    # Guard
+    "RESULT_AMBIGUOUS",
+    "RESULT_HIT",
+    "RESULT_NO_EVIDENCE",
+    "RESULT_ROUTE_CONFLICT",
+    "ROUTE_BLOCK_AMBIGUOUS",
+    "ROUTE_BLOCK_CONFLICT",
+    "ROUTE_BLOCK_UNSUPPORTED",
+    "ROUTE_ROUTABLE",
+    "classify_query_to_cthc_route",
+    "evaluate_gate",
+    "route_status_to_result_status",
     # Hash router
     "BENCHMARK_SALT",
     "canonical_jurisdiction",
