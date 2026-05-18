@@ -10,6 +10,7 @@ This package intentionally starts small:
 - shared types
 - deterministic hashing
 - audit-chain helpers
+- salted CTHC domain hash routing
 """
 
 from .audit_chain import (
@@ -18,6 +19,13 @@ from .audit_chain import (
     build_audit_chain,
     make_audit_event,
     verify_audit_chain,
+)
+from .hash_router import (
+    BENCHMARK_SALT,
+    canonical_jurisdiction,
+    default_cthc_code,
+    route_key_for_corpus,
+    salted_domain_hash,
 )
 from .hashing import (
     compute_audit_row_hash,
@@ -42,6 +50,7 @@ __version__ = "0.1.0"
 
 __all__ = [
     "__version__",
+    # Shared types
     "AuditEvent",
     "Chunk",
     "CorpusId",
@@ -50,11 +59,19 @@ __all__ = [
     "GateDecision",
     "JurisdictionId",
     "RetrievalResult",
+    # Audit chain
     "GENESIS_HASH",
     "audit_events_as_dicts",
     "build_audit_chain",
     "make_audit_event",
     "verify_audit_chain",
+    # Hash router
+    "BENCHMARK_SALT",
+    "canonical_jurisdiction",
+    "default_cthc_code",
+    "route_key_for_corpus",
+    "salted_domain_hash",
+    # Hashing helpers
     "compute_audit_row_hash",
     "compute_evidence_hash",
     "compute_source_hash",
