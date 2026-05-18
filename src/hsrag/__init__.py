@@ -13,6 +13,7 @@ This package intentionally starts small:
 - salted CTHC domain hash routing
 - CTHC route-opener detection
 - conservative route guard
+- audit-ready evidence assembly
 """
 
 from .audit_chain import (
@@ -31,6 +32,15 @@ from .cthc import (
     normalize_text,
     token_set,
     tokenize,
+)
+from .evidence_assembler import (
+    Evidence,
+    EvidencePack,
+    assemble_evidence,
+    chunk_to_evidence,
+    evidence_hashes,
+    evidence_pack_as_dict,
+    source_hashes,
 )
 from .guard import (
     RESULT_AMBIGUOUS,
@@ -99,6 +109,14 @@ __all__ = [
     "normalize_text",
     "token_set",
     "tokenize",
+    # Evidence assembly
+    "Evidence",
+    "EvidencePack",
+    "assemble_evidence",
+    "chunk_to_evidence",
+    "evidence_hashes",
+    "evidence_pack_as_dict",
+    "source_hashes",
     # Guard
     "RESULT_AMBIGUOUS",
     "RESULT_HIT",
