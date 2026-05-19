@@ -154,3 +154,34 @@ Run its tests with:
     python -m pytest tests\test_petstore_subset.py
 
 The sample demonstrates that the ingest and query pipeline can handle a second API spec dataset beyond the toy user-service sample.
+
+## OpenAPI JSON Importer
+
+This demo includes a local OpenAPI JSON importer.
+
+Sample input:
+
+    input/openapi_petstore_minimal.json
+
+Run importer:
+
+    python .\src\hsrag_api_sqlite\openapi_importer.py
+
+Expected local outputs:
+
+    data/openapi_import.sqlite3
+    data/openapi_normalized.json
+
+The importer is local-only, zero-secret, and zero-network.
+
+It accepts local JSON files only.
+
+It does not support YAML in v0.1.
+
+It does not fetch remote URLs.
+
+It does not require an API key.
+
+Run importer tests:
+
+    python -m pytest tests\test_openapi_importer.py
