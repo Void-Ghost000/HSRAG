@@ -4,7 +4,7 @@ This file describes how to test and verify the HSRAG API SQLite demo locally.
 
 ## Scope
 
-All verification commands are:
+All normal verification commands are:
 
 - local-only
 - zero-secret
@@ -12,7 +12,7 @@ All verification commands are:
 
 No API key is required.
 
-No external service is called.
+No external service is called by the importer, demo, query layer, benchmark, or verifier.
 
 No LLM call is made.
 
@@ -28,7 +28,7 @@ From this directory:
 
 Expected result in the current verified prototype:
 
-    69 passed
+    all tests passed
 
 ## Run Benchmark Smoke Test
 
@@ -70,6 +70,25 @@ Expected local outputs:
 
 These files are local artifacts and are ignored by git.
 
+## Run Local OpenAPI JSON Importer
+
+    python .\src\hsrag_api_sqlite\openapi_importer.py
+
+Expected local outputs:
+
+    data/openapi_import.sqlite3
+    data/openapi_normalized.json
+
+The importer is local-only, zero-secret, and zero-network.
+
+It accepts local JSON files only.
+
+It does not support YAML in this version.
+
+It does not fetch remote URLs.
+
+It does not require an API key.
+
 ## One-command Verify
 
     python .\scripts\verify_local.py
@@ -92,6 +111,43 @@ These files are local artifacts and are ignored by git.
 A successful run reports:
 
     "status": "passed"
+
+## Manual External OpenAPI Validation
+
+The importer can be manually tested with an external OpenAPI JSON file saved locally.
+
+Example workflow:
+
+    1. Download a public OpenAPI JSON file manually.
+    2. Save it under input/.
+    3. Run openapi_importer.py against that local file.
+    4. Query the generated SQLite DB.
+
+Recommended authority behavior:
+
+    Unreviewed external spec:
+        evidence_class = EHS
+        tacl_layer = L3
+        contract_role = candidate
+
+    Reviewed external spec:
+        evidence_class = FHS
+        tacl_layer = L0
+        contract_role = core
+
+Expected behavior:
+
+    EHS / L3 / candidate returns found_with_warning.
+    FHS / L0 / core can return found API_SPEC_FOUND.
+
+Manual validation already performed locally:
+
+    External Petstore OpenAPI JSON
+    EHS candidate mode: found_with_warning
+    FHS reviewed mode: found API_SPEC_FOUND
+    Reviewed import count: 19 records
+
+This external validation is manual and not part of CI.
 
 ## Acceptance Gates
 
@@ -116,9 +172,9 @@ Current local verification status:
 
     passed
 
-Observed in local run:
+Observed locally:
 
-    pytest: 69 passed
+    pytest: passed
     demo: passed
     benchmark: passed
     acceptance gates: passed
@@ -128,60 +184,3 @@ Observed in local run:
 This is a verified local prototype, not a production deployment.
 
 Do not commit generated local artifacts under data/ or benchmark reports under benchmarks/.
-
-## Petstore-style Subset Sample
-
-This demo also includes a small normalized Petstore-style sample:
-
-    input/petstore_subset.api_spec.json
-
-It contains:
-
-    GET /pet/{petId}
-    POST /pet
-    DELETE /pet/{petId}
-
-This file is a local fixed sample for demonstrating HSRAG-style API spec ingest.
-
-It is not fetched from the network.
-
-It does not require an API key.
-
-It does not call a real Petstore service.
-
-Run its tests with:
-
-    python -m pytest tests\test_petstore_subset.py
-
-The sample demonstrates that the ingest and query pipeline can handle a second API spec dataset beyond the toy user-service sample.
-
-## OpenAPI JSON Importer
-
-This demo includes a local OpenAPI JSON importer.
-
-Sample input:
-
-    input/openapi_petstore_minimal.json
-
-Run importer:
-
-    python .\src\hsrag_api_sqlite\openapi_importer.py
-
-Expected local outputs:
-
-    data/openapi_import.sqlite3
-    data/openapi_normalized.json
-
-The importer is local-only, zero-secret, and zero-network.
-
-It accepts local JSON files only.
-
-It does not support YAML in v0.1.
-
-It does not fetch remote URLs.
-
-It does not require an API key.
-
-Run importer tests:
-
-    python -m pytest tests\test_openapi_importer.py
