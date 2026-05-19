@@ -6,6 +6,8 @@ benchmarks/*.txt
 data/*.db
 data/*.sqlite
 data/*.sqlite3
+data/*.json
+!data/.gitkeep
 
 __pycache__/
 .pytest_cache/

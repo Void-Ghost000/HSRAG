@@ -47,3 +47,25 @@ Observed result:
 Once core modules are implemented:
 
     python -m pytest
+
+## End-to-End Demo
+
+Run from this directory:
+
+    python .\src\hsrag_api_sqlite\demo.py
+
+This demo performs:
+
+    1. ingest input/api_spec.example.json
+    2. create a second revision for one endpoint
+    3. query by method/path
+    4. query by CTHC hash pointer
+    5. query revision history
+    6. run semantic discovery as candidates-only
+
+Expected local outputs:
+
+    data/demo_api_specs.sqlite3
+    data/demo_report.json
+
+The demo is local-only, zero-secret, and zero-network.
