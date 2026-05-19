@@ -12,3 +12,10 @@ data/*.json
 __pycache__/
 .pytest_cache/
 *.pyc
+
+# Manual external validation artifacts
+input/external_*.openapi.json
+input/external_*.json
+data/external_*.sqlite3
+data/external_*.json
+data/external_*.normalized.json
