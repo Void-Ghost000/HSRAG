@@ -30,6 +30,10 @@ Instead, it adds a **boundary and audit layer before retrieval**, so retrieval c
 ---
 
 ## Quick Links
+<!-- HSRAG_API_SQLITE_QUICK_LINK -->
+- [HSRAG API SQLite demo](examples/hsrag_api_sqlite/) — local verified prototype for hash-addressed API specification management.
+<!-- /HSRAG_API_SQLITE_QUICK_LINK -->
+
 
 - [HSRAG core package](src/hsrag/)
 - [HSRAG LAW demo](examples/hsrag_law/)
@@ -163,6 +167,21 @@ That is why source normalization, corpus manifests, failure samples, and audit l
 ---
 
 ## Quick Start: Minimal LAW Smoke Demo
+<!-- HSRAG_API_SQLITE_QUICKSTART -->
+### API SQLite demo
+
+From the repository root:
+
+    cd examples/hsrag_api_sqlite
+    python .\scripts\verify_local.py
+
+Expected verifier result:
+
+    "status": "passed"
+
+This demo is local-only, zero-secret, and zero-network.
+<!-- /HSRAG_API_SQLITE_QUICKSTART -->
+
 
 To run the smallest public LAW demo from the repository root:
 
@@ -660,6 +679,10 @@ This makes results easier to inspect, reproduce, and challenge.
 ---
 
 ## Current Implementation Status
+<!-- HSRAG_API_SQLITE_STATUS -->
+- HSRAG API SQLite verified prototype for hash-addressed API specification management.
+<!-- /HSRAG_API_SQLITE_STATUS -->
+
 
 The main live demo is:
 
@@ -1023,10 +1046,43 @@ PDF extraction, browser automation, and official bulk ingestion are planned as s
 
 ---
 
+<!-- HSRAG_API_SQLITE_SECTION -->
+## HSRAG API SQLite Demo
+
+HSRAG API SQLite is a local-first verified prototype for managing API specifications as hash-addressed, versioned, and authority-gated records.
+
+It demonstrates:
+
+- CTHC hash pointer lookup
+- TACL-lite authority layers
+- FHS / CHS / EHS evidence isolation
+- source_hash-based revision tracking
+- local OpenAPI JSON import
+- one-command local verification
+
+Location:
+
+    examples/hsrag_api_sqlite/
+
+Run:
+
+    cd examples/hsrag_api_sqlite
+    python .\scripts\verify_local.py
+
+This demo is local-only, zero-secret, and zero-network.
+
+It is not a production API registry, API gateway, cloud service, or LLM API wrapper.
+
+The goal is to show how API specs can be resolved through deterministic identity, authority layers, and auditable result contracts instead of vague semantic guessing.
+<!-- /HSRAG_API_SQLITE_SECTION -->
+
 ## Documentation Map
 
 | Document | Purpose |
 |---|---|
+<!-- HSRAG_API_SQLITE_DOCMAP -->
+| [HSRAG API SQLite Demo](examples/hsrag_api_sqlite/) | Local verified prototype for hash-addressed API specification management with CTHC pointers, TACL-lite authority gates, and local OpenAPI JSON import. |
+<!-- /HSRAG_API_SQLITE_DOCMAP -->
 | [FAQ](docs/FAQ.md) | Common questions about HSRAG, RAG, CTHC, benchmarks, memory, and forks |
 | [Project Manifesto](docs/project_manifesto.md) | Project boundary, update cadence, communication style, fork policy, commercialization stance, and invariants |
 | [HSRAG 6.3 × TACL Architecture](docs/hsrag_6_3_tacl_architecture.md) | Future integrated architecture and roadmap target |
@@ -1183,6 +1239,10 @@ A smoke or stress benchmark is automatically publication-grade evidence.
 ---
 
 ## Roadmap
+<!-- HSRAG_API_SQLITE_ROADMAP -->
+- Extend the API SQLite demo with larger OpenAPI fixtures, optional YAML support, and retrieval evaluation baselines.
+<!-- /HSRAG_API_SQLITE_ROADMAP -->
+
 
 Planned next steps:
 
