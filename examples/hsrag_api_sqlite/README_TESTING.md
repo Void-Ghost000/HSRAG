@@ -1,12 +1,36 @@
 # README_TESTING
 
-## Install test dependency
+This file describes how to test and verify the HSRAG API SQLite demo locally.
+
+## Scope
+
+All verification commands are:
+
+- local-only
+- zero-secret
+- zero-network
+
+No API key is required.
+
+No external service is called.
+
+No LLM call is made.
+
+## Install Test Dependency
 
 From this directory:
 
     python -m pip install pytest
 
-## Run benchmark smoke test
+## Run All Tests
+
+    python -m pytest
+
+Expected result in the current verified prototype:
+
+    69 passed
+
+## Run Benchmark Smoke Test
 
     python -m pytest tests\test_benchmark_script_smoke.py
 
@@ -14,7 +38,7 @@ Expected result:
 
     1 passed
 
-## Run local benchmark
+## Run Local Benchmark
 
     python .\scripts\benchmark_local_lookup.py --runs 10000 --dataset-size 200
 
@@ -22,39 +46,15 @@ Expected output file:
 
     benchmarks/local_lookup_report.json
 
-## Scope
-
-This benchmark is local-only, zero-secret, and zero-network.
-
-It reports p50 / p95 / p99 latency for local SQLite lookup modes.
+The benchmark reports p50 / p95 / p99 latency for local SQLite lookup modes.
 
 It does not benchmark cloud RAG, LLM billing, or production API latency.
 
-## Current Verified Command
-
-Already verified locally:
-
-    python .\scripts\benchmark_local_lookup.py --runs 10000 --dataset-size 200
-    python -m pytest tests\test_benchmark_script_smoke.py
-
-Observed result:
-
-    Benchmark report generated.
-    1 passed.
-
-## Future full verification command
-
-Once core modules are implemented:
-
-    python -m pytest
-
-## End-to-End Demo
-
-Run from this directory:
+## Run End-to-End Demo
 
     python .\src\hsrag_api_sqlite\demo.py
 
-This demo performs:
+The demo performs:
 
     1. ingest input/api_spec.example.json
     2. create a second revision for one endpoint
@@ -68,11 +68,9 @@ Expected local outputs:
     data/demo_api_specs.sqlite3
     data/demo_report.json
 
-The demo is local-only, zero-secret, and zero-network.
+These files are local artifacts and are ignored by git.
 
 ## One-command Verify
-
-Run from this directory:
 
     python .\scripts\verify_local.py
 
@@ -82,15 +80,51 @@ This command runs:
     2. python .\src\hsrag_api_sqlite\demo.py
     3. python .\scripts\benchmark_local_lookup.py
 
-Expected local output:
+Expected local outputs:
 
     data/verify_report.json
     data/verify_demo_report.json
     data/verify_demo_api_specs.sqlite3
     data/verify_benchmark_report.json
 
-The generated files are local artifacts and are ignored by git.
+These files are local artifacts and are ignored by git.
 
 A successful run reports:
 
     "status": "passed"
+
+## Acceptance Gates
+
+The verifier checks:
+
+- pytest passed
+- demo report generated
+- demo scope is local-only / zero-secret / zero-network
+- ingest and revision passed
+- pointer lookup passed
+- semantic discovery is candidates-only
+- benchmark report generated
+- benchmark scope is local-only / zero-secret / zero-network
+- no external API key required
+- no network calls
+- no LLM calls
+- p99 latency values reported
+
+## Current Validation Result
+
+Current local verification status:
+
+    passed
+
+Observed in local run:
+
+    pytest: 69 passed
+    demo: passed
+    benchmark: passed
+    acceptance gates: passed
+
+## Notes
+
+This is a verified local prototype, not a production deployment.
+
+Do not commit generated local artifacts under data/ or benchmark reports under benchmarks/.
