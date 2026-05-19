@@ -32,6 +32,16 @@ This demo follows a stricter rule:
     Source hash decides content version.
     Guard decides whether the result can be trusted.
 
+## Why It Matters
+
+This matters in environments where wrong API specs can create compliance, integration, or operational risk.
+
+Examples include regulated industries, multi-tenant deployments, internal platform engineering, and contract-grade API integrations.
+
+The goal is not to make API lookup more magical.
+
+The goal is to make API spec resolution deterministic, auditable, and trust-tiered.
+
 ## Current Status
 
 Status:
@@ -57,7 +67,7 @@ Current verified scope:
 
 Current validation target:
 
-    pytest: 69+ tests passed before OpenAPI extension
+    pytest: passed
     demo: passed
     benchmark: passed
     verifier: passed
@@ -66,6 +76,34 @@ Current validation target:
 This is not production-ready.
 
 It is a reproducible verified prototype.
+
+## Quick Start
+
+From this directory:
+
+    python -m pytest
+    python .\scripts\verify_local.py
+
+Expected verifier result:
+
+    "status": "passed"
+
+## Who This Is For
+
+This demo is useful if you:
+
+- need deterministic API spec lookup
+- care about auditability
+- manage API specs in regulated or multi-tenant environments
+- want to understand HSRAG-style hash-addressed retrieval
+- want to fork and adapt the pattern for your own API spec format
+
+This demo is not for you if you:
+
+- need a hosted API registry
+- need production API governance today
+- want LLM-generated API specs
+- need real-time spec sync from multiple remote sources
 
 ## What This Demo Is
 
@@ -303,16 +341,6 @@ Run one-command local verification:
 
     python .\scripts\verify_local.py
 
-## 60-second Quickstart
-
-From this directory:
-
-    python -m pytest
-    python .\scripts\verify_local.py
-
-Expected verifier result:
-
-    "status": "passed"
 
 ## One-command Verification
 
@@ -412,6 +440,18 @@ A successful local verification must satisfy:
 - no network calls
 - no LLM calls
 - p99 latency values reported
+
+## Possible Next Directions
+
+These are directions, not promises:
+
+- larger external OpenAPI fixtures
+- YAML OpenAPI support
+- retrieval evaluation baseline
+- ESI-style metrics and baseline comparison
+- TypeScript or Go adapter
+- CI verification workflow
+- multi-spec corpus experiments
 
 ## Known Limits
 
