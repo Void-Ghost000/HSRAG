@@ -69,3 +69,28 @@ Expected local outputs:
     data/demo_report.json
 
 The demo is local-only, zero-secret, and zero-network.
+
+## One-command Verify
+
+Run from this directory:
+
+    python .\scripts\verify_local.py
+
+This command runs:
+
+    1. python -m pytest
+    2. python .\src\hsrag_api_sqlite\demo.py
+    3. python .\scripts\benchmark_local_lookup.py
+
+Expected local output:
+
+    data/verify_report.json
+    data/verify_demo_report.json
+    data/verify_demo_api_specs.sqlite3
+    data/verify_benchmark_report.json
+
+The generated files are local artifacts and are ignored by git.
+
+A successful run reports:
+
+    "status": "passed"
