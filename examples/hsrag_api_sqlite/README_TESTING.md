@@ -128,3 +128,29 @@ Observed in local run:
 This is a verified local prototype, not a production deployment.
 
 Do not commit generated local artifacts under data/ or benchmark reports under benchmarks/.
+
+## Petstore-style Subset Sample
+
+This demo also includes a small normalized Petstore-style sample:
+
+    input/petstore_subset.api_spec.json
+
+It contains:
+
+    GET /pet/{petId}
+    POST /pet
+    DELETE /pet/{petId}
+
+This file is a local fixed sample for demonstrating HSRAG-style API spec ingest.
+
+It is not fetched from the network.
+
+It does not require an API key.
+
+It does not call a real Petstore service.
+
+Run its tests with:
+
+    python -m pytest tests\test_petstore_subset.py
+
+The sample demonstrates that the ingest and query pipeline can handle a second API spec dataset beyond the toy user-service sample.
