@@ -1,0 +1,4 @@
+jurisdiction,corpus_guess,unit_id,chunk_text
+EU,EU_AI_ACT,ARTICLE_5,"EU AI Act Article 5 concerns prohibited artificial intelligence practices and unacceptable risk AI systems."
+US,US_CDA230,SECTION_230,"47 U.S.C. Section 230 concerns platform liability and interactive computer services."
+US,US_COPPA,CHILDREN_PRIVACY,"COPPA concerns online privacy protection for children."
