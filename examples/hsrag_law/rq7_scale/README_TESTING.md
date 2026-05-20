@@ -1,6 +1,8 @@
 # RQ7 Testing
 
-RQ7 currently supports a local one-command verification path.
+RQ7 currently supports local one-command verification paths.
+
+## Core Verify
 
 Command:
 
@@ -13,25 +15,36 @@ Expected result:
     acceptance_passed: true
     latest_report_is_clean: true
 
-This command performs:
+## Adapter Matrix Verify
 
-1. Build a local chunk registry from real_law_manifest.example.json.
-2. Run RQ7 with the generated chunk registry.
-3. Validate required artifacts.
-4. Validate acceptance gates.
-5. Write rq7_verify_summary.json and rq7_verify_summary.txt.
+Command:
+
+    python examples/hsrag_law/rq7_scale/scripts/verify_rq7_adapters.py
+
+Expected result:
+
+    status: OK
+    all_passed: true
+    adapter_count: 3
+
+Adapters covered:
+
+- txt_manifest
+- fixed_csv
+- auto_csv
 
 Current maturity:
 
 - Salted toy-real retrieval pipeline: verified.
 - One-command verify: available.
+- Adapter matrix verify: available.
 - Full-scale RQ7 benchmark: not implemented yet.
 - Official RQ4 corpus loader: not connected yet.
 - Vector / hybrid baselines: not implemented yet.
 
 Claim boundary:
 
-The current verify command validates pipeline integrity and artifact generation.
-It does not prove full-scale benchmark performance.
-It does not prove HSRAG replaces all RAG systems.
-It does not provide legal advice.
+The current verify commands validate pipeline integrity and artifact generation.
+They do not prove full-scale benchmark performance.
+They do not prove HSRAG replaces all RAG systems.
+They do not provide legal advice.
