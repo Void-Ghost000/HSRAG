@@ -27,17 +27,25 @@ Expected result:
     all_passed: true
     adapter_count: 3
 
-Adapters covered:
+## Artifact Inventory Scan
 
-- txt_manifest
-- fixed_csv
-- auto_csv
+Command:
+
+    python examples/hsrag_law/rq7_scale/scripts/scan_rq7_artifacts.py --root examples/hsrag_law --output examples/hsrag_law/rq7_scale/04_runs/rq7_artifact_inventory.local.json --report examples/hsrag_law/rq7_scale/04_runs/rq7_artifact_inventory.local.md
+
+Expected result:
+
+    status: OK
+    local_only: true
+    zero_network: true
+    zero_secret: true
 
 Current maturity:
 
 - Salted toy-real retrieval pipeline: verified.
 - One-command verify: available.
 - Adapter matrix verify: available.
+- Artifact inventory scan: available.
 - Full-scale RQ7 benchmark: not implemented yet.
 - Official RQ4 corpus loader: not connected yet.
 - Vector / hybrid baselines: not implemented yet.
