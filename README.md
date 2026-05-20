@@ -1265,3 +1265,29 @@ Planned next steps:
 ## One-Line Summary
 
 HSRAG demonstrates that typed, hash-addressed, boundary-first retrieval can reduce cross-domain evidence risk, reject unsupported or ambiguous queries before retrieval, preserve auditability, reduce token cost, and control multi-turn context contamination in reproducible benchmark settings.
+## HSRAG RQ7 Scale Benchmark
+
+A local RQ7 benchmark scaffold is available under:
+
+    examples/hsrag_law/rq7_scale/
+
+RQ7 tests retrieval boundary control across:
+
+- global search
+- CTHC-pruned search
+- unique address lookup
+
+Current status:
+
+- salted toy-real pipeline verified
+- one-command verify available
+- full-scale benchmark pending
+
+Run:
+
+    python examples/hsrag_law/rq7_scale/scripts/verify_rq7.py
+
+Claim boundary:
+
+RQ7 is currently a verified local benchmark pipeline, not a production retrieval system and not a claim that HSRAG replaces all RAG systems.
+

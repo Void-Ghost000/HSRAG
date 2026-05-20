@@ -884,3 +884,46 @@ Planned improvements:
 ## 15. One-line summary
 
 HSRAG LAW demonstrates that **CTHC-typed legal addresses plus salted domain-hash retrieval** can reduce cross-domain legal retrieval risk, reject unsupported / ambiguous / conflict-form queries, preserve auditability, and significantly reduce token cost in a reproducible benchmark setting.
+## RQ7 Scale Benchmark
+
+RQ7 compares three retrieval modes:
+
+- mainstream global search
+- CTHC-pruned search
+- unique address lookup
+
+Current maturity:
+
+- salted toy-real retrieval pipeline: verified
+- one-command verify: available
+- external chunk registry loader: available
+- full-scale RQ7 benchmark: not implemented yet
+- official RQ4 corpus loader: not connected yet
+- vector / hybrid baselines: not implemented yet
+
+One-command verify:
+
+    python examples/hsrag_law/rq7_scale/scripts/verify_rq7.py
+
+Expected current result:
+
+    status: OK
+    one_command_verify: true
+    acceptance_passed: true
+    latest_report_is_clean: true
+
+Claim boundary:
+
+RQ7 currently validates pipeline integrity, result contracts, salted-domain routing, artifact generation, and reporting.
+
+It does not claim that HSRAG replaces all RAG systems.
+It does not claim full-scale benchmark completion.
+It does not provide legal advice.
+
+See:
+
+- `examples/hsrag_law/rq7_scale/README.md`
+- `examples/hsrag_law/rq7_scale/README_TESTING.md`
+- `examples/hsrag_law/rq7_scale/CLAIM_BOUNDARY.md`
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_LATEST_REPORT.md`
+
