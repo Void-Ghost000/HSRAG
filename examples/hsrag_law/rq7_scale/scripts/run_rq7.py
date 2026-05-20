@@ -459,6 +459,91 @@ def summarize_rows(rows: list[dict[str, Any]], price_per_1k_tokens: float) -> li
     return summaries
 
 
+
+def summarize_rows_by_query_class(rows: list[dict[str, Any]], price_per_1k_tokens: float) -> list[dict[str, Any]]:
+    groups: dict[tuple[str, int, str], list[dict[str, Any]]] = {}
+
+    for row in rows:
+        key = (row["mode"], int(row["corpus_size"]), str(row["query_class"]))
+        groups.setdefault(key, []).append(row)
+
+    summaries: list[dict[str, Any]] = []
+
+    for (mode, corpus_size, query_class), group_rows in sorted(groups.items()):
+        total = len(group_rows)
+        target_rows = [row for row in group_rows if row.get("target")]
+        block_expected_rows = [
+            row for row in group_rows
+            if row["query_class"] in {"no_evidence", "ambiguous_cross_domain", "mismatch_trap"}
+        ]
+
+        target_correct = 0
+        wrong_corpus = 0
+        wrong_jurisdiction = 0
+        wrong_unit = 0
+
+        for row in target_rows:
+            target = row.get("target")
+            result = row.get("result")
+
+            if row["status"] != "ALLOW" or not result:
+                continue
+
+            if target.get("corpus") == result.get("corpus") and target.get("unit") == result.get("unit"):
+                target_correct += 1
+            else:
+                if target.get("corpus") != result.get("corpus"):
+                    wrong_corpus += 1
+                if target.get("jurisdiction") != result.get("jurisdiction"):
+                    wrong_jurisdiction += 1
+                if target.get("unit") != result.get("unit"):
+                    wrong_unit += 1
+
+        false_allow = sum(
+            1 for row in group_rows
+            if row["query_class"] in {"no_evidence", "ambiguous_cross_domain", "mismatch_trap"}
+            and row["status"] == "ALLOW"
+        )
+
+        correct_blocks = sum(1 for row in block_expected_rows if row["status"] == "BLOCK")
+
+        latencies = [float(row["metrics"]["latency_ms"]) for row in group_rows]
+        tokens = [int(row["metrics"]["retrieved_token_count"]) for row in group_rows]
+        esi_values = [float(row["metrics"]["esi"]) for row in group_rows]
+        before_values = [int(row["metrics"]["candidate_count_before"]) for row in group_rows]
+        after_values = [int(row["metrics"]["candidate_count_after"]) for row in group_rows]
+        salt_valid_values = [1.0 if row["metrics"].get("returned_domain_salt_valid") else 0.0 for row in group_rows]
+
+        before_mean = sum(before_values) / total
+        after_mean = sum(after_values) / total
+        token_mean = sum(tokens) / total
+
+        summaries.append({
+            "mode": mode,
+            "corpus_size": corpus_size,
+            "query_class": query_class,
+            "row_count": total,
+            "target_correct_rate": round(target_correct / max(1, len(target_rows)), 6),
+            "wrong_corpus_collision_rate": round(wrong_corpus / max(1, len(target_rows)), 6),
+            "wrong_jurisdiction_collision_rate": round(wrong_jurisdiction / max(1, len(target_rows)), 6),
+            "wrong_unit_collision_rate": round(wrong_unit / max(1, len(target_rows)), 6),
+            "false_allow_rate": round(false_allow / max(1, len(block_expected_rows)), 6),
+            "correct_block_rate": round(correct_blocks / max(1, len(block_expected_rows)), 6),
+            "candidate_count_before_mean": round(before_mean, 3),
+            "candidate_count_after_mean": round(after_mean, 3),
+            "candidate_reduction_ratio": round(1.0 - (after_mean / max(before_mean, 1.0)), 6),
+            "retrieved_token_count_mean": round(token_mean, 3),
+            "estimated_token_cost_usd_per_1k_queries": round(token_mean * price_per_1k_tokens, 8),
+            "latency_p50_ms": round(percentile(latencies, 50), 3),
+            "latency_p95_ms": round(percentile(latencies, 95), 3),
+            "latency_p99_ms": round(percentile(latencies, 99), 3),
+            "esi_mean": round(sum(esi_values) / total, 6),
+            "returned_domain_salt_valid_rate": round(sum(salt_valid_values) / total, 6),
+        })
+
+    return summaries
+
+
 def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
     if not rows:
         path.write_text("", encoding="utf-8")
@@ -596,6 +681,7 @@ def build_public_report(
     gates: dict[str, Any],
     raw_results_path: Path,
     metrics_summary_path: Path,
+    metrics_by_query_class_path: Path,
     acceptance_gates_path: Path,
     audit_chain_path: Path,
     write_latest_report: bool = False,
@@ -668,6 +754,7 @@ def build_public_report(
         "",
         f"- raw_results: {raw_results_path}",
         f"- metrics_summary: {metrics_summary_path}",
+        f"- metrics_by_query_class: {metrics_by_query_class_path}",
         f"- acceptance_gates: {acceptance_gates_path}",
         f"- audit_chain: {audit_chain_path}",
         "",
@@ -817,6 +904,17 @@ def run(config_path: Path, chunk_registry_path: Path | None = None, write_latest
 
     append_audit_event(audit_events, "METRICS_WRITTEN", {"path": str(metrics_summary_path), "summary_count": len(summaries)}, run_started_at_utc)
 
+    query_class_summaries = summarize_rows_by_query_class(rows, price_per_1k_tokens)
+    metrics_by_query_class_path = run_dir / "metrics_by_query_class.csv"
+    write_csv(metrics_by_query_class_path, query_class_summaries)
+
+    append_audit_event(
+        audit_events,
+        "QUERY_CLASS_METRICS_WRITTEN",
+        {"path": str(metrics_by_query_class_path), "summary_count": len(query_class_summaries)},
+        run_started_at_utc,
+    )
+
     gates = evaluate_gates(rows, summaries)
     acceptance_gates_path = run_dir / "acceptance_gates.json"
     write_json(acceptance_gates_path, gates)
@@ -836,6 +934,7 @@ def run(config_path: Path, chunk_registry_path: Path | None = None, write_latest
         gates=gates,
         raw_results_path=raw_results_path,
         metrics_summary_path=metrics_summary_path,
+        metrics_by_query_class_path=metrics_by_query_class_path,
         acceptance_gates_path=acceptance_gates_path,
         audit_chain_path=audit_chain_path,
         write_latest_report=write_latest_report,
@@ -866,6 +965,7 @@ def run(config_path: Path, chunk_registry_path: Path | None = None, write_latest
         "run_dir": str(run_dir),
         "raw_results": str(raw_results_path),
         "metrics_summary": str(metrics_summary_path),
+        "metrics_by_query_class": str(metrics_by_query_class_path),
         "acceptance_gates": str(acceptance_gates_path),
         "audit_chain": str(audit_chain_path),
         "report": str(report_paths["run_report"]),

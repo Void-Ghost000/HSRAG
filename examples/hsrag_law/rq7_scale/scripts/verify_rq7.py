@@ -90,6 +90,7 @@ def main() -> None:
     required_paths = {
         "raw_results": Path(runner_summary["raw_results"]),
         "metrics_summary": Path(runner_summary["metrics_summary"]),
+        "metrics_by_query_class": Path(runner_summary["metrics_by_query_class"]),
         "acceptance_gates": Path(runner_summary["acceptance_gates"]),
         "audit_chain": Path(runner_summary["audit_chain"]),
         "report": Path(runner_summary["report"]),
