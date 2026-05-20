@@ -1,0 +1,23 @@
+HSRAG API SQLite local verification
+
+status: passed
+local_only: true
+zero_secret: true
+zero_network: true
+
+commands:
+- pytest: passed
+- demo: passed
+- benchmark: passed
+
+acceptance gates:
+- pytest_passed: passed
+- demo_report_generated: passed
+- demo_scope_local_only_zero_secret_zero_network: passed
+- demo_ingest_and_revision_passed: passed
+- demo_pointer_lookup_passed: passed
+- demo_semantic_discovery_is_candidates_only: passed
+- benchmark_report_generated: passed
+- benchmark_scope_local_only_zero_secret_zero_network: passed
+- benchmark_no_external_cost_or_key: passed
+- benchmark_p99_reported: passed
