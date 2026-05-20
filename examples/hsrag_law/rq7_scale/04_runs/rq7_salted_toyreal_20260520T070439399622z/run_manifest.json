@@ -1,0 +1,18 @@
+{
+  "schema": "HSRAG_RQ7_RUN_MANIFEST_V0_1",
+  "run_id": "rq7_salted_toyreal_20260520T070439399622z",
+  "run_started_at_utc": "2026-05-20T07:04:39.399622Z",
+  "config_hash": "sha256:acbb751e84f0758d6ab2a749576dfec23e6746eec15396d2c0986f025dd0c937",
+  "query_seed_hash": "sha256:c6621d08ebfc0114a741c470a9d1b987f60cd6e503ca47c6409a31e95fd76e04",
+  "corpus_manifest_hash": "sha256:0fe3460f847965b50bcede03d9ba5aa9e3fb119b7ae273ba5d0abc219018750a",
+  "chunk_registry_hash": "sha256:24aaecf65d02ac508e8fcc9dd7d3ef4697c6b634cd890bb3055a14ee30052a29",
+  "domain_salt_id": "HSRAG_RQ7_PUBLIC_REPRODUCIBLE_SALT_v1",
+  "synthetic_dry_run": false,
+  "toy_retrieval": true,
+  "salted_domain_gate": true,
+  "claim_boundary": {
+    "production_ready": false,
+    "replaces_all_rag": false,
+    "legal_advice": false
+  }
+}

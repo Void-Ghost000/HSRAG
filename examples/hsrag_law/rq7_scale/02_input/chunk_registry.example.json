@@ -1,0 +1,56 @@
+{
+  "schema": "HSRAG_RQ7_CHUNK_REGISTRY_V0_1",
+  "description": "Toy-real chunk registry for RQ7 retrieval pipeline validation.",
+  "chunks": [
+    {
+      "chunk_id": "EU_AI_ACT_ARTICLE_5_CHUNK_0001",
+      "domain": "LAW",
+      "jurisdiction": "EU",
+      "corpus": "EU_AI_ACT",
+      "unit": "ARTICLE_5",
+      "cthc_address": "cthc://LAW/EU/EU_AI_ACT/ARTICLE_5/CHUNK_0001",
+      "source_hash": "sha256:EU_AI_ACT_ARTICLE_5_SOURCE_PLACEHOLDER",
+      "text": "EU AI Act Article 5 concerns prohibited artificial intelligence practices including unacceptable risk AI systems and certain manipulative or exploitative AI practices."
+    },
+    {
+      "chunk_id": "EU_AI_ACT_ARTICLE_6_CHUNK_0001",
+      "domain": "LAW",
+      "jurisdiction": "EU",
+      "corpus": "EU_AI_ACT",
+      "unit": "ARTICLE_6",
+      "cthc_address": "cthc://LAW/EU/EU_AI_ACT/ARTICLE_6/CHUNK_0001",
+      "source_hash": "sha256:EU_AI_ACT_ARTICLE_6_SOURCE_PLACEHOLDER",
+      "text": "EU AI Act Article 6 concerns high-risk AI systems and classification rules for regulated artificial intelligence applications."
+    },
+    {
+      "chunk_id": "US_CDA230_SECTION_230_CHUNK_0001",
+      "domain": "LAW",
+      "jurisdiction": "US",
+      "corpus": "US_CDA230",
+      "unit": "SECTION_230",
+      "cthc_address": "cthc://LAW/US/US_CDA230/SECTION_230/CHUNK_0001",
+      "source_hash": "sha256:US_CDA230_SECTION_230_SOURCE_PLACEHOLDER",
+      "text": "47 U.S.C. Section 230 concerns protection for interactive computer services and platform liability for third party content under United States internet law."
+    },
+    {
+      "chunk_id": "US_COPPA_MAIN_CHUNK_0001",
+      "domain": "LAW",
+      "jurisdiction": "US",
+      "corpus": "US_COPPA",
+      "unit": "CHILDREN_PRIVACY",
+      "cthc_address": "cthc://LAW/US/US_COPPA/CHILDREN_PRIVACY/CHUNK_0001",
+      "source_hash": "sha256:US_COPPA_SOURCE_PLACEHOLDER",
+      "text": "COPPA concerns online privacy protection for children and requirements for operators collecting personal information from children."
+    },
+    {
+      "chunk_id": "NOISE_GENERIC_LAW_CHUNK_0001",
+      "domain": "LAW",
+      "jurisdiction": "GENERIC",
+      "corpus": "GENERIC_LEGAL_NOISE",
+      "unit": "GENERAL_RULE",
+      "cthc_address": "cthc://LAW/GENERIC/GENERIC_LEGAL_NOISE/GENERAL_RULE/CHUNK_0001",
+      "source_hash": "sha256:GENERIC_NOISE_SOURCE_PLACEHOLDER",
+      "text": "This generic legal text discusses official rules, compliance obligations, governance procedures, and regulatory interpretation without belonging to a specific supported corpus."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "HSRAG_RQ7_QUERY_SEED_V0_1",
+  "queries": [
+    {
+      "query_id": "Q_EXACT_UNIT_0001",
+      "query_class": "exact_unit",
+      "query": "EU AI Act Article 5 prohibited AI practices",
+      "target": {
+        "domain": "LAW",
+        "jurisdiction": "EU",
+        "corpus": "EU_AI_ACT",
+        "unit": "ARTICLE_5"
+      },
+      "expected_behavior": "ALLOW"
+    },
+    {
+      "query_id": "Q_NO_EVIDENCE_0001",
+      "query_class": "no_evidence",
+      "query": "Explain an official rule from a fictional jurisdiction not present in the corpus.",
+      "target": null,
+      "expected_behavior": "BLOCK_NO_EVIDENCE"
+    },
+    {
+      "query_id": "Q_AMBIGUOUS_0001",
+      "query_class": "ambiguous_cross_domain",
+      "query": "Explain platform liability rules under AI law and US internet law.",
+      "target": null,
+      "expected_behavior": "BLOCK_AMBIGUOUS_ROUTE"
+    }
+  ]
+}

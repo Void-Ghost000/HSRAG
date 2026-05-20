@@ -1,0 +1,39 @@
+{
+  "schema": "HSRAG_RQ7_RESULT_CONTRACT_V0_1",
+  "required_fields": [
+    "status",
+    "reason_code",
+    "retryable",
+    "mode",
+    "query_id",
+    "query_class",
+    "corpus_size",
+    "target",
+    "result",
+    "metrics",
+    "hashes"
+  ],
+  "status_values": ["ALLOW", "BLOCK", "ERROR"],
+  "reason_code_values": [
+    "FOUND",
+    "NO_EVIDENCE",
+    "AMBIGUOUS_ROUTE",
+    "WRONG_DOMAIN_BLOCKED",
+    "UNIQUE_ADDRESS_NOT_FOUND",
+    "INTERNAL_ERROR"
+  ],
+  "required_metrics": [
+    "latency_ms",
+    "retrieved_token_count",
+    "esi",
+    "candidate_count_before",
+    "candidate_count_after"
+  ],
+  "required_hashes": [
+    "query_hash",
+    "source_hash",
+    "evidence_hash",
+    "decision_hash",
+    "run_hash"
+  ]
+}

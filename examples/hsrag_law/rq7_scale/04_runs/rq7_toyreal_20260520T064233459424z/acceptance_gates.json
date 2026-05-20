@@ -1,0 +1,15 @@
+{
+  "schema": "HSRAG_RQ7_ACCEPTANCE_GATES_V0_1",
+  "passed": true,
+  "gate_results": {
+    "result_contract_required": true,
+    "audit_hash_complete_rate_min_1_0": true,
+    "route_determinism_rate_min_1_0": true,
+    "unique_address_exact_target_correct_rate_min_1_0": true,
+    "hsrag_no_evidence_false_allow_rate_max_0": true,
+    "p99_required_for_every_mode": true,
+    "token_cost_required_for_every_mode": true,
+    "esi_required_for_every_mode": true
+  },
+  "note": "Toy retrieval gates validate local retrieval plumbing. They do not validate full-scale benchmark quality."
+}

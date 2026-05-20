@@ -1,0 +1,17 @@
+{
+  "schema": "HSRAG_RQ7_MUTATION_POLICY_V0_1",
+  "deterministic_seed_required": true,
+  "mutation_count_per_query": 5,
+  "mutations": [
+    "polite_prefix",
+    "irrelevant_tail",
+    "typo_light",
+    "case_punctuation_noise",
+    "order_shuffle",
+    "legalese_paraphrase",
+    "jurisdiction_distractor",
+    "corpus_name_omission",
+    "section_number_omission",
+    "wrong_domain_injection"
+  ]
+}

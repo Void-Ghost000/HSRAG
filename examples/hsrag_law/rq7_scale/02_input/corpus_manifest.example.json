@@ -1,0 +1,27 @@
+{
+  "schema": "HSRAG_RQ7_CORPUS_MANIFEST_V0_1",
+  "corpus_set": "LAW_SCALE_DEMO",
+  "classification": "FHS",
+  "corpora": [
+    {
+      "corpus_id": "EU_AI_ACT",
+      "domain": "LAW",
+      "jurisdiction": "EU",
+      "source_type": "PUBLIC_LEGAL_TEXT",
+      "source_hash": "sha256:PLACEHOLDER"
+    },
+    {
+      "corpus_id": "US_CDA230",
+      "domain": "LAW",
+      "jurisdiction": "US",
+      "source_type": "PUBLIC_LEGAL_TEXT",
+      "source_hash": "sha256:PLACEHOLDER"
+    }
+  ],
+  "noise_policy": {
+    "same_domain_noise": true,
+    "cross_domain_noise": true,
+    "wrong_jurisdiction_similar_text": true,
+    "synthetic_legal_style_distractors": true
+  }
+}
