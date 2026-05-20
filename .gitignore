@@ -22,3 +22,5 @@ runs/
 logs/
 
 local_artifacts/
+examples/hsrag_law/rq7_scale/04_runs/
+examples/hsrag_law/rq7_scale/06_audit/*_audit_chain.jsonl
