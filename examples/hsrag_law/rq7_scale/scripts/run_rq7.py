@@ -541,6 +541,53 @@ def evaluate_gates(rows: list[dict[str, Any]], summaries: list[dict[str, Any]]) 
 
 
 
+
+def validate_chunk_registry(registry: dict[str, Any]) -> None:
+    if registry.get("schema") != "HSRAG_RQ7_CHUNK_REGISTRY_V0_1":
+        raise ValueError("INVALID_CHUNK_REGISTRY_SCHEMA")
+
+    chunks = registry.get("chunks")
+    if not isinstance(chunks, list) or not chunks:
+        raise ValueError("EMPTY_CHUNK_REGISTRY")
+
+    required = {
+        "chunk_id",
+        "domain",
+        "jurisdiction",
+        "corpus",
+        "unit",
+        "cthc_address",
+        "source_hash",
+        "text",
+    }
+
+    seen_chunk_ids: set[str] = set()
+    seen_cthc_addresses: set[str] = set()
+
+    for index, chunk in enumerate(chunks):
+        missing = [field for field in required if field not in chunk or not chunk[field]]
+        if missing:
+            raise ValueError(f"INVALID_CHUNK_{index}_MISSING_{','.join(missing)}")
+
+        chunk_id = str(chunk["chunk_id"])
+        cthc_address = str(chunk["cthc_address"])
+
+        if chunk_id in seen_chunk_ids:
+            raise ValueError(f"DUPLICATE_CHUNK_ID:{chunk_id}")
+
+        if cthc_address in seen_cthc_addresses:
+            raise ValueError(f"DUPLICATE_CTHC_ADDRESS:{cthc_address}")
+
+        if not cthc_address.startswith("cthc://"):
+            raise ValueError(f"INVALID_CTHC_ADDRESS:{cthc_address}")
+
+        if not str(chunk["source_hash"]).startswith("sha256:"):
+            raise ValueError(f"INVALID_SOURCE_HASH:{chunk_id}")
+
+        seen_chunk_ids.add(chunk_id)
+        seen_cthc_addresses.add(cthc_address)
+
+
 def build_public_report(
     run_dir: Path,
     base_dir: Path,
@@ -653,14 +700,21 @@ def build_public_report(
     }
 
 
-def run(config_path: Path) -> dict[str, Any]:
+def run(config_path: Path, chunk_registry_path: Path | None = None) -> dict[str, Any]:
     config = load_json(config_path)
     base_dir = config_path.resolve().parent
     salt_id = str(config.get("domain_salt_id", DEFAULT_DOMAIN_SALT_ID))
 
     query_seed = load_json(base_dir / "02_input" / "query_seed.example.json")
     corpus_manifest = load_json(base_dir / "02_input" / "corpus_manifest.example.json")
-    chunk_registry = load_json(base_dir / "02_input" / "chunk_registry.example.json")
+
+    resolved_chunk_registry_path = (
+        chunk_registry_path.resolve()
+        if chunk_registry_path is not None
+        else (base_dir / "02_input" / "chunk_registry.example.json").resolve()
+    )
+    chunk_registry = load_json(resolved_chunk_registry_path)
+    validate_chunk_registry(chunk_registry)
     base_chunks = list(chunk_registry["chunks"])
 
     run_started_at_utc = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
@@ -679,6 +733,7 @@ def run(config_path: Path) -> dict[str, Any]:
         "query_seed_hash": sha256_json(query_seed),
         "corpus_manifest_hash": sha256_json(corpus_manifest),
         "chunk_registry_hash": sha256_json(chunk_registry),
+        "chunk_registry_path": str(resolved_chunk_registry_path),
         "domain_salt_id": salt_id,
         "synthetic_dry_run": False,
         "toy_retrieval": True,
@@ -819,9 +874,11 @@ def run(config_path: Path) -> dict[str, Any]:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", required=True)
+    parser.add_argument("--chunk-registry", required=False)
     args = parser.parse_args()
 
-    summary = run(Path(args.config))
+    chunk_registry_path = Path(args.chunk_registry) if args.chunk_registry else None
+    summary = run(Path(args.config), chunk_registry_path=chunk_registry_path)
     print(json.dumps(summary, ensure_ascii=False, sort_keys=True))
 
 
