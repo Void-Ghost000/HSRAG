@@ -18,11 +18,18 @@ Candidate select and run command:
 
     python examples/hsrag_law/rq7_scale/scripts/run_rq7_candidate.py --root examples/hsrag_law/rq7_scale/02_input
 
-Expected result:
+Master verify command:
+
+    python examples/hsrag_law/rq7_scale/scripts/verify_rq7_all.py
+
+Expected master result:
 
     status: OK
-    acceptance_passed: true
+    all_passed: true
     latest_report_is_clean: true
+    local_only: true
+    zero_network: true
+    zero_secret: true
 
 Current maturity:
 
@@ -31,6 +38,7 @@ Current maturity:
 - Adapter matrix verify: available.
 - Artifact inventory scan: available.
 - Candidate select and run: available.
+- Master verify: available.
 - Full-scale RQ7 benchmark: not implemented yet.
 - Official RQ4 corpus loader: not connected yet.
 - Vector / hybrid baselines: not implemented yet.
