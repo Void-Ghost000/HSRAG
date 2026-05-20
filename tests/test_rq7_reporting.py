@@ -30,12 +30,11 @@ def test_rq7_reporting_layer_generates_markdown_report() -> None:
     assert summary["salted_domain_gate"] is True
 
     run_report = Path(summary["report"])
-    latest_report = Path(summary["latest_report"])
 
     assert run_report.exists()
-    assert latest_report.exists()
+    assert summary["latest_report"] is None
 
-    report_text = latest_report.read_text(encoding="utf-8")
+    report_text = run_report.read_text(encoding="utf-8")
 
     assert "# HSRAG RQ7 Report" in report_text
     assert "## Metrics Summary" in report_text

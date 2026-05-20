@@ -598,7 +598,8 @@ def build_public_report(
     metrics_summary_path: Path,
     acceptance_gates_path: Path,
     audit_chain_path: Path,
-) -> dict[str, Path]:
+    write_latest_report: bool = False,
+) -> dict[str, Path | None]:
     reports_dir = base_dir / "05_reports"
     reports_dir.mkdir(parents=True, exist_ok=True)
 
@@ -692,15 +693,19 @@ def build_public_report(
     latest_report_path = reports_dir / "RQ7_LATEST_REPORT.md"
 
     run_report_path.write_text(report_text, encoding="utf-8")
-    latest_report_path.write_text(report_text, encoding="utf-8")
+
+    latest_report_output: Path | None = None
+    if write_latest_report:
+        latest_report_path.write_text(report_text, encoding="utf-8")
+        latest_report_output = latest_report_path
 
     return {
         "run_report": run_report_path,
-        "latest_report": latest_report_path,
+        "latest_report": latest_report_output,
     }
 
 
-def run(config_path: Path, chunk_registry_path: Path | None = None) -> dict[str, Any]:
+def run(config_path: Path, chunk_registry_path: Path | None = None, write_latest_report: bool = False) -> dict[str, Any]:
     config = load_json(config_path)
     base_dir = config_path.resolve().parent
     salt_id = str(config.get("domain_salt_id", DEFAULT_DOMAIN_SALT_ID))
@@ -833,6 +838,7 @@ def run(config_path: Path, chunk_registry_path: Path | None = None) -> dict[str,
         metrics_summary_path=metrics_summary_path,
         acceptance_gates_path=acceptance_gates_path,
         audit_chain_path=audit_chain_path,
+        write_latest_report=write_latest_report,
     )
 
     append_audit_event(
@@ -840,7 +846,7 @@ def run(config_path: Path, chunk_registry_path: Path | None = None) -> dict[str,
         "REPORT_WRITTEN",
         {
             "run_report": str(report_paths["run_report"]),
-            "latest_report": str(report_paths["latest_report"]),
+            "latest_report": str(report_paths["latest_report"]) if report_paths.get("latest_report") else None,
         },
         run_started_at_utc,
     )
@@ -863,7 +869,7 @@ def run(config_path: Path, chunk_registry_path: Path | None = None) -> dict[str,
         "acceptance_gates": str(acceptance_gates_path),
         "audit_chain": str(audit_chain_path),
         "report": str(report_paths["run_report"]),
-        "latest_report": str(report_paths["latest_report"]),
+        "latest_report": str(report_paths["latest_report"]) if report_paths.get("latest_report") else None,
         "passed": gates["passed"],
         "synthetic_dry_run": False,
         "toy_retrieval": True,
@@ -875,10 +881,15 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", required=True)
     parser.add_argument("--chunk-registry", required=False)
+    parser.add_argument("--write-latest-report", action="store_true")
     args = parser.parse_args()
 
     chunk_registry_path = Path(args.chunk_registry) if args.chunk_registry else None
-    summary = run(Path(args.config), chunk_registry_path=chunk_registry_path)
+    summary = run(
+        Path(args.config),
+        chunk_registry_path=chunk_registry_path,
+        write_latest_report=args.write_latest_report,
+    )
     print(json.dumps(summary, ensure_ascii=False, sort_keys=True))
 
 
