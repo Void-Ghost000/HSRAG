@@ -1,0 +1,5 @@
+EU AI Act Article 5 concerns prohibited artificial intelligence practices.
+
+This sample text is only a local RQ7.1 loader fixture. It is not an official legal source.
+
+The provision concerns unacceptable risk AI systems, manipulative practices, exploitative practices, and prohibited AI practices under the EU AI Act.

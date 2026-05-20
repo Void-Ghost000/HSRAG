@@ -1,0 +1,5 @@
+47 U.S.C. Section 230 concerns protection for interactive computer services.
+
+This sample text is only a local RQ7.1 loader fixture. It is not an official legal source.
+
+The section is commonly discussed in relation to platform liability, third party content, and United States internet law.

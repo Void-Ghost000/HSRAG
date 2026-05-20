@@ -1,0 +1,27 @@
+{
+  "schema": "HSRAG_RQ7_REAL_LAW_MANIFEST_V0_1",
+  "description": "Example local manifest for building an RQ7 chunk registry from plaintext legal files.",
+  "local_only": true,
+  "entries": [
+    {
+      "entry_id": "EU_AI_ACT_ARTICLE_5_SAMPLE",
+      "domain": "LAW",
+      "jurisdiction": "EU",
+      "corpus": "EU_AI_ACT",
+      "unit": "ARTICLE_5",
+      "path": "02_input/legal_texts/EU_AI_ACT_ARTICLE_5.sample.txt",
+      "source_type": "LOCAL_SAMPLE_TEXT",
+      "official_source": false
+    },
+    {
+      "entry_id": "US_CDA230_SECTION_230_SAMPLE",
+      "domain": "LAW",
+      "jurisdiction": "US",
+      "corpus": "US_CDA230",
+      "unit": "SECTION_230",
+      "path": "02_input/legal_texts/US_CDA230_SECTION_230.sample.txt",
+      "source_type": "LOCAL_SAMPLE_TEXT",
+      "official_source": false
+    }
+  ]
+}
