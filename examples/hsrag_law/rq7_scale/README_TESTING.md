@@ -1,44 +1,28 @@
 # RQ7 Testing
 
-RQ7 currently supports local one-command verification paths.
+RQ7 currently supports local verification paths.
 
-## Core Verify
-
-Command:
+Core verify command:
 
     python examples/hsrag_law/rq7_scale/scripts/verify_rq7.py
 
-Expected result:
-
-    status: OK
-    one_command_verify: true
-    acceptance_passed: true
-    latest_report_is_clean: true
-
-## Adapter Matrix Verify
-
-Command:
+Adapter matrix verify command:
 
     python examples/hsrag_law/rq7_scale/scripts/verify_rq7_adapters.py
 
-Expected result:
-
-    status: OK
-    all_passed: true
-    adapter_count: 3
-
-## Artifact Inventory Scan
-
-Command:
+Artifact inventory scan command:
 
     python examples/hsrag_law/rq7_scale/scripts/scan_rq7_artifacts.py --root examples/hsrag_law --output examples/hsrag_law/rq7_scale/04_runs/rq7_artifact_inventory.local.json --report examples/hsrag_law/rq7_scale/04_runs/rq7_artifact_inventory.local.md
 
+Candidate select and run command:
+
+    python examples/hsrag_law/rq7_scale/scripts/run_rq7_candidate.py --root examples/hsrag_law/rq7_scale/02_input
+
 Expected result:
 
     status: OK
-    local_only: true
-    zero_network: true
-    zero_secret: true
+    acceptance_passed: true
+    latest_report_is_clean: true
 
 Current maturity:
 
@@ -46,6 +30,7 @@ Current maturity:
 - One-command verify: available.
 - Adapter matrix verify: available.
 - Artifact inventory scan: available.
+- Candidate select and run: available.
 - Full-scale RQ7 benchmark: not implemented yet.
 - Official RQ4 corpus loader: not connected yet.
 - Vector / hybrid baselines: not implemented yet.
