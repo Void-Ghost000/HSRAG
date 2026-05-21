@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path("examples/hsrag_law/rq7_scale")
 
 
-def test_rq7_master_verify_passes() -> None:
+def test_rq7_master_verify_passes_with_rq4_gate() -> None:
     result = subprocess.run(
         [
             sys.executable,
@@ -22,6 +22,7 @@ def test_rq7_master_verify_passes() -> None:
 
     summary = json.loads(result.stdout)
 
+    assert summary["schema"] == "HSRAG_RQ7_ALL_VERIFY_SUMMARY_V0_2"
     assert summary["status"] == "OK"
     assert summary["all_passed"] is True
     assert summary["local_only"] is True
@@ -35,13 +36,17 @@ def test_rq7_master_verify_passes() -> None:
     assert summary["adapter_matrix"]["all_passed"] is True
     assert summary["candidate_run"]["status"] == "OK"
     assert summary["candidate_run"]["acceptance_passed"] is True
+    assert summary["rq4_verify"]["status"] == "OK"
+    assert summary["rq4_verify"]["acceptance_passed"] is True
 
     assert summary["claim_boundary"]["master_verify_only"] is True
+    assert summary["claim_boundary"]["rq4_rebuilt_artifact_connected"] is True
+    assert summary["claim_boundary"]["official_rq4_corpus_connected"] is True
+    assert summary["claim_boundary"]["unit_derivation_is_heuristic"] is True
     assert summary["claim_boundary"]["full_scale_benchmark"] is False
-    assert summary["claim_boundary"]["official_rq4_corpus_connected"] is False
 
 
-def test_rq7_master_verify_writes_summary_files() -> None:
+def test_rq7_master_verify_writes_summary_files_with_rq4_gate() -> None:
     result = subprocess.run(
         [
             sys.executable,
@@ -63,8 +68,10 @@ def test_rq7_master_verify_writes_summary_files() -> None:
 
     text = summary_txt.read_text(encoding="utf-8")
     assert "HSRAG RQ7 master verify" in text
+    assert "rq4_verify_status: OK" in text
+    assert "rq4_rebuilt_artifact_connected: true" in text
+    assert "unit_derivation_is_heuristic: true" in text
     assert "full_scale_benchmark: false" in text
-    assert "official_rq4_corpus_connected: false" in text
     assert "all_passed: True" in text
 
 
