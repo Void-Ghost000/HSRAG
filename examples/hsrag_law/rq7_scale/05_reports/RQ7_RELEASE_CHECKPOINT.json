@@ -1,7 +1,7 @@
 {
   "schema": "HSRAG_RQ7_FINAL_RELEASE_CHECKPOINT_V0_1",
   "status": "OK",
-  "checked_at_utc": "2026-05-21T11:30:35.026541Z",
+  "checked_at_utc": "2026-05-21T12:11:54.441965Z",
   "release_verify": {
     "claim_boundary": {
       "full_scale_benchmark": false,
@@ -19,7 +19,7 @@
       "all_passed": true,
       "latest_report_is_clean": true,
       "status": "OK",
-      "verify_id": "rq7_all_verify_20260521T113035198592z"
+      "verify_id": "rq7_all_verify_20260521T121154621996z"
     },
     "missing_report_phrases": [],
     "public_report": {
@@ -30,14 +30,14 @@
         600,
         889
       ],
-      "report": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_public_report_20260521T113106155219z\\RQ7_PUBLIC_REPORT.md",
-      "report_id": "rq7_public_report_20260521T113106155219z",
+      "report": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_public_report_20260521T121225812348z\\RQ7_PUBLIC_REPORT.md",
+      "report_id": "rq7_public_report_20260521T121225812348z",
       "rq4_chunk_count": 889,
       "status": "OK"
     },
     "release_checkpoint": true,
-    "release_id": "rq7_release_verify_20260521T113035109186z",
-    "run_started_at_utc": "2026-05-21T11:30:35.109186Z",
+    "release_id": "rq7_release_verify_20260521T121154531992z",
+    "run_started_at_utc": "2026-05-21T12:11:54.531992Z",
     "schema": "HSRAG_RQ7_RELEASE_VERIFY_SUMMARY_V0_1",
     "status": "OK",
     "zero_network": true,
@@ -68,21 +68,21 @@
         600,
         889
       ],
-      "report": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_public_report_20260521T113114148778z\\RQ7_PUBLIC_REPORT.md",
-      "report_id": "rq7_public_report_20260521T113114148778z",
+      "report": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_public_report_20260521T121233821565z\\RQ7_PUBLIC_REPORT.md",
+      "report_id": "rq7_public_report_20260521T121233821565z",
       "rq4_chunk_count": 889,
-      "run_started_at_utc": "2026-05-21T11:31:14.148778Z",
-      "scale_summary_csv": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_rq4_scale_tiers_20260521T113120501465z\\rq7_rq4_scale_tier_summary.csv",
-      "scale_verify_id": "rq7_rq4_scale_tiers_20260521T113120501465z",
+      "run_started_at_utc": "2026-05-21T12:12:33.821565Z",
+      "scale_summary_csv": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_rq4_scale_tiers_20260521T121240170735z\\rq7_rq4_scale_tier_summary.csv",
+      "scale_verify_id": "rq7_rq4_scale_tiers_20260521T121240170735z",
       "schema": "HSRAG_RQ7_PUBLIC_REPORT_SUMMARY_V0_1",
-      "snapshot_id": "rq7_rq4_metrics_snapshot_20260521T113114237085z",
+      "snapshot_id": "rq7_rq4_metrics_snapshot_20260521T121233912317z",
       "status": "OK"
     },
-    "published_at_utc": "2026-05-21T11:31:14.063482Z",
+    "published_at_utc": "2026-05-21T12:12:33.731434Z",
     "published_report": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_PUBLIC_REPORT.md",
     "published_summary": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_PUBLIC_REPORT_SUMMARY.json",
     "schema": "HSRAG_RQ7_PUBLISHED_PUBLIC_REPORT_V0_1",
-    "source_report": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_public_report_20260521T113114148778z\\RQ7_PUBLIC_REPORT.md",
+    "source_report": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_public_report_20260521T121233821565z\\RQ7_PUBLIC_REPORT.md",
     "status": "OK"
   },
   "missing_report_phrases": [],

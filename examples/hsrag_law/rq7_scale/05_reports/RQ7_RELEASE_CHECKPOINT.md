@@ -1,7 +1,7 @@
 # RQ7 Release Checkpoint
 
 - status: OK
-- checked_at_utc: 2026-05-21T11:30:35.026541Z
+- checked_at_utc: 2026-05-21T12:11:54.441965Z
 - rq7_v0_1_checkpoint: true
 - rq4_rebuilt_artifact_connected: true
 - rq4_metrics_snapshot_available: true
