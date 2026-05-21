@@ -1,0 +1,103 @@
+{
+  "schema": "HSRAG_RQ7_FINAL_RELEASE_CHECKPOINT_V0_1",
+  "status": "OK",
+  "checked_at_utc": "2026-05-21T11:30:35.026541Z",
+  "release_verify": {
+    "claim_boundary": {
+      "full_scale_benchmark": false,
+      "legal_advice": false,
+      "public_report_available": true,
+      "rq4_metrics_snapshot_available": true,
+      "rq4_rebuilt_artifact_connected": true,
+      "rq4_scale_tiers_available": true,
+      "unit_derivation_is_heuristic": true,
+      "vector_hybrid_baselines": false
+    },
+    "claim_boundary_ok": true,
+    "local_only": true,
+    "master_verify": {
+      "all_passed": true,
+      "latest_report_is_clean": true,
+      "status": "OK",
+      "verify_id": "rq7_all_verify_20260521T113035198592z"
+    },
+    "missing_report_phrases": [],
+    "public_report": {
+      "actual_elapsed_timing_available": true,
+      "executed_tiers": [
+        100,
+        300,
+        600,
+        889
+      ],
+      "report": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_public_report_20260521T113106155219z\\RQ7_PUBLIC_REPORT.md",
+      "report_id": "rq7_public_report_20260521T113106155219z",
+      "rq4_chunk_count": 889,
+      "status": "OK"
+    },
+    "release_checkpoint": true,
+    "release_id": "rq7_release_verify_20260521T113035109186z",
+    "run_started_at_utc": "2026-05-21T11:30:35.109186Z",
+    "schema": "HSRAG_RQ7_RELEASE_VERIFY_SUMMARY_V0_1",
+    "status": "OK",
+    "zero_network": true,
+    "zero_secret": true
+  },
+  "published_report": {
+    "claim_boundary": {
+      "full_scale_benchmark": false,
+      "legal_advice": false,
+      "public_report_published": true,
+      "rq4_rebuilt_artifact_connected": true,
+      "unit_derivation_is_heuristic": true,
+      "vector_hybrid_baselines": false
+    },
+    "public_report": {
+      "actual_elapsed_timing_available": true,
+      "claim_boundary": {
+        "full_scale_benchmark": false,
+        "legal_advice": false,
+        "public_report_only": true,
+        "rq4_rebuilt_artifact_connected": true,
+        "unit_derivation_is_heuristic": true,
+        "vector_hybrid_baselines": false
+      },
+      "executed_tiers": [
+        100,
+        300,
+        600,
+        889
+      ],
+      "report": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_public_report_20260521T113114148778z\\RQ7_PUBLIC_REPORT.md",
+      "report_id": "rq7_public_report_20260521T113114148778z",
+      "rq4_chunk_count": 889,
+      "run_started_at_utc": "2026-05-21T11:31:14.148778Z",
+      "scale_summary_csv": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_rq4_scale_tiers_20260521T113120501465z\\rq7_rq4_scale_tier_summary.csv",
+      "scale_verify_id": "rq7_rq4_scale_tiers_20260521T113120501465z",
+      "schema": "HSRAG_RQ7_PUBLIC_REPORT_SUMMARY_V0_1",
+      "snapshot_id": "rq7_rq4_metrics_snapshot_20260521T113114237085z",
+      "status": "OK"
+    },
+    "published_at_utc": "2026-05-21T11:31:14.063482Z",
+    "published_report": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_PUBLIC_REPORT.md",
+    "published_summary": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_PUBLIC_REPORT_SUMMARY.json",
+    "schema": "HSRAG_RQ7_PUBLISHED_PUBLIC_REPORT_V0_1",
+    "source_report": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_public_report_20260521T113114148778z\\RQ7_PUBLIC_REPORT.md",
+    "status": "OK"
+  },
+  "missing_report_phrases": [],
+  "test_command": "python -m pytest tests -k rq7",
+  "release_checkpoint": true,
+  "claim_boundary": {
+    "rq7_v0_1_checkpoint": true,
+    "rq4_rebuilt_artifact_connected": true,
+    "rq4_metrics_snapshot_available": true,
+    "rq4_scale_tiers_available": true,
+    "public_report_published": true,
+    "actual_elapsed_timing_available": true,
+    "full_scale_benchmark": false,
+    "vector_hybrid_baselines": false,
+    "unit_derivation_is_heuristic": true,
+    "legal_advice": false
+  }
+}

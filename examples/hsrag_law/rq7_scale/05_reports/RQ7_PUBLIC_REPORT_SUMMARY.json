@@ -1,8 +1,8 @@
 {
   "schema": "HSRAG_RQ7_PUBLISHED_PUBLIC_REPORT_V0_1",
   "status": "OK",
-  "published_at_utc": "2026-05-21T10:35:54.974695Z",
-  "source_report": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_public_report_20260521T103555222612z\\RQ7_PUBLIC_REPORT.md",
+  "published_at_utc": "2026-05-21T11:31:14.063482Z",
+  "source_report": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_public_report_20260521T113114148778z\\RQ7_PUBLIC_REPORT.md",
   "published_report": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_PUBLIC_REPORT.md",
   "published_summary": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_PUBLIC_REPORT_SUMMARY.json",
   "public_report": {
@@ -21,14 +21,14 @@
       600,
       889
     ],
-    "report": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_public_report_20260521T103555222612z\\RQ7_PUBLIC_REPORT.md",
-    "report_id": "rq7_public_report_20260521T103555222612z",
+    "report": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_public_report_20260521T113114148778z\\RQ7_PUBLIC_REPORT.md",
+    "report_id": "rq7_public_report_20260521T113114148778z",
     "rq4_chunk_count": 889,
-    "run_started_at_utc": "2026-05-21T10:35:55.222612Z",
-    "scale_summary_csv": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_rq4_scale_tiers_20260521T103618634246z\\rq7_rq4_scale_tier_summary.csv",
-    "scale_verify_id": "rq7_rq4_scale_tiers_20260521T103618634246z",
+    "run_started_at_utc": "2026-05-21T11:31:14.148778Z",
+    "scale_summary_csv": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_rq4_scale_tiers_20260521T113120501465z\\rq7_rq4_scale_tier_summary.csv",
+    "scale_verify_id": "rq7_rq4_scale_tiers_20260521T113120501465z",
     "schema": "HSRAG_RQ7_PUBLIC_REPORT_SUMMARY_V0_1",
-    "snapshot_id": "rq7_rq4_metrics_snapshot_20260521T103555639653z",
+    "snapshot_id": "rq7_rq4_metrics_snapshot_20260521T113114237085z",
     "status": "OK"
   },
   "claim_boundary": {
