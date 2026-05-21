@@ -1291,3 +1291,25 @@ Claim boundary:
 
 RQ7 is currently a verified local benchmark pipeline, not a production retrieval system and not a claim that HSRAG replaces all RAG systems.
 
+
+## RQ7 Public Report
+
+The RQ7 public report is available here:
+
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_PUBLIC_REPORT.md`
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_PUBLIC_REPORT_SUMMARY.json`
+
+Current scope:
+
+- RQ4 rebuilt 889-chunk artifact connected
+- scale tiers: 100 / 300 / 600 / 889
+- actual elapsed timing available
+- public report published
+- full-scale benchmark pending
+- vector / hybrid baselines pending
+- unit derivation remains heuristic
+
+Run release verify:
+
+    python examples/hsrag_law/rq7_scale/scripts/verify_rq7_release.py --tiers 100,300,600,889
+

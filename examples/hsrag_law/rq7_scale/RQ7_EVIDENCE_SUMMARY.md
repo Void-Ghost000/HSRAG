@@ -147,3 +147,24 @@ Acceptance target:
 - metrics_summary and metrics_by_query_class are generated per tier
 - claim boundary remains clear
 - all RQ7 tests continue passing
+
+## Published Public Report
+
+The current RQ7 public report is published at:
+
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_PUBLIC_REPORT.md`
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_PUBLIC_REPORT_SUMMARY.json`
+
+The report summarizes:
+
+- RQ4 rebuilt 889-chunk artifact connection
+- RQ4 metrics snapshot
+- scale tiers: 100 / 300 / 600 / 889
+- actual elapsed timing
+- claim boundaries
+- known limits
+
+Release verification command:
+
+    python examples/hsrag_law/rq7_scale/scripts/verify_rq7_release.py --tiers 100,300,600,889
+

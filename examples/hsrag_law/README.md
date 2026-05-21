@@ -927,3 +927,25 @@ See:
 - `examples/hsrag_law/rq7_scale/CLAIM_BOUNDARY.md`
 - `examples/hsrag_law/rq7_scale/05_reports/RQ7_LATEST_REPORT.md`
 
+
+## RQ7 Public Report
+
+RQ7 now has a published public report:
+
+- `rq7_scale/05_reports/RQ7_PUBLIC_REPORT.md`
+- `rq7_scale/05_reports/RQ7_PUBLIC_REPORT_SUMMARY.json`
+
+Current claim boundary:
+
+- RQ4 rebuilt artifact is connected locally.
+- RQ4 scale tiers are available for 100 / 300 / 600 / 889 chunks.
+- Actual elapsed timing is reported.
+- This is not a full-scale benchmark.
+- Vector / hybrid baselines are not implemented yet.
+- Unit derivation remains heuristic.
+- This is not legal advice.
+
+Recommended verification command:
+
+    python examples/hsrag_law/rq7_scale/scripts/verify_rq7_release.py --tiers 100,300,600,889
+
