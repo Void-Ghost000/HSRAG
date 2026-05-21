@@ -168,3 +168,29 @@ Release verification command:
 
     python examples/hsrag_law/rq7_scale/scripts/verify_rq7_release.py --tiers 100,300,600,889
 
+
+## RQ7 Release Checkpoint
+
+RQ7 v0.1 release checkpoint files:
+
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_RELEASE_CHECKPOINT.md`
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_RELEASE_CHECKPOINT.json`
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_PUBLIC_REPORT.md`
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_PUBLIC_REPORT_SUMMARY.json`
+
+Current claim boundary:
+
+- RQ4 rebuilt 889-chunk artifact connected
+- RQ4 metrics snapshot available
+- RQ4 scale tiers available: 100 / 300 / 600 / 889
+- Actual elapsed timing available
+- Full-scale benchmark pending
+- Vector / hybrid baselines pending
+- Unit derivation remains heuristic
+- Not legal advice
+
+Verify:
+
+    python -m pytest tests -k rq7
+    python examples/hsrag_law/rq7_scale/scripts/verify_rq7_release.py --tiers 100,300,600,889
+
