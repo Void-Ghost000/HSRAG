@@ -10,18 +10,6 @@ Adapter matrix verify command:
 
     python examples/hsrag_law/rq7_scale/scripts/verify_rq7_adapters.py
 
-Artifact inventory scan command:
-
-    python examples/hsrag_law/rq7_scale/scripts/scan_rq7_artifacts.py --root examples/hsrag_law --output examples/hsrag_law/rq7_scale/04_runs/rq7_artifact_inventory.local.json --report examples/hsrag_law/rq7_scale/04_runs/rq7_artifact_inventory.local.md
-
-Candidate select and run command:
-
-    python examples/hsrag_law/rq7_scale/scripts/run_rq7_candidate.py --root examples/hsrag_law/rq7_scale/02_input
-
-RQ4 rebuilt artifact verify command:
-
-    python examples/hsrag_law/rq7_scale/scripts/verify_rq7_rq4.py
-
 RQ4 metrics snapshot command:
 
     python examples/hsrag_law/rq7_scale/scripts/snapshot_rq7_rq4_metrics.py
@@ -29,6 +17,10 @@ RQ4 metrics snapshot command:
 RQ4 scale tier command:
 
     python examples/hsrag_law/rq7_scale/scripts/run_rq7_rq4_scale_tiers.py --tiers 100,300,600,889
+
+Public report command:
+
+    python examples/hsrag_law/rq7_scale/scripts/build_rq7_public_report.py --tiers 100,300,600,889
 
 Master verify command:
 
@@ -46,13 +38,10 @@ Expected current results:
 Current maturity:
 
 - Salted toy-real retrieval pipeline: verified.
-- One-command verify: available.
-- Adapter matrix verify: available.
-- Artifact inventory scan: available.
-- Candidate select and run: available.
 - RQ4 rebuilt artifact verify: available.
 - RQ4 metrics snapshot: available.
 - RQ4 scale tier runner: available.
+- RQ7 public report generator: available.
 - Master verify includes RQ4 metrics snapshot.
 - Full-scale RQ7 benchmark: not implemented yet.
 - Vector / hybrid baselines: not implemented yet.
@@ -62,6 +51,7 @@ Claim boundary:
 The current verify commands validate pipeline integrity and artifact generation.
 RQ4 rebuilt verify connects a local RQ4 rebuilt chunk artifact, but unit derivation is still heuristic.
 RQ4 scale tier runner tests selected tiers from the 889-chunk RQ4 rebuilt artifact.
+The public report summarizes current local results and claim boundaries.
 They do not prove full-scale benchmark performance.
 They do not prove HSRAG replaces all RAG systems.
 They do not provide legal advice.
