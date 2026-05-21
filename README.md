@@ -1394,3 +1394,31 @@ Build triage report:
 
     python examples/hsrag_law/rq7_scale/scripts/build_rq7_full_query_triage.py
 
+
+## RQ7 Synthetic Scale Benchmark
+
+RQ7 full benchmark branch includes a synthetic scale stress benchmark:
+
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_SYNTHETIC_SCALE_BENCHMARK.md`
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_SYNTHETIC_SCALE_BENCHMARK.json`
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_SYNTHETIC_SCALE_BENCHMARK.csv`
+
+Current synthetic scale tiers:
+
+- 1,000 chunks
+- 5,000 chunks
+- 10,000 chunks
+
+Claim boundary:
+
+- Synthetic chunks are explicitly labeled.
+- Synthetic expansion is not new legal corpus.
+- This is a scale stress benchmark only.
+- This is not a full-scale real-law corpus benchmark.
+- Vector / hybrid baselines are still pending.
+- This does not provide legal advice.
+
+Run benchmark:
+
+    python examples/hsrag_law/rq7_scale/scripts/run_rq7_synthetic_scale_benchmark.py --target-sizes 1000,5000,10000
+
