@@ -15,26 +15,39 @@ Current maturity:
 - external chunk registry loader: available
 - TXT manifest chunk registry builder: available
 - CSV chunk registry adapter: available
+- auto CSV artifact adapter: available
+- artifact inventory scanner: available
+- candidate select and run gate: available
 - query-class metrics: available
 - reporting layer: available
 - one-command verify: available
+- adapter matrix verify: available
+- master verify: available
+- RQ4 rebuilt artifact adapter: available
+- RQ4 rebuilt artifact verify: available
+- RQ4 metrics snapshot: available
 
 Current delivery level:
 
-Level 2A+ — QSVCS Tested / Toy-real RQ7 pipeline.
+Level 2B-pre — local master verify with RQ4 rebuilt artifact gate.
 
 ## One-command Verify
 
 Run:
 
-    python examples/hsrag_law/rq7_scale/scripts/verify_rq7.py
+    python examples/hsrag_law/rq7_scale/scripts/verify_rq7_all.py
 
 Expected current result:
 
     status: OK
-    one_command_verify: true
-    acceptance_passed: true
+    all_passed: true
     latest_report_is_clean: true
+    local_only: true
+    zero_network: true
+    zero_secret: true
+    rq4_rebuilt_artifact_connected: true
+    rq4_metrics_snapshot_available: true
+    unit_derivation_is_heuristic: true
 
 ## Full RQ7 Test Command
 
@@ -45,12 +58,6 @@ Run:
 Expected current result:
 
     all selected RQ7 tests pass
-
-Recent local checkpoint:
-
-    67 items collected
-    27 deselected
-    40 selected
 
 ## What RQ7 Currently Verifies
 
@@ -71,6 +78,27 @@ RQ7 currently verifies:
 - unique address lookup returns cthc_address_hash
 - generated registry can be loaded from local TXT manifest
 - generated registry can be loaded from local CSV artifact
+- auto CSV candidate discovery
+- adapter matrix verification
+- RQ4 rebuilt chunk artifact conversion
+- RQ4 rebuilt artifact verification
+- RQ4 metrics snapshot extraction
+- master verify across local RQ7 stack
+
+## RQ4 Rebuilt Artifact Status
+
+RQ7 can now connect the local RQ4 rebuilt chunk artifact:
+
+    examples/hsrag_law/results/rq4_rebuilt_chunks.csv
+
+Current status:
+
+- RQ4 rebuilt artifact is connected locally.
+- RQ4 rebuilt registry generation is verified.
+- RQ4 verify gate is available.
+- RQ4 metrics snapshot is available.
+- Unit derivation is heuristic.
+- Full-scale benchmark remains pending.
 
 ## Claim Boundary
 
@@ -80,44 +108,42 @@ RQ7 currently does not claim:
 - full-scale RQ7 benchmark completion
 - production retrieval performance
 - legal advice
-- official RQ4 corpus validation
 - vector / hybrid baseline coverage
 - real API billing cost
 - production latency measurement
+- perfect legal unit parsing
 
-Current RQ7 validates pipeline integrity, artifact generation, salted-domain routing, query-class metrics, and one-command local verification.
+Current RQ7 validates pipeline integrity, artifact generation, salted-domain routing, query-class metrics, local RQ4 rebuilt artifact connection, and master verification.
 
 ## Known Limits
 
-- The current corpus is toy-real / local sample data.
-- The current scale noise is synthetic.
-- Latency is estimated by deterministic local formulas.
+- RQ4 unit derivation is heuristic.
+- Latency is still estimated by deterministic local formulas.
 - Token cost is estimated, not actual API billing.
 - ESI is rule-based.
-- Official RQ4 corpus is not connected yet.
 - Vector and hybrid baselines are not implemented yet.
 - Full-scale RQ7 benchmark is pending.
+- Production retrieval timing is not measured yet.
+- This does not provide legal advice.
 
 ## Next Engineering Gate
 
 The next major gate is:
 
-RQ7.3 — Real Corpus Connection
+RQ7.14 — Real Scale Tier Runner
 
 Goal:
 
-    existing RQ4 / RQ2 / RQ3 LAW artifacts
-    -> RQ7 chunk registry
-    -> salted-domain RQ7 runner
-    -> query-class metrics
-    -> report
-    -> one-command verify
+    RQ4 rebuilt chunk registry
+    -> scale tier selection
+    -> run RQ7 at selected chunk counts
+    -> compare modes
+    -> emit scale-tier metrics snapshot
 
 Acceptance target:
 
-- real artifact loader works
-- official/public corpus provenance is preserved
-- source_hash remains deterministic
-- cthc_address remains deterministic
-- result contract remains stable
+- scale tiers are explicit
+- RQ4 registry is used
+- metrics_summary and metrics_by_query_class are generated per tier
+- claim boundary remains clear
 - all RQ7 tests continue passing
