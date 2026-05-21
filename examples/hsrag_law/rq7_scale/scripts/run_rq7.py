@@ -794,7 +794,11 @@ def build_public_report(
 
 def run(config_path: Path, chunk_registry_path: Path | None = None, write_latest_report: bool = False) -> dict[str, Any]:
     config = load_json(config_path)
-    base_dir = config_path.resolve().parent
+
+    if "_rq7_base_dir" in config:
+        base_dir = Path(str(config["_rq7_base_dir"])).resolve()
+    else:
+        base_dir = config_path.resolve().parent
     salt_id = str(config.get("domain_salt_id", DEFAULT_DOMAIN_SALT_ID))
 
     query_seed = load_json(base_dir / "02_input" / "query_seed.example.json")
