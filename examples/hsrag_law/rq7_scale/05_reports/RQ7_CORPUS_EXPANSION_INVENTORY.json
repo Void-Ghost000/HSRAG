@@ -1,0 +1,818 @@
+{
+  "schema": "HSRAG_RQ7_CORPUS_EXPANSION_INVENTORY_V0_1",
+  "status": "OK",
+  "scanned_at_utc": "2026-05-21T16:01:41.235107Z",
+  "root": "examples/hsrag_law",
+  "artifact_count": 25,
+  "kind_summary": {
+    "RESULT_LOG": 5,
+    "NON_CORPUS_ARTIFACT": 13,
+    "TEXT_CORPUS_CANDIDATE": 4,
+    "METRICS_OR_SUMMARY": 3
+  },
+  "text_corpus_candidate_count": 4,
+  "text_corpus_candidates": [
+    {
+      "path": "examples/hsrag_law/custom_template/output/custom_chunks.csv",
+      "filename": "custom_chunks.csv",
+      "row_count": 1,
+      "sha256": "sha256:723f38565b8fc10f0c8bad4c85546f382df993e10931b7d030d7076a23fbd151",
+      "columns": [
+        "chunk_id",
+        "chunk_index",
+        "corpus_id",
+        "title",
+        "jurisdiction",
+        "source_type",
+        "language",
+        "source_url",
+        "version",
+        "cthc_address",
+        "domain_hash",
+        "chunk_hash",
+        "char_len",
+        "token_estimate",
+        "text"
+      ],
+      "classification": {
+        "kind": "TEXT_CORPUS_CANDIDATE",
+        "has_text": true,
+        "has_corpus": true,
+        "has_jurisdiction": true,
+        "has_result_hint": false,
+        "has_metric_hint": true
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/rq4_rebuilt_chunks.csv",
+      "filename": "rq4_rebuilt_chunks.csv",
+      "row_count": 889,
+      "sha256": "sha256:bf854b26123c0c82f71a68f1f88168ead71a19691a84a94f467f285d61102632",
+      "columns": [
+        "chunk_id",
+        "corpus_id",
+        "jurisdiction",
+        "source_title",
+        "source_url",
+        "candidate_type",
+        "source_hash",
+        "normalized_text_sha256",
+        "chunk_index",
+        "chunk_hash",
+        "char_start",
+        "char_end",
+        "text"
+      ],
+      "classification": {
+        "kind": "TEXT_CORPUS_CANDIDATE",
+        "has_text": true,
+        "has_corpus": true,
+        "has_jurisdiction": true,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    },
+    {
+      "path": "examples/hsrag_law/rq7_scale/02_input/rq7_auto_csv_fixture.example.csv",
+      "filename": "rq7_auto_csv_fixture.example.csv",
+      "row_count": 3,
+      "sha256": "sha256:a05c039f18c0509443401e4a1913fbd91590427978f72bfd0239a0c61cd3cd59",
+      "columns": [
+        "jurisdiction",
+        "corpus_guess",
+        "unit_id",
+        "chunk_text"
+      ],
+      "classification": {
+        "kind": "TEXT_CORPUS_CANDIDATE",
+        "has_text": true,
+        "has_corpus": true,
+        "has_jurisdiction": true,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    },
+    {
+      "path": "examples/hsrag_law/rq7_scale/02_input/rq7_csv_fixture.example.csv",
+      "filename": "rq7_csv_fixture.example.csv",
+      "row_count": 3,
+      "sha256": "sha256:9a9d5875d3a221827f65f8d71db693e0874b6e55ece6e990cd3b8d0c3a31646b",
+      "columns": [
+        "domain",
+        "jurisdiction",
+        "corpus",
+        "unit",
+        "text",
+        "source_type",
+        "official_source"
+      ],
+      "classification": {
+        "kind": "TEXT_CORPUS_CANDIDATE",
+        "has_text": true,
+        "has_corpus": true,
+        "has_jurisdiction": true,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "examples/hsrag_law/custom_template/output/custom_benchmark_cases.csv",
+      "filename": "custom_benchmark_cases.csv",
+      "row_count": 200,
+      "sha256": "sha256:dc15e0d0d28471cd9f2e953513ed35a6e3ce3427bcca2ea67efc6db31be05c73",
+      "columns": [
+        "case_id",
+        "case_type",
+        "query",
+        "expected_decision",
+        "expected_corpus_id",
+        "expected_domain_hash",
+        "decision",
+        "reason",
+        "detected_corpus_id",
+        "detected_domain_hash",
+        "retrieved_chunk_id",
+        "retrieved_corpus_id",
+        "retrieved_domain_hash",
+        "score",
+        "token_estimate",
+        "latency_ms",
+        "target_correct",
+        "false_allow",
+        "wrong_corpus_misrouting",
+        "wrong_domain_misrouting"
+      ],
+      "classification": {
+        "kind": "RESULT_LOG",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": true,
+        "has_metric_hint": true
+      }
+    },
+    {
+      "path": "examples/hsrag_law/custom_template/output/custom_benchmark_gate_checks.csv",
+      "filename": "custom_benchmark_gate_checks.csv",
+      "row_count": 7,
+      "sha256": "sha256:a36ac072f9b944853e87ecf9b328b690147dfcde4eb0994b984067363cf11c5d",
+      "columns": [
+        "metric",
+        "expected",
+        "actual",
+        "passed"
+      ],
+      "classification": {
+        "kind": "NON_CORPUS_ARTIFACT",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    },
+    {
+      "path": "examples/hsrag_law/custom_template/output/custom_chunks.csv",
+      "filename": "custom_chunks.csv",
+      "row_count": 1,
+      "sha256": "sha256:723f38565b8fc10f0c8bad4c85546f382df993e10931b7d030d7076a23fbd151",
+      "columns": [
+        "chunk_id",
+        "chunk_index",
+        "corpus_id",
+        "title",
+        "jurisdiction",
+        "source_type",
+        "language",
+        "source_url",
+        "version",
+        "cthc_address",
+        "domain_hash",
+        "chunk_hash",
+        "char_len",
+        "token_estimate",
+        "text"
+      ],
+      "classification": {
+        "kind": "TEXT_CORPUS_CANDIDATE",
+        "has_text": true,
+        "has_corpus": true,
+        "has_jurisdiction": true,
+        "has_result_hint": false,
+        "has_metric_hint": true
+      }
+    },
+    {
+      "path": "examples/hsrag_law/custom_template/output/custom_gate_checks.csv",
+      "filename": "custom_gate_checks.csv",
+      "row_count": 14,
+      "sha256": "sha256:74cdcc8b21e0e0487f0211210aee8752e4233e87f6cea7e4ee59b07df21ee9ad",
+      "columns": [
+        "check",
+        "passed",
+        "detail"
+      ],
+      "classification": {
+        "kind": "NON_CORPUS_ARTIFACT",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    },
+    {
+      "path": "examples/hsrag_law/custom_template/output/custom_source_records.csv",
+      "filename": "custom_source_records.csv",
+      "row_count": 1,
+      "sha256": "sha256:f46f6ac922fd0296cf40ca691aab197cb5b6734e707e422d536be69b985d78a4",
+      "columns": [
+        "filename",
+        "path",
+        "char_len_raw",
+        "char_len_normalized",
+        "file_hash"
+      ],
+      "classification": {
+        "kind": "NON_CORPUS_ARTIFACT",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/rq1_consistency_matrix.csv",
+      "filename": "rq1_consistency_matrix.csv",
+      "row_count": 1,
+      "sha256": "sha256:6b7bfd2f3a4e747eaedae0c8ef0009a7674c5a082056ed6c933b35ae92227af7",
+      "columns": [
+        "rq",
+        "benchmark_role",
+        "requires_mc",
+        "mc_cases",
+        "mc_scope_decision",
+        "source_hash_gate",
+        "url_fetch_smoke",
+        "audit_chain_complete",
+        "notes"
+      ],
+      "classification": {
+        "kind": "NON_CORPUS_ARTIFACT",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/rq1_gate_checks.csv",
+      "filename": "rq1_gate_checks.csv",
+      "row_count": 11,
+      "sha256": "sha256:543d88345a440b7014023f6989e131b40ffcbfc80f05192cbe1bfc6a6c4fcda0",
+      "columns": [
+        "gate_id",
+        "description",
+        "expected",
+        "actual",
+        "passed",
+        "severity"
+      ],
+      "classification": {
+        "kind": "NON_CORPUS_ARTIFACT",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/rq1_url_fetch_records.csv",
+      "filename": "rq1_url_fetch_records.csv",
+      "row_count": 0,
+      "sha256": "sha256:c62547cad2be5c9a8307742c2b37515fe3332de743fe3969dd781989e8249367",
+      "columns": [
+        "corpus_id",
+        "jurisdiction",
+        "source_title",
+        "source_url",
+        "source_type",
+        "hard_gate",
+        "fetch_decision",
+        "http_status",
+        "content_type",
+        "byte_length",
+        "raw_sha256",
+        "normalized_text_sha256",
+        "normalized_text_length",
+        "suspicious_captcha_or_js_gate",
+        "elapsed_ms",
+        "error"
+      ],
+      "classification": {
+        "kind": "NON_CORPUS_ARTIFACT",
+        "has_text": false,
+        "has_corpus": true,
+        "has_jurisdiction": true,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/rq2_2_baseline_comparison.csv",
+      "filename": "rq2_2_baseline_comparison.csv",
+      "row_count": 4,
+      "sha256": "sha256:a1f635ef233c4d9ec4963a20d757f6e878552ebb8a28f6072e3a75801e1a2a58",
+      "columns": [
+        "mode",
+        "target_correct",
+        "wrong_collision",
+        "p95_latency_ms",
+        "target_correct_gap_vs_hsrag",
+        "wrong_collision_gap_vs_hsrag",
+        "latency_gap_vs_hsrag_ms"
+      ],
+      "classification": {
+        "kind": "RESULT_LOG",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": true,
+        "has_metric_hint": true
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/rq2_2_consistency_matrix.csv",
+      "filename": "rq2_2_consistency_matrix.csv",
+      "row_count": 1,
+      "sha256": "sha256:0b3f98fc47db5696cb401858650dd2342c0eb0963c3217c23eecdfa584d345f0",
+      "columns": [
+        "rq",
+        "benchmark_role",
+        "corpora",
+        "requires_mc",
+        "mc_cases",
+        "baseline_modes",
+        "source_status",
+        "real_primary_verified",
+        "core_decision",
+        "hsrag_target_correct",
+        "hsrag_wrong_collision",
+        "hsrag_no_evidence_false_allow",
+        "hsrag_ambiguous_false_allow",
+        "hsrag_mismatch_escape",
+        "hsrag_audit_chain_complete",
+        "local_verifier_audit_chain_complete",
+        "best_baseline_target_correct",
+        "best_baseline_wrong_collision",
+        "token_reduction_pct_max",
+        "cost_reduction_pct_max",
+        "notes"
+      ],
+      "classification": {
+        "kind": "METRICS_OR_SUMMARY",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": false,
+        "has_metric_hint": true
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/rq2_2_gate_checks.csv",
+      "filename": "rq2_2_gate_checks.csv",
+      "row_count": 15,
+      "sha256": "sha256:09988e30ef926ea4c340ed397a17485b5184cb7ec3f9d74c1650a92f67eb2915",
+      "columns": [
+        "gate_id",
+        "description",
+        "expected",
+        "actual",
+        "passed",
+        "severity"
+      ],
+      "classification": {
+        "kind": "NON_CORPUS_ARTIFACT",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/rq3_fix2_baseline_comparison.csv",
+      "filename": "rq3_fix2_baseline_comparison.csv",
+      "row_count": 4,
+      "sha256": "sha256:17a02b8e84344f715f9a5fa6bdf2d6706d284be3465a4bf7c1468907ef989a6d",
+      "columns": [
+        "mode",
+        "target_correct",
+        "wrong_corpus_collision",
+        "wrong_jurisdiction_escape",
+        "p95_latency_ms",
+        "target_correct_gap_vs_hsrag",
+        "wrong_corpus_collision_gap_vs_hsrag",
+        "wrong_jurisdiction_escape_gap_vs_hsrag",
+        "latency_gap_vs_hsrag_ms"
+      ],
+      "classification": {
+        "kind": "RESULT_LOG",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": true,
+        "has_metric_hint": true
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/rq3_fix2_consistency_matrix.csv",
+      "filename": "rq3_fix2_consistency_matrix.csv",
+      "row_count": 1,
+      "sha256": "sha256:1dfdaad611b33f1dcfa62d360ea55e1046c44b6e5952d135c27598358399abad",
+      "columns": [
+        "rq",
+        "benchmark_role",
+        "corpora",
+        "jurisdictions",
+        "requires_mc",
+        "mc_cases",
+        "baseline_modes",
+        "source_status",
+        "real_primary_verified",
+        "core_decision",
+        "fix_label",
+        "raw_fix1_wrong_jurisdiction_escape",
+        "fix2_normalized_wrong_jurisdiction_escape",
+        "hsrag_target_correct",
+        "hsrag_wrong_corpus_collision",
+        "hsrag_wrong_jurisdiction_escape",
+        "hsrag_no_evidence_false_allow",
+        "hsrag_ambiguous_false_allow",
+        "hsrag_mismatch_escape",
+        "hsrag_audit_chain_complete",
+        "local_verifier_audit_chain_complete",
+        "best_baseline_target_correct",
+        "best_baseline_wrong_corpus_collision",
+        "best_baseline_wrong_jurisdiction_escape",
+        "token_reduction_pct_max",
+        "cost_reduction_pct_max",
+        "notes"
+      ],
+      "classification": {
+        "kind": "METRICS_OR_SUMMARY",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": false,
+        "has_metric_hint": true
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/rq3_fix2_gate_checks.csv",
+      "filename": "rq3_fix2_gate_checks.csv",
+      "row_count": 20,
+      "sha256": "sha256:f77688b7ff8467619e003e190541ad7d2989b0b47c05cf17ab803f1d8b9838cf",
+      "columns": [
+        "gate_id",
+        "description",
+        "expected",
+        "actual",
+        "passed",
+        "severity"
+      ],
+      "classification": {
+        "kind": "NON_CORPUS_ARTIFACT",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/rq4_fetch_attempts.csv",
+      "filename": "rq4_fetch_attempts.csv",
+      "row_count": 9,
+      "sha256": "sha256:ee6bc032b581acb6719b57790e13a56f2e601b438312e5464cf45fb5ddd7cfb7",
+      "columns": [
+        "corpus_id",
+        "jurisdiction",
+        "source_title",
+        "source_url",
+        "candidate_type",
+        "fetch_decision",
+        "http_status",
+        "content_type",
+        "byte_length",
+        "raw_sha256",
+        "normalized_text_sha256",
+        "normalized_text_length",
+        "chunk_count",
+        "legal_signal_score",
+        "suspicious_gate_page",
+        "elapsed_ms",
+        "error"
+      ],
+      "classification": {
+        "kind": "NON_CORPUS_ARTIFACT",
+        "has_text": false,
+        "has_corpus": true,
+        "has_jurisdiction": true,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/rq4_gate_checks.csv",
+      "filename": "rq4_gate_checks.csv",
+      "row_count": 6,
+      "sha256": "sha256:563a74c6c95d589329d409d0b1d94747ece9078efacdeddde4066a30172fb22e",
+      "columns": [
+        "gate_id",
+        "description",
+        "expected",
+        "actual",
+        "passed",
+        "severity"
+      ],
+      "classification": {
+        "kind": "NON_CORPUS_ARTIFACT",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/rq4_rebuilt_chunks.csv",
+      "filename": "rq4_rebuilt_chunks.csv",
+      "row_count": 889,
+      "sha256": "sha256:bf854b26123c0c82f71a68f1f88168ead71a19691a84a94f467f285d61102632",
+      "columns": [
+        "chunk_id",
+        "corpus_id",
+        "jurisdiction",
+        "source_title",
+        "source_url",
+        "candidate_type",
+        "source_hash",
+        "normalized_text_sha256",
+        "chunk_index",
+        "chunk_hash",
+        "char_start",
+        "char_end",
+        "text"
+      ],
+      "classification": {
+        "kind": "TEXT_CORPUS_CANDIDATE",
+        "has_text": true,
+        "has_corpus": true,
+        "has_jurisdiction": true,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/rq4_source_records.csv",
+      "filename": "rq4_source_records.csv",
+      "row_count": 6,
+      "sha256": "sha256:3d7a21ae9850e4f4c86477d2a43e6e7c580b799cbd9a492fd4a766f7d5b3b3c3",
+      "columns": [
+        "corpus_id",
+        "jurisdiction",
+        "source_title",
+        "selected_source_url",
+        "selected_candidate_type",
+        "source_type",
+        "hard_gate",
+        "fetch_decision",
+        "rebuild_usable",
+        "http_status",
+        "content_type",
+        "byte_length",
+        "raw_sha256",
+        "normalized_text_sha256",
+        "normalized_text_length",
+        "chunk_count",
+        "legal_signal_score",
+        "suspicious_gate_page",
+        "elapsed_ms",
+        "error"
+      ],
+      "classification": {
+        "kind": "NON_CORPUS_ARTIFACT",
+        "has_text": false,
+        "has_corpus": true,
+        "has_jurisdiction": true,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/rq5_baseline_comparison.csv",
+      "filename": "rq5_baseline_comparison.csv",
+      "row_count": 2,
+      "sha256": "sha256:bb6381723fb3f9945375de553106f9334eada01b562c5cf9d6ba7c259adaa1a1",
+      "columns": [
+        "baseline_mode",
+        "hsrag_target_correct",
+        "baseline_target_correct",
+        "hsrag_wrong_corpus_misrouting",
+        "baseline_wrong_corpus_misrouting",
+        "hsrag_unsupported_query_false_allow",
+        "baseline_unsupported_query_false_allow",
+        "hsrag_ambiguous_query_false_allow",
+        "baseline_ambiguous_query_false_allow",
+        "hsrag_conflict_query_false_allow",
+        "baseline_conflict_query_false_allow",
+        "token_reduction_pct",
+        "cost_reduction_pct",
+        "p95_latency_ratio_baseline_over_hsrag"
+      ],
+      "classification": {
+        "kind": "METRICS_OR_SUMMARY",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": false,
+        "has_metric_hint": true
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/rq5_case_results.csv",
+      "filename": "rq5_case_results.csv",
+      "row_count": 50000,
+      "sha256": "sha256:47829b955146de198d1e1cc0cecb71498d4fb61c98fac91e3c1eeafe9b0bb7ef",
+      "columns": [
+        "case_id",
+        "case_type",
+        "perturbation_mode",
+        "expected_corpus_id",
+        "expected_jurisdiction",
+        "query",
+        "hsrag_decision",
+        "hsrag_reason",
+        "hsrag_route_status",
+        "hsrag_cthc_path",
+        "hsrag_domain_hash",
+        "hsrag_detected_corpus_ids",
+        "hsrag_routed_corpus_id",
+        "hsrag_retrieved_chunk_id",
+        "hsrag_retrieved_corpus_id",
+        "hsrag_retrieved_jurisdiction",
+        "hsrag_latency_ms",
+        "hsrag_token_estimate",
+        "hsrag_cost_estimate",
+        "global_retrieved_chunk_id",
+        "global_retrieved_corpus_id",
+        "global_retrieved_jurisdiction",
+        "global_latency_ms",
+        "global_token_estimate",
+        "global_cost_estimate",
+        "domain_retrieved_chunk_id",
+        "domain_retrieved_corpus_id",
+        "domain_retrieved_jurisdiction",
+        "domain_latency_ms",
+        "domain_token_estimate",
+        "domain_cost_estimate",
+        "previous_hash",
+        "audit_hash"
+      ],
+      "classification": {
+        "kind": "RESULT_LOG",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": true,
+        "has_metric_hint": true
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/rq5_gate_checks.csv",
+      "filename": "rq5_gate_checks.csv",
+      "row_count": 10,
+      "sha256": "sha256:f39f2c9ee5d892af000d99c9d940f651541f67d5067ebffaf4162b7e88a5a9d4",
+      "columns": [
+        "gate_id",
+        "description",
+        "expected",
+        "actual",
+        "passed",
+        "severity"
+      ],
+      "classification": {
+        "kind": "NON_CORPUS_ARTIFACT",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/smoke_test_records.csv",
+      "filename": "smoke_test_records.csv",
+      "row_count": 9,
+      "sha256": "sha256:a21a88957c79a7e2e0ca92dc3d27ff3474d560e4e29c6cfa4b61ebcbf0e97df9",
+      "columns": [
+        "case_id",
+        "query",
+        "case_type",
+        "decision",
+        "reason",
+        "expected_corpus_id",
+        "expected_jurisdiction",
+        "routed_corpus_id",
+        "routed_jurisdiction",
+        "retrieved_chunk_id",
+        "retrieved_corpus_id",
+        "retrieved_jurisdiction",
+        "lexical_score",
+        "latency_ms",
+        "previous_hash",
+        "audit_hash"
+      ],
+      "classification": {
+        "kind": "RESULT_LOG",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": true,
+        "has_metric_hint": true
+      }
+    },
+    {
+      "path": "examples/hsrag_law/results/unified_benchmark_table_v0_3.csv",
+      "filename": "unified_benchmark_table_v0_3.csv",
+      "row_count": 0,
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "columns": [],
+      "classification": {
+        "kind": "NON_CORPUS_ARTIFACT",
+        "has_text": false,
+        "has_corpus": false,
+        "has_jurisdiction": false,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    },
+    {
+      "path": "examples/hsrag_law/rq7_scale/02_input/rq7_auto_csv_fixture.example.csv",
+      "filename": "rq7_auto_csv_fixture.example.csv",
+      "row_count": 3,
+      "sha256": "sha256:a05c039f18c0509443401e4a1913fbd91590427978f72bfd0239a0c61cd3cd59",
+      "columns": [
+        "jurisdiction",
+        "corpus_guess",
+        "unit_id",
+        "chunk_text"
+      ],
+      "classification": {
+        "kind": "TEXT_CORPUS_CANDIDATE",
+        "has_text": true,
+        "has_corpus": true,
+        "has_jurisdiction": true,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    },
+    {
+      "path": "examples/hsrag_law/rq7_scale/02_input/rq7_csv_fixture.example.csv",
+      "filename": "rq7_csv_fixture.example.csv",
+      "row_count": 3,
+      "sha256": "sha256:9a9d5875d3a221827f65f8d71db693e0874b6e55ece6e990cd3b8d0c3a31646b",
+      "columns": [
+        "domain",
+        "jurisdiction",
+        "corpus",
+        "unit",
+        "text",
+        "source_type",
+        "official_source"
+      ],
+      "classification": {
+        "kind": "TEXT_CORPUS_CANDIDATE",
+        "has_text": true,
+        "has_corpus": true,
+        "has_jurisdiction": true,
+        "has_result_hint": false,
+        "has_metric_hint": false
+      }
+    }
+  ],
+  "claim_boundary": {
+    "inventory_only": true,
+    "does_not_expand_corpus": true,
+    "does_not_run_benchmark": true,
+    "full_scale_benchmark": false,
+    "vector_hybrid_baselines": false,
+    "legal_advice": false
+  }
+}
