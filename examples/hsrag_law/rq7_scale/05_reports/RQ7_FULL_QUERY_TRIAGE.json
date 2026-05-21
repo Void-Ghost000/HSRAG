@@ -1,0 +1,380 @@
+{
+  "schema": "HSRAG_RQ7_FULL_QUERY_TRIAGE_V0_1",
+  "status": "OK",
+  "published_at_utc": "2026-05-21T14:48:32.452644Z",
+  "diagnostic_id": "rq7_full_query_diagnostics_20260521T144832438074z",
+  "diagnostic_status": "DIAGNOSTIC_WARN",
+  "acceptance_passed": false,
+  "raw_result_count": 420,
+  "triage_summary": {
+    "ALLOW_MATCHED_TARGET": 124,
+    "EXPECTED_GUARD_BLOCK": 64,
+    "FALSE_ALLOW_RISK": 96,
+    "TARGET_BLOCKED": 136
+  },
+  "reason_by_triage": {
+    "ALLOW_MATCHED_TARGET": {
+      "FOUND": 124
+    },
+    "EXPECTED_GUARD_BLOCK": {
+      "NO_EVIDENCE": 24,
+      "AMBIGUOUS_ROUTE": 8,
+      "UNIQUE_ADDRESS_NOT_FOUND": 32
+    },
+    "FALSE_ALLOW_RISK": {
+      "FOUND": 96
+    },
+    "TARGET_BLOCKED": {
+      "NO_EVIDENCE": 128,
+      "UNIQUE_ADDRESS_NOT_FOUND": 8
+    }
+  },
+  "examples": {
+    "ALLOW_MATCHED_TARGET": [
+      {
+        "mode": "BM25_GLOBAL",
+        "query_class": "exact_unit",
+        "status": "ALLOW",
+        "reason_code": "FOUND",
+        "query_id": "Q_EXACT_UNIT_0001",
+        "target": {
+          "corpus": "EU_AI_ACT",
+          "domain": "LAW",
+          "jurisdiction": "EU",
+          "unit": "ARTICLE_5"
+        },
+        "result": {
+          "chunk_id": "EU_AI_ACT_ARTICLE_5_CHUNK_0001",
+          "corpus": "EU_AI_ACT",
+          "cthc_address": "cthc://LAW/EU/EU_AI_ACT/ARTICLE_5/CHUNK_0001",
+          "cthc_address_hash": "sha256:7d26c9e3cf6b5e3eb1cfb3e6c52bab315276e33194f18ff99d88ee3b551fefb6",
+          "domain": "LAW",
+          "domain_salt_hash": "sha256:83cba0601cb3106a26db1a694d2b3bf2d835595369d1ebfe5f009bc3be6b59bc",
+          "domain_salt_id": "HSRAG_RQ7_PUBLIC_REPRODUCIBLE_SALT_v1",
+          "jurisdiction": "EU",
+          "unit": "ARTICLE_5"
+        }
+      },
+      {
+        "mode": "BM25_GLOBAL",
+        "query_class": "exact_unit",
+        "status": "ALLOW",
+        "reason_code": "FOUND",
+        "query_id": "rq7_full_target_0001",
+        "target": {
+          "corpus": "EU_AI_ACT",
+          "domain": "LAW",
+          "jurisdiction": "EU",
+          "unit": "ARTICLE_5"
+        },
+        "result": {
+          "chunk_id": "EU_AI_ACT_ARTICLE_5_CHUNK_0001",
+          "corpus": "EU_AI_ACT",
+          "cthc_address": "cthc://LAW/EU/EU_AI_ACT/ARTICLE_5/CHUNK_0001",
+          "cthc_address_hash": "sha256:7d26c9e3cf6b5e3eb1cfb3e6c52bab315276e33194f18ff99d88ee3b551fefb6",
+          "domain": "LAW",
+          "domain_salt_hash": "sha256:83cba0601cb3106a26db1a694d2b3bf2d835595369d1ebfe5f009bc3be6b59bc",
+          "domain_salt_id": "HSRAG_RQ7_PUBLIC_REPRODUCIBLE_SALT_v1",
+          "jurisdiction": "EU",
+          "unit": "ARTICLE_5"
+        }
+      },
+      {
+        "mode": "BM25_GLOBAL",
+        "query_class": "exact_unit",
+        "status": "ALLOW",
+        "reason_code": "FOUND",
+        "query_id": "rq7_full_target_0002",
+        "target": {
+          "corpus": "EU_AI_ACT",
+          "domain": "LAW",
+          "jurisdiction": "EU",
+          "unit": "ARTICLE_5"
+        },
+        "result": {
+          "chunk_id": "EU_AI_ACT_ARTICLE_5_CHUNK_0001",
+          "corpus": "EU_AI_ACT",
+          "cthc_address": "cthc://LAW/EU/EU_AI_ACT/ARTICLE_5/CHUNK_0001",
+          "cthc_address_hash": "sha256:7d26c9e3cf6b5e3eb1cfb3e6c52bab315276e33194f18ff99d88ee3b551fefb6",
+          "domain": "LAW",
+          "domain_salt_hash": "sha256:83cba0601cb3106a26db1a694d2b3bf2d835595369d1ebfe5f009bc3be6b59bc",
+          "domain_salt_id": "HSRAG_RQ7_PUBLIC_REPRODUCIBLE_SALT_v1",
+          "jurisdiction": "EU",
+          "unit": "ARTICLE_5"
+        }
+      },
+      {
+        "mode": "BM25_GLOBAL",
+        "query_class": "typo_abbreviation",
+        "status": "ALLOW",
+        "reason_code": "FOUND",
+        "query_id": "rq7_full_target_0003",
+        "target": {
+          "corpus": "EU_AI_ACT",
+          "domain": "LAW",
+          "jurisdiction": "EU",
+          "unit": "ARTICLE_5"
+        },
+        "result": {
+          "chunk_id": "EU_AI_ACT_ARTICLE_5_CHUNK_0001",
+          "corpus": "EU_AI_ACT",
+          "cthc_address": "cthc://LAW/EU/EU_AI_ACT/ARTICLE_5/CHUNK_0001",
+          "cthc_address_hash": "sha256:7d26c9e3cf6b5e3eb1cfb3e6c52bab315276e33194f18ff99d88ee3b551fefb6",
+          "domain": "LAW",
+          "domain_salt_hash": "sha256:83cba0601cb3106a26db1a694d2b3bf2d835595369d1ebfe5f009bc3be6b59bc",
+          "domain_salt_id": "HSRAG_RQ7_PUBLIC_REPRODUCIBLE_SALT_v1",
+          "jurisdiction": "EU",
+          "unit": "ARTICLE_5"
+        }
+      },
+      {
+        "mode": "BM25_GLOBAL",
+        "query_class": "jurisdiction_distractor",
+        "status": "ALLOW",
+        "reason_code": "FOUND",
+        "query_id": "rq7_full_target_0004",
+        "target": {
+          "corpus": "EU_AI_ACT",
+          "domain": "LAW",
+          "jurisdiction": "EU",
+          "unit": "ARTICLE_5"
+        },
+        "result": {
+          "chunk_id": "EU_AI_ACT_ARTICLE_5_CHUNK_0001",
+          "corpus": "EU_AI_ACT",
+          "cthc_address": "cthc://LAW/EU/EU_AI_ACT/ARTICLE_5/CHUNK_0001",
+          "cthc_address_hash": "sha256:7d26c9e3cf6b5e3eb1cfb3e6c52bab315276e33194f18ff99d88ee3b551fefb6",
+          "domain": "LAW",
+          "domain_salt_hash": "sha256:83cba0601cb3106a26db1a694d2b3bf2d835595369d1ebfe5f009bc3be6b59bc",
+          "domain_salt_id": "HSRAG_RQ7_PUBLIC_REPRODUCIBLE_SALT_v1",
+          "jurisdiction": "EU",
+          "unit": "ARTICLE_5"
+        }
+      }
+    ],
+    "FALSE_ALLOW_RISK": [
+      {
+        "mode": "BM25_GLOBAL",
+        "query_class": "no_evidence",
+        "status": "ALLOW",
+        "reason_code": "FOUND",
+        "query_id": "Q_NO_EVIDENCE_0001",
+        "target": null,
+        "result": {
+          "chunk_id": "NOISE_GENERIC_LAW_CHUNK_0001",
+          "corpus": "GENERIC_LEGAL_NOISE",
+          "cthc_address": "cthc://LAW/GENERIC/GENERIC_LEGAL_NOISE/GENERAL_RULE/CHUNK_0001",
+          "cthc_address_hash": "sha256:0b7de2b4949e662b1bfafd38dc49c307c86d3a0b664761654d6b04bc9c97be6e",
+          "domain": "LAW",
+          "domain_salt_hash": "sha256:4862c9f9a0fa1d52be974064bdf91d69129cc2d4e9c28df8d80cba67d788ac0b",
+          "domain_salt_id": "HSRAG_RQ7_PUBLIC_REPRODUCIBLE_SALT_v1",
+          "jurisdiction": "GENERIC",
+          "unit": "GENERAL_RULE"
+        }
+      },
+      {
+        "mode": "BM25_GLOBAL",
+        "query_class": "ambiguous_cross_domain",
+        "status": "ALLOW",
+        "reason_code": "FOUND",
+        "query_id": "Q_AMBIGUOUS_0001",
+        "target": null,
+        "result": {
+          "chunk_id": "US_CDA230_SECTION_230_CHUNK_0001",
+          "corpus": "US_CDA230",
+          "cthc_address": "cthc://LAW/US/US_CDA230/SECTION_230/CHUNK_0001",
+          "cthc_address_hash": "sha256:442130cba6bd27e3b80e0e6ec146007a65db6373cd21d594a5493dd70f60caeb",
+          "domain": "LAW",
+          "domain_salt_hash": "sha256:85c46daca6882555c2128754c444004c8f1d94c5583b5834d1ddcea762893859",
+          "domain_salt_id": "HSRAG_RQ7_PUBLIC_REPRODUCIBLE_SALT_v1",
+          "jurisdiction": "US",
+          "unit": "SECTION_230"
+        }
+      },
+      {
+        "mode": "BM25_GLOBAL",
+        "query_class": "no_evidence",
+        "status": "ALLOW",
+        "reason_code": "FOUND",
+        "query_id": "rq7_full_guard_0005",
+        "target": null,
+        "result": {
+          "chunk_id": "EU_AI_ACT_ARTICLE_5_CHUNK_0001",
+          "corpus": "EU_AI_ACT",
+          "cthc_address": "cthc://LAW/EU/EU_AI_ACT/ARTICLE_5/CHUNK_0001",
+          "cthc_address_hash": "sha256:7d26c9e3cf6b5e3eb1cfb3e6c52bab315276e33194f18ff99d88ee3b551fefb6",
+          "domain": "LAW",
+          "domain_salt_hash": "sha256:83cba0601cb3106a26db1a694d2b3bf2d835595369d1ebfe5f009bc3be6b59bc",
+          "domain_salt_id": "HSRAG_RQ7_PUBLIC_REPRODUCIBLE_SALT_v1",
+          "jurisdiction": "EU",
+          "unit": "ARTICLE_5"
+        }
+      },
+      {
+        "mode": "BM25_GLOBAL",
+        "query_class": "no_evidence",
+        "status": "ALLOW",
+        "reason_code": "FOUND",
+        "query_id": "rq7_full_guard_0006",
+        "target": null,
+        "result": {
+          "chunk_id": "EU_AI_ACT_ARTICLE_5_CHUNK_0001",
+          "corpus": "EU_AI_ACT",
+          "cthc_address": "cthc://LAW/EU/EU_AI_ACT/ARTICLE_5/CHUNK_0001",
+          "cthc_address_hash": "sha256:7d26c9e3cf6b5e3eb1cfb3e6c52bab315276e33194f18ff99d88ee3b551fefb6",
+          "domain": "LAW",
+          "domain_salt_hash": "sha256:83cba0601cb3106a26db1a694d2b3bf2d835595369d1ebfe5f009bc3be6b59bc",
+          "domain_salt_id": "HSRAG_RQ7_PUBLIC_REPRODUCIBLE_SALT_v1",
+          "jurisdiction": "EU",
+          "unit": "ARTICLE_5"
+        }
+      },
+      {
+        "mode": "BM25_GLOBAL",
+        "query_class": "ambiguous_cross_domain",
+        "status": "ALLOW",
+        "reason_code": "FOUND",
+        "query_id": "rq7_full_guard_0007",
+        "target": null,
+        "result": {
+          "chunk_id": "US_CDA230_SECTION_230_CHUNK_0001",
+          "corpus": "US_CDA230",
+          "cthc_address": "cthc://LAW/US/US_CDA230/SECTION_230/CHUNK_0001",
+          "cthc_address_hash": "sha256:442130cba6bd27e3b80e0e6ec146007a65db6373cd21d594a5493dd70f60caeb",
+          "domain": "LAW",
+          "domain_salt_hash": "sha256:85c46daca6882555c2128754c444004c8f1d94c5583b5834d1ddcea762893859",
+          "domain_salt_id": "HSRAG_RQ7_PUBLIC_REPRODUCIBLE_SALT_v1",
+          "jurisdiction": "US",
+          "unit": "SECTION_230"
+        }
+      }
+    ],
+    "EXPECTED_GUARD_BLOCK": [
+      {
+        "mode": "CTHC_PRUNED_BM25",
+        "query_class": "no_evidence",
+        "status": "BLOCK",
+        "reason_code": "NO_EVIDENCE",
+        "query_id": "Q_NO_EVIDENCE_0001",
+        "target": null,
+        "result": null
+      },
+      {
+        "mode": "CTHC_PRUNED_BM25",
+        "query_class": "no_evidence",
+        "status": "BLOCK",
+        "reason_code": "NO_EVIDENCE",
+        "query_id": "rq7_full_guard_0005",
+        "target": null,
+        "result": null
+      },
+      {
+        "mode": "CTHC_PRUNED_BM25",
+        "query_class": "no_evidence",
+        "status": "BLOCK",
+        "reason_code": "NO_EVIDENCE",
+        "query_id": "rq7_full_guard_0006",
+        "target": null,
+        "result": null
+      },
+      {
+        "mode": "CTHC_PRUNED_BM25",
+        "query_class": "mismatch_trap",
+        "status": "BLOCK",
+        "reason_code": "AMBIGUOUS_ROUTE",
+        "query_id": "rq7_full_guard_0009",
+        "target": null,
+        "result": null
+      },
+      {
+        "mode": "CTHC_PRUNED_TFIDF",
+        "query_class": "no_evidence",
+        "status": "BLOCK",
+        "reason_code": "NO_EVIDENCE",
+        "query_id": "Q_NO_EVIDENCE_0001",
+        "target": null,
+        "result": null
+      }
+    ],
+    "TARGET_BLOCKED": [
+      {
+        "mode": "CTHC_PRUNED_BM25",
+        "query_class": "exact_unit",
+        "status": "BLOCK",
+        "reason_code": "NO_EVIDENCE",
+        "query_id": "rq7_full_target_0001",
+        "target": {
+          "corpus": "EU_AI_ACT",
+          "domain": "LAW",
+          "jurisdiction": "EU",
+          "unit": "ARTICLE_5"
+        },
+        "result": null
+      },
+      {
+        "mode": "CTHC_PRUNED_BM25",
+        "query_class": "exact_unit",
+        "status": "BLOCK",
+        "reason_code": "NO_EVIDENCE",
+        "query_id": "rq7_full_target_0002",
+        "target": {
+          "corpus": "EU_AI_ACT",
+          "domain": "LAW",
+          "jurisdiction": "EU",
+          "unit": "ARTICLE_5"
+        },
+        "result": null
+      },
+      {
+        "mode": "CTHC_PRUNED_BM25",
+        "query_class": "jurisdiction_distractor",
+        "status": "BLOCK",
+        "reason_code": "NO_EVIDENCE",
+        "query_id": "rq7_full_target_0004",
+        "target": {
+          "corpus": "EU_AI_ACT",
+          "domain": "LAW",
+          "jurisdiction": "EU",
+          "unit": "ARTICLE_5"
+        },
+        "result": null
+      },
+      {
+        "mode": "CTHC_PRUNED_BM25",
+        "query_class": "exact_unit",
+        "status": "BLOCK",
+        "reason_code": "NO_EVIDENCE",
+        "query_id": "rq7_full_extra_0011",
+        "target": {
+          "corpus": "EU_AI_ACT",
+          "domain": "LAW",
+          "jurisdiction": "EU",
+          "unit": "ARTICLE_5"
+        },
+        "result": null
+      },
+      {
+        "mode": "CTHC_PRUNED_BM25",
+        "query_class": "exact_unit",
+        "status": "BLOCK",
+        "reason_code": "NO_EVIDENCE",
+        "query_id": "rq7_full_extra_0012",
+        "target": {
+          "corpus": "EU_AI_ACT",
+          "domain": "LAW",
+          "jurisdiction": "EU",
+          "unit": "ARTICLE_5"
+        },
+        "result": null
+      }
+    ]
+  },
+  "claim_boundary": {
+    "triage_only": true,
+    "acceptance_failure_allowed_for_diagnostics": true,
+    "full_query_expansion": true,
+    "full_scale_benchmark": false,
+    "vector_hybrid_baselines": false,
+    "legal_advice": false
+  }
+}
