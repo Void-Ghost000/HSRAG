@@ -194,3 +194,28 @@ Verify:
     python -m pytest tests -k rq7
     python examples/hsrag_law/rq7_scale/scripts/verify_rq7_release.py --tiers 100,300,600,889
 
+
+## RQ7 Full Query Diagnostics
+
+RQ7 full benchmark branch includes a diagnostic report for expanded query seeds:
+
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_FULL_QUERY_DIAGNOSTICS.md`
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_FULL_QUERY_DIAGNOSTICS.json`
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_FULL_QUERY_DIAGNOSTICS_SUMMARY.json`
+
+Current claim boundary:
+
+- Full query expansion is diagnostic-only.
+- Acceptance failure is allowed for diagnostics.
+- Full-scale benchmark is still pending.
+- Vector / hybrid baselines are still pending.
+- This does not provide legal advice.
+
+Run diagnostics:
+
+    python examples/hsrag_law/rq7_scale/scripts/analyze_rq7_full_query_diagnostics.py
+
+Publish diagnostics:
+
+    python examples/hsrag_law/rq7_scale/scripts/publish_rq7_full_query_diagnostics.py
+
