@@ -140,6 +140,9 @@ def summarize_metrics_for_tier(
                 "retrieved_token_count_mean": row["retrieved_token_count_mean"],
                 "estimated_token_cost_usd_per_1k_queries": row["estimated_token_cost_usd_per_1k_queries"],
                 "latency_p99_ms": row["latency_p99_ms"],
+                "actual_elapsed_p50_ms": row.get("actual_elapsed_p50_ms", "0.0"),
+                "actual_elapsed_p95_ms": row.get("actual_elapsed_p95_ms", "0.0"),
+                "actual_elapsed_p99_ms": row.get("actual_elapsed_p99_ms", "0.0"),
                 "esi_mean": row["esi_mean"],
                 "returned_domain_salt_valid_rate": row["returned_domain_salt_valid_rate"],
             }

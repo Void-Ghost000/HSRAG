@@ -54,6 +54,9 @@ def summarize_mode_rows(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
                 "retrieved_token_count_mean": float(row["retrieved_token_count_mean"]),
                 "estimated_token_cost_usd_per_1k_queries": float(row["estimated_token_cost_usd_per_1k_queries"]),
                 "latency_p99_ms": float(row["latency_p99_ms"]),
+                "actual_elapsed_p50_ms": float(row.get("actual_elapsed_p50_ms", 0.0)),
+                "actual_elapsed_p95_ms": float(row.get("actual_elapsed_p95_ms", 0.0)),
+                "actual_elapsed_p99_ms": float(row.get("actual_elapsed_p99_ms", 0.0)),
                 "esi_mean": float(row["esi_mean"]),
                 "returned_domain_salt_valid_rate": float(row.get("returned_domain_salt_valid_rate", 0.0)),
             }
@@ -76,6 +79,9 @@ def summarize_query_class_rows(rows: list[dict[str, str]]) -> list[dict[str, Any
                 "correct_block_rate": float(row["correct_block_rate"]),
                 "candidate_reduction_ratio": float(row["candidate_reduction_ratio"]),
                 "latency_p99_ms": float(row["latency_p99_ms"]),
+                "actual_elapsed_p50_ms": float(row.get("actual_elapsed_p50_ms", 0.0)),
+                "actual_elapsed_p95_ms": float(row.get("actual_elapsed_p95_ms", 0.0)),
+                "actual_elapsed_p99_ms": float(row.get("actual_elapsed_p99_ms", 0.0)),
                 "esi_mean": float(row["esi_mean"]),
             }
         )
