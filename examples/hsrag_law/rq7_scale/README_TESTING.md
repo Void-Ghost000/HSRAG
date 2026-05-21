@@ -30,12 +30,16 @@ Master verify command:
 
     python examples/hsrag_law/rq7_scale/scripts/verify_rq7_all.py
 
-Expected current results:
+Expected master result:
 
     status: OK
-    acceptance_passed: true
+    all_passed: true
     latest_report_is_clean: true
+    local_only: true
+    zero_network: true
+    zero_secret: true
     rq4_rebuilt_artifact_connected: true
+    rq4_metrics_snapshot_available: true
     unit_derivation_is_heuristic: true
 
 Current maturity:
@@ -47,7 +51,7 @@ Current maturity:
 - Candidate select and run: available.
 - RQ4 rebuilt artifact verify: available.
 - RQ4 metrics snapshot: available.
-- Master verify includes RQ4 rebuilt artifact gate.
+- Master verify includes RQ4 metrics snapshot.
 - Full-scale RQ7 benchmark: not implemented yet.
 - Vector / hybrid baselines: not implemented yet.
 

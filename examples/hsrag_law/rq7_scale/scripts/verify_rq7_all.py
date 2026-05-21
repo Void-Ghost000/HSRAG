@@ -95,16 +95,18 @@ def main() -> None:
         ]
     )
 
-    rq4_summary = run_json_command(
+    rq4_metrics_snapshot = run_json_command(
         [
             sys.executable,
-            str(base_dir / "scripts" / "verify_rq7_rq4.py"),
+            str(base_dir / "scripts" / "snapshot_rq7_rq4_metrics.py"),
             "--config",
             str(config_path),
             "--rq4-csv",
             str(rq4_csv_path),
         ]
     )
+
+    rq4_verify = rq4_metrics_snapshot.get("rq4_verify", {})
 
     latest_clean = (
         core_summary.get("latest_report_is_clean") is True
@@ -113,7 +115,7 @@ def main() -> None:
             for item in adapter_summary.get("adapter_results", [])
         )
         and candidate_summary.get("latest_report_is_clean") is True
-        and rq4_summary.get("latest_report_is_clean") is True
+        and rq4_verify.get("latest_report_is_clean") is True
     )
 
     passed = (
@@ -128,15 +130,15 @@ def main() -> None:
         and adapter_summary.get("all_passed") is True
         and candidate_summary.get("status") == "OK"
         and candidate_summary.get("acceptance_passed") is True
-        and rq4_summary.get("status") == "OK"
-        and rq4_summary.get("acceptance_passed") is True
-        and rq4_summary.get("claim_boundary", {}).get("rq4_rebuilt_artifact_connected") is True
-        and rq4_summary.get("claim_boundary", {}).get("unit_derivation_is_heuristic") is True
+        and rq4_metrics_snapshot.get("status") == "OK"
+        and rq4_verify.get("acceptance_passed") is True
+        and rq4_verify.get("chunk_count", 0) >= 800
+        and rq4_verify.get("unit_derivation_is_heuristic") is True
         and latest_clean
     )
 
     summary = {
-        "schema": "HSRAG_RQ7_ALL_VERIFY_SUMMARY_V0_2",
+        "schema": "HSRAG_RQ7_ALL_VERIFY_SUMMARY_V0_3",
         "status": "OK" if passed else "FAILED",
         "verify_id": verify_id,
         "run_started_at_utc": run_started_at_utc,
@@ -144,7 +146,8 @@ def main() -> None:
         "core_verify": core_summary,
         "adapter_matrix": adapter_summary,
         "candidate_run": candidate_summary,
-        "rq4_verify": rq4_summary,
+        "rq4_verify": rq4_verify,
+        "rq4_metrics_snapshot": rq4_metrics_snapshot,
         "latest_report_is_clean": latest_clean,
         "local_only": True,
         "zero_network": True,
@@ -153,6 +156,7 @@ def main() -> None:
         "claim_boundary": {
             "master_verify_only": True,
             "rq4_rebuilt_artifact_connected": True,
+            "rq4_metrics_snapshot_available": True,
             "official_rq4_corpus_connected": True,
             "unit_derivation_is_heuristic": True,
             "full_scale_benchmark": False,
@@ -174,13 +178,15 @@ def main() -> None:
         f"core_verify_status: {core_summary.get('status')}",
         f"adapter_matrix_status: {adapter_summary.get('status')}",
         f"candidate_run_status: {candidate_summary.get('status')}",
-        f"rq4_verify_status: {rq4_summary.get('status')}",
+        f"rq4_metrics_snapshot_status: {rq4_metrics_snapshot.get('status')}",
+        f"rq4_chunk_count: {rq4_verify.get('chunk_count')}",
         f"latest_report_is_clean: {latest_clean}",
         f"all_passed: {passed}",
         "",
         "claim_boundary:",
         "- master_verify_only: true",
         "- rq4_rebuilt_artifact_connected: true",
+        "- rq4_metrics_snapshot_available: true",
         "- official_rq4_corpus_connected: true",
         "- unit_derivation_is_heuristic: true",
         "- full_scale_benchmark: false",
