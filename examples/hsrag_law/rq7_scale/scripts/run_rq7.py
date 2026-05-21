@@ -7,6 +7,7 @@ import json
 import math
 import re
 from datetime import datetime, timezone
+from time import perf_counter_ns
 from pathlib import Path
 from typing import Any
 
@@ -407,6 +408,7 @@ def summarize_rows(rows: list[dict[str, Any]], price_per_1k_tokens: float) -> li
         correct_blocks = sum(1 for r in block_expected_rows if r["status"] == "BLOCK")
 
         latencies = [float(r["metrics"]["latency_ms"]) for r in group_rows]
+        actual_latencies = [float(r["metrics"].get("actual_elapsed_ms", 0.0)) for r in group_rows]
         tokens = [int(r["metrics"]["retrieved_token_count"]) for r in group_rows]
         esi_values = [float(r["metrics"]["esi"]) for r in group_rows]
         before_values = [int(r["metrics"]["candidate_count_before"]) for r in group_rows]
@@ -438,6 +440,9 @@ def summarize_rows(rows: list[dict[str, Any]], price_per_1k_tokens: float) -> li
             "latency_p50_ms": round(percentile(latencies, 50), 3),
             "latency_p95_ms": round(percentile(latencies, 95), 3),
             "latency_p99_ms": round(percentile(latencies, 99), 3),
+            "actual_elapsed_p50_ms": round(percentile(actual_latencies, 50), 6),
+            "actual_elapsed_p95_ms": round(percentile(actual_latencies, 95), 6),
+            "actual_elapsed_p99_ms": round(percentile(actual_latencies, 99), 6),
             "esi_mean": round(sum(esi_values) / total, 6),
             "returned_domain_salt_valid_rate": round(sum(salt_valid_values) / total, 6),
             "replay_success_rate": 1.0,
@@ -508,6 +513,7 @@ def summarize_rows_by_query_class(rows: list[dict[str, Any]], price_per_1k_token
         correct_blocks = sum(1 for row in block_expected_rows if row["status"] == "BLOCK")
 
         latencies = [float(row["metrics"]["latency_ms"]) for row in group_rows]
+        actual_latencies = [float(row["metrics"].get("actual_elapsed_ms", 0.0)) for row in group_rows]
         tokens = [int(row["metrics"]["retrieved_token_count"]) for row in group_rows]
         esi_values = [float(row["metrics"]["esi"]) for row in group_rows]
         before_values = [int(row["metrics"]["candidate_count_before"]) for row in group_rows]
@@ -537,6 +543,9 @@ def summarize_rows_by_query_class(rows: list[dict[str, Any]], price_per_1k_token
             "latency_p50_ms": round(percentile(latencies, 50), 3),
             "latency_p95_ms": round(percentile(latencies, 95), 3),
             "latency_p99_ms": round(percentile(latencies, 99), 3),
+            "actual_elapsed_p50_ms": round(percentile(actual_latencies, 50), 6),
+            "actual_elapsed_p95_ms": round(percentile(actual_latencies, 95), 6),
+            "actual_elapsed_p99_ms": round(percentile(actual_latencies, 99), 6),
             "esi_mean": round(sum(esi_values) / total, 6),
             "returned_domain_salt_valid_rate": round(sum(salt_valid_values) / total, 6),
         })
@@ -565,6 +574,8 @@ def evaluate_gates(rows: list[dict[str, Any]], summaries: list[dict[str, Any]]) 
     esi_reported = all("esi_mean" in summary for summary in summaries)
     token_cost_reported = all("estimated_token_cost_usd_per_1k_queries" in summary for summary in summaries)
     salt_valid_reported = all("returned_domain_salt_valid_rate" in summary for summary in summaries)
+    actual_elapsed_row_reported = all("actual_elapsed_ms" in row["metrics"] for row in rows)
+    actual_elapsed_summary_reported = all("actual_elapsed_p99_ms" in summary for summary in summaries)
 
     hsrag_modes = {"CTHC_PRUNED_BM25", "CTHC_PRUNED_TFIDF", "UNIQUE_ADDRESS"}
     hsrag_no_evidence_false_allow = sum(
@@ -613,6 +624,8 @@ def evaluate_gates(rows: list[dict[str, Any]], summaries: list[dict[str, Any]]) 
         "token_cost_required_for_every_mode": token_cost_reported,
         "esi_required_for_every_mode": esi_reported,
         "returned_domain_salt_valid_rate_reported": salt_valid_reported,
+        "actual_elapsed_ms_reported_for_every_row": actual_elapsed_row_reported,
+        "actual_elapsed_p99_reported_for_every_mode": actual_elapsed_summary_reported,
         "global_search_does_not_use_salt_for_pruning": global_does_not_prune,
         "cthc_pruned_uses_salted_domain_boundary": cthc_has_salted_boundary,
     }
@@ -690,18 +703,19 @@ def build_public_report(
     reports_dir.mkdir(parents=True, exist_ok=True)
 
     mode_lines = [
-        "| mode | corpus_size | target_correct | candidate_reduction | p99_ms | esi | token_cost_per_1k | salt_valid |",
-        "|---|---:|---:|---:|---:|---:|---:|---:|",
+        "| mode | corpus_size | target_correct | candidate_reduction | estimated_p99_ms | actual_p99_ms | esi | token_cost_per_1k | salt_valid |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
 
     for summary in sorted(summaries, key=lambda item: (str(item["mode"]), int(item["corpus_size"]))):
         mode_lines.append(
-            "| {mode} | {corpus_size} | {target_correct_rate} | {candidate_reduction_ratio} | {latency_p99_ms} | {esi_mean} | {cost} | {salt_valid} |".format(
+            "| {mode} | {corpus_size} | {target_correct_rate} | {candidate_reduction_ratio} | {latency_p99_ms} | {actual_p99_ms} | {esi_mean} | {cost} | {salt_valid} |".format(
                 mode=summary["mode"],
                 corpus_size=summary["corpus_size"],
                 target_correct_rate=summary["target_correct_rate"],
                 candidate_reduction_ratio=summary["candidate_reduction_ratio"],
                 latency_p99_ms=summary["latency_p99_ms"],
+                actual_p99_ms=summary.get("actual_elapsed_p99_ms", "NA"),
                 esi_mean=summary["esi_mean"],
                 cost=summary["estimated_token_cost_usd_per_1k_queries"],
                 salt_valid=summary.get("returned_domain_salt_valid_rate", "NA"),
@@ -849,7 +863,9 @@ def run(config_path: Path, chunk_registry_path: Path | None = None, write_latest
 
         for mode in config["modes"]:
             for query_index, query in enumerate(query_seed["queries"]):
+                actual_started_ns = perf_counter_ns()
                 status, reason_code, result, candidate_before, candidate_after, route_boundary = retrieve(mode, query, chunks, salt_id)
+                actual_elapsed_ms = round((perf_counter_ns() - actual_started_ns) / 1_000_000.0, 6)
                 target = query.get("target")
                 latency_ms = estimated_latency_ms(mode, corpus_size, candidate_after, query_index)
                 retrieved_tokens = estimated_tokens(status, result, chunks_by_id)
@@ -874,6 +890,7 @@ def run(config_path: Path, chunk_registry_path: Path | None = None, write_latest
                         "candidate_count_before": candidate_before,
                         "candidate_count_after": candidate_after,
                         "returned_domain_salt_valid": returned_domain_salt_valid,
+                        "actual_elapsed_ms": actual_elapsed_ms,
                         "toy_retrieval": True,
                         "salted_domain_gate": True,
                     },
