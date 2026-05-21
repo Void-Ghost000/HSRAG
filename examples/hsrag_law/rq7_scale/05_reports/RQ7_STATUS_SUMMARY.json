@@ -1,0 +1,30 @@
+{
+  "schema": "HSRAG_RQ7_STATUS_SUMMARY_V0_1",
+  "status": "OK",
+  "checked_at_utc": "2026-05-21T12:00:32.237644Z",
+  "missing_files": [],
+  "published_files": {
+    "public_report": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_PUBLIC_REPORT.md",
+    "public_summary": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_PUBLIC_REPORT_SUMMARY.json",
+    "release_checkpoint_md": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_RELEASE_CHECKPOINT.md",
+    "release_checkpoint_json": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_RELEASE_CHECKPOINT.json"
+  },
+  "current_maturity": "RQ7 v0.1 release checkpoint / Level 2B-pre",
+  "claim_boundary": {
+    "rq4_rebuilt_artifact_connected": true,
+    "rq4_metrics_snapshot_available": true,
+    "rq4_scale_tiers_available": true,
+    "actual_elapsed_timing_available": true,
+    "public_report_published": true,
+    "release_checkpoint_published": true,
+    "full_scale_benchmark": false,
+    "vector_hybrid_baselines": false,
+    "unit_derivation_is_heuristic": true,
+    "legal_advice": false
+  },
+  "recommended_verify_commands": [
+    "python -m pytest tests -k rq7",
+    "python examples/hsrag_law/rq7_scale/scripts/verify_rq7_release.py --tiers 100,300,600,889",
+    "python examples/hsrag_law/rq7_scale/scripts/publish_rq7_release_checkpoint.py --tiers 100,300,600,889"
+  ]
+}
