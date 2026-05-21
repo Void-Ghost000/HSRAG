@@ -28,3 +28,4 @@ examples/hsrag_law/rq7_scale/02_input/chunk_registry.generated*.json
 examples/hsrag_law/rq7_scale/02_input/chunk_registry.from_csv*.json
 examples/hsrag_law/rq7_scale/02_input/chunk_registry.auto*.json
 examples/hsrag_law/rq7_scale/02_input/chunk_registry.rq4_rebuilt*.json
+examples/hsrag_law/rq7_scale/02_input/chunk_registry.synthetic*.json
