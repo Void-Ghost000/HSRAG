@@ -1,0 +1,119 @@
+{
+  "schema": "HSRAG_RQ7_SYNTHETIC_SCALE_BENCHMARK_V0_1",
+  "status": "OK",
+  "run_id": "rq7_synthetic_scale_benchmark_20260521T172246726255z",
+  "run_started_at_utc": "2026-05-21T17:22:46.726255Z",
+  "target_sizes": [
+    1000,
+    5000,
+    10000
+  ],
+  "benchmark_results": [
+    {
+      "target_size": 1000,
+      "builder": {
+        "chunk_count": 1000,
+        "output": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_synthetic_scale_benchmark_20260521T172246726255z\\chunk_registry.synthetic_1000.json",
+        "real_chunk_count": 889,
+        "scale_stress_only": true,
+        "status": "OK",
+        "synthetic_chunk_count": 111,
+        "synthetic_chunks_explicitly_labeled": true,
+        "synthetic_expansion": true,
+        "target_size": 1000
+      },
+      "runner": {
+        "acceptance_gates": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172246940874z\\acceptance_gates.json",
+        "audit_chain": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172246940874z\\audit_chain.jsonl",
+        "latest_report": null,
+        "metrics_by_query_class": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172246940874z\\metrics_by_query_class.csv",
+        "metrics_summary": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172246940874z\\metrics_summary.csv",
+        "passed": true,
+        "raw_results": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172246940874z\\raw_results.jsonl",
+        "report": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172246940874z\\RQ7_REPORT.md",
+        "run_dir": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172246940874z",
+        "run_id": "rq7_salted_toyreal_20260521T172246940874z",
+        "salted_domain_gate": true,
+        "status": "OK",
+        "synthetic_dry_run": false,
+        "toy_retrieval": true
+      },
+      "passed": true,
+      "registry": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_synthetic_scale_benchmark_20260521T172246726255z\\chunk_registry.synthetic_1000.json"
+    },
+    {
+      "target_size": 5000,
+      "builder": {
+        "chunk_count": 5000,
+        "output": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_synthetic_scale_benchmark_20260521T172246726255z\\chunk_registry.synthetic_5000.json",
+        "real_chunk_count": 889,
+        "scale_stress_only": true,
+        "status": "OK",
+        "synthetic_chunk_count": 4111,
+        "synthetic_chunks_explicitly_labeled": true,
+        "synthetic_expansion": true,
+        "target_size": 5000
+      },
+      "runner": {
+        "acceptance_gates": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172253299349z\\acceptance_gates.json",
+        "audit_chain": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172253299349z\\audit_chain.jsonl",
+        "latest_report": null,
+        "metrics_by_query_class": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172253299349z\\metrics_by_query_class.csv",
+        "metrics_summary": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172253299349z\\metrics_summary.csv",
+        "passed": true,
+        "raw_results": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172253299349z\\raw_results.jsonl",
+        "report": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172253299349z\\RQ7_REPORT.md",
+        "run_dir": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172253299349z",
+        "run_id": "rq7_salted_toyreal_20260521T172253299349z",
+        "salted_domain_gate": true,
+        "status": "OK",
+        "synthetic_dry_run": false,
+        "toy_retrieval": true
+      },
+      "passed": true,
+      "registry": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_synthetic_scale_benchmark_20260521T172246726255z\\chunk_registry.synthetic_5000.json"
+    },
+    {
+      "target_size": 10000,
+      "builder": {
+        "chunk_count": 10000,
+        "output": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_synthetic_scale_benchmark_20260521T172246726255z\\chunk_registry.synthetic_10000.json",
+        "real_chunk_count": 889,
+        "scale_stress_only": true,
+        "status": "OK",
+        "synthetic_chunk_count": 9111,
+        "synthetic_chunks_explicitly_labeled": true,
+        "synthetic_expansion": true,
+        "target_size": 10000
+      },
+      "runner": {
+        "acceptance_gates": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172303532926z\\acceptance_gates.json",
+        "audit_chain": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172303532926z\\audit_chain.jsonl",
+        "latest_report": null,
+        "metrics_by_query_class": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172303532926z\\metrics_by_query_class.csv",
+        "metrics_summary": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172303532926z\\metrics_summary.csv",
+        "passed": true,
+        "raw_results": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172303532926z\\raw_results.jsonl",
+        "report": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172303532926z\\RQ7_REPORT.md",
+        "run_dir": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T172303532926z",
+        "run_id": "rq7_salted_toyreal_20260521T172303532926z",
+        "salted_domain_gate": true,
+        "status": "OK",
+        "synthetic_dry_run": false,
+        "toy_retrieval": true
+      },
+      "passed": true,
+      "registry": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_synthetic_scale_benchmark_20260521T172246726255z\\chunk_registry.synthetic_10000.json"
+    }
+  ],
+  "metric_csv": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_SYNTHETIC_SCALE_BENCHMARK.csv",
+  "claim_boundary": {
+    "synthetic_expansion": true,
+    "synthetic_chunks_explicitly_labeled": true,
+    "synthetic_expansion_is_not_new_legal_corpus": true,
+    "scale_stress_only": true,
+    "full_scale_real_corpus_benchmark": false,
+    "vector_hybrid_baselines": false,
+    "legal_advice": false
+  }
+}
