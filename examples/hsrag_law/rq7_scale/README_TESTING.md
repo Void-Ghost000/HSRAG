@@ -22,14 +22,17 @@ Master verify command:
 
     python examples/hsrag_law/rq7_scale/scripts/verify_rq7_all.py
 
-Expected master result:
+RQ4 rebuilt artifact verify command:
+
+    python examples/hsrag_law/rq7_scale/scripts/verify_rq7_rq4.py
+
+Expected RQ4 verify result:
 
     status: OK
-    all_passed: true
+    acceptance_passed: true
     latest_report_is_clean: true
-    local_only: true
-    zero_network: true
-    zero_secret: true
+    rq4_rebuilt_artifact_connected: true
+    unit_derivation_is_heuristic: true
 
 Current maturity:
 
@@ -39,13 +42,14 @@ Current maturity:
 - Artifact inventory scan: available.
 - Candidate select and run: available.
 - Master verify: available.
+- RQ4 rebuilt artifact verify: available.
 - Full-scale RQ7 benchmark: not implemented yet.
-- Official RQ4 corpus loader: not connected yet.
 - Vector / hybrid baselines: not implemented yet.
 
 Claim boundary:
 
 The current verify commands validate pipeline integrity and artifact generation.
+RQ4 rebuilt verify connects a local RQ4 rebuilt chunk artifact, but unit derivation is still heuristic.
 They do not prove full-scale benchmark performance.
 They do not prove HSRAG replaces all RAG systems.
 They do not provide legal advice.
