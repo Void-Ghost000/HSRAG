@@ -219,3 +219,33 @@ Publish diagnostics:
 
     python examples/hsrag_law/rq7_scale/scripts/publish_rq7_full_query_diagnostics.py
 
+
+## RQ7 Full Query Triage
+
+RQ7 full benchmark branch includes a triage report for expanded query diagnostics:
+
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_FULL_QUERY_TRIAGE.md`
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_FULL_QUERY_TRIAGE.json`
+
+Current triage categories include:
+
+- EXPECTED_GUARD_BLOCK
+- FALSE_ALLOW_RISK
+- TARGET_BLOCKED
+- TARGET_MISMATCH
+- ALLOW_MATCHED_TARGET
+- ALLOW_NO_TARGET
+- OTHER
+
+Current claim boundary:
+
+- Triage is diagnostic-only.
+- Acceptance failure is allowed for diagnostics.
+- Full-scale benchmark is still pending.
+- Vector / hybrid baselines are still pending.
+- This does not provide legal advice.
+
+Build triage report:
+
+    python examples/hsrag_law/rq7_scale/scripts/build_rq7_full_query_triage.py
+
