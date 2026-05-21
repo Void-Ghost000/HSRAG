@@ -815,7 +815,11 @@ def run(config_path: Path, chunk_registry_path: Path | None = None, write_latest
         base_dir = config_path.resolve().parent
     salt_id = str(config.get("domain_salt_id", DEFAULT_DOMAIN_SALT_ID))
 
-    query_seed = load_json(base_dir / "02_input" / "query_seed.example.json")
+    query_seed_path_value = config.get("query_seed_path", "02_input/query_seed.example.json")
+    query_seed_path = Path(str(query_seed_path_value))
+    if not query_seed_path.is_absolute():
+        query_seed_path = base_dir / query_seed_path
+    query_seed = load_json(query_seed_path)
     corpus_manifest = load_json(base_dir / "02_input" / "corpus_manifest.example.json")
 
     resolved_chunk_registry_path = (

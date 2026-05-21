@@ -1,0 +1,238 @@
+{
+  "schema": "HSRAG_RQ7_QUERY_SEED_V0_1_FULL_EXPANSION",
+  "queries": [
+    {
+      "query_id": "Q_EXACT_UNIT_0001",
+      "query_class": "exact_unit",
+      "query": "EU AI Act Article 5 prohibited AI practices",
+      "target": {
+        "domain": "LAW",
+        "jurisdiction": "EU",
+        "corpus": "EU_AI_ACT",
+        "unit": "ARTICLE_5"
+      },
+      "expected_behavior": "ALLOW"
+    },
+    {
+      "query_id": "Q_NO_EVIDENCE_0001",
+      "query_class": "no_evidence",
+      "query": "Explain an official rule from a fictional jurisdiction not present in the corpus.",
+      "target": null,
+      "expected_behavior": "BLOCK_NO_EVIDENCE"
+    },
+    {
+      "query_id": "Q_AMBIGUOUS_0001",
+      "query_class": "ambiguous_cross_domain",
+      "query": "Explain platform liability rules under AI law and US internet law.",
+      "target": null,
+      "expected_behavior": "BLOCK_AMBIGUOUS_ROUTE"
+    },
+    {
+      "query_id": "rq7_full_target_0001",
+      "query_class": "exact_unit",
+      "query": "EU_AI_ACT ARTICLE_5: identify the relevant rule and evidence.",
+      "target": {
+        "domain": "LAW",
+        "jurisdiction": "EU",
+        "corpus": "EU_AI_ACT",
+        "unit": "ARTICLE_5"
+      },
+      "expected_behavior": "ALLOW",
+      "rq7_full_expansion": true
+    },
+    {
+      "query_id": "rq7_full_target_0002",
+      "query_class": "exact_unit",
+      "query": "What does EU_AI_ACT ARTICLE_5 cover?",
+      "target": {
+        "domain": "LAW",
+        "jurisdiction": "EU",
+        "corpus": "EU_AI_ACT",
+        "unit": "ARTICLE_5"
+      },
+      "expected_behavior": "ALLOW",
+      "rq7_full_expansion": true
+    },
+    {
+      "query_id": "rq7_full_target_0003",
+      "query_class": "typo_abbreviation",
+      "query": "EU AI ACT ARTICLE 5 pls summarize the legal point.",
+      "target": {
+        "domain": "LAW",
+        "jurisdiction": "EU",
+        "corpus": "EU_AI_ACT",
+        "unit": "ARTICLE_5"
+      },
+      "expected_behavior": "ALLOW",
+      "rq7_full_expansion": true
+    },
+    {
+      "query_id": "rq7_full_target_0004",
+      "query_class": "jurisdiction_distractor",
+      "query": "Ignore unrelated jurisdiction hints and answer using EU EU_AI_ACT ARTICLE_5.",
+      "target": {
+        "domain": "LAW",
+        "jurisdiction": "EU",
+        "corpus": "EU_AI_ACT",
+        "unit": "ARTICLE_5"
+      },
+      "expected_behavior": "ALLOW",
+      "rq7_full_expansion": true
+    },
+    {
+      "query_id": "rq7_full_guard_0005",
+      "query_class": "no_evidence",
+      "query": "Does the Martian Neural Safety Act Article 999 require lunar model licensing?",
+      "expected_behavior": "BLOCK_NO_EVIDENCE",
+      "rq7_full_expansion": true
+    },
+    {
+      "query_id": "rq7_full_guard_0006",
+      "query_class": "no_evidence",
+      "query": "What does the Atlantis AI Liability Regulation say about underwater foundation models?",
+      "expected_behavior": "BLOCK_NO_EVIDENCE",
+      "rq7_full_expansion": true
+    },
+    {
+      "query_id": "rq7_full_guard_0007",
+      "query_class": "ambiguous_cross_domain",
+      "query": "Compare AI prohibitions, children privacy, and platform liability without specifying a jurisdiction or article.",
+      "expected_behavior": "BLOCK_AMBIGUOUS_ROUTE",
+      "rq7_full_expansion": true
+    },
+    {
+      "query_id": "rq7_full_guard_0008",
+      "query_class": "ambiguous_cross_domain",
+      "query": "Tell me the legal rule across EU AI law and US internet law, but do not pick a specific source.",
+      "expected_behavior": "BLOCK_AMBIGUOUS_ROUTE",
+      "rq7_full_expansion": true
+    },
+    {
+      "query_id": "rq7_full_guard_0009",
+      "query_class": "mismatch_trap",
+      "query": "Under EU AI Act Article 5, what does 47 U.S.C. Section 230 require?",
+      "expected_behavior": "BLOCK_NO_EVIDENCE",
+      "rq7_full_expansion": true
+    },
+    {
+      "query_id": "rq7_full_guard_0010",
+      "query_class": "mismatch_trap",
+      "query": "Under COPPA, explain EU AI Act prohibited AI practices as if they were the same corpus.",
+      "expected_behavior": "BLOCK_NO_EVIDENCE",
+      "rq7_full_expansion": true
+    },
+    {
+      "query_id": "rq7_full_extra_0011",
+      "query_class": "exact_unit",
+      "query": "Retrieve the boundary-controlled evidence for EU_AI_ACT ARTICLE_5.",
+      "target": {
+        "domain": "LAW",
+        "jurisdiction": "EU",
+        "corpus": "EU_AI_ACT",
+        "unit": "ARTICLE_5"
+      },
+      "expected_behavior": "ALLOW",
+      "rq7_full_expansion": true
+    },
+    {
+      "query_id": "rq7_full_extra_0012",
+      "query_class": "exact_unit",
+      "query": "Retrieve the boundary-controlled evidence for EU_AI_ACT ARTICLE_5.",
+      "target": {
+        "domain": "LAW",
+        "jurisdiction": "EU",
+        "corpus": "EU_AI_ACT",
+        "unit": "ARTICLE_5"
+      },
+      "expected_behavior": "ALLOW",
+      "rq7_full_expansion": true
+    },
+    {
+      "query_id": "rq7_full_extra_0013",
+      "query_class": "exact_unit",
+      "query": "Retrieve the boundary-controlled evidence for EU_AI_ACT ARTICLE_5.",
+      "target": {
+        "domain": "LAW",
+        "jurisdiction": "EU",
+        "corpus": "EU_AI_ACT",
+        "unit": "ARTICLE_5"
+      },
+      "expected_behavior": "ALLOW",
+      "rq7_full_expansion": true
+    },
+    {
+      "query_id": "rq7_full_extra_0014",
+      "query_class": "exact_unit",
+      "query": "Retrieve the boundary-controlled evidence for EU_AI_ACT ARTICLE_5.",
+      "target": {
+        "domain": "LAW",
+        "jurisdiction": "EU",
+        "corpus": "EU_AI_ACT",
+        "unit": "ARTICLE_5"
+      },
+      "expected_behavior": "ALLOW",
+      "rq7_full_expansion": true
+    },
+    {
+      "query_id": "rq7_full_extra_0015",
+      "query_class": "exact_unit",
+      "query": "Retrieve the boundary-controlled evidence for EU_AI_ACT ARTICLE_5.",
+      "target": {
+        "domain": "LAW",
+        "jurisdiction": "EU",
+        "corpus": "EU_AI_ACT",
+        "unit": "ARTICLE_5"
+      },
+      "expected_behavior": "ALLOW",
+      "rq7_full_expansion": true
+    },
+    {
+      "query_id": "rq7_full_extra_0016",
+      "query_class": "exact_unit",
+      "query": "Retrieve the boundary-controlled evidence for EU_AI_ACT ARTICLE_5.",
+      "target": {
+        "domain": "LAW",
+        "jurisdiction": "EU",
+        "corpus": "EU_AI_ACT",
+        "unit": "ARTICLE_5"
+      },
+      "expected_behavior": "ALLOW",
+      "rq7_full_expansion": true
+    },
+    {
+      "query_id": "rq7_full_extra_0017",
+      "query_class": "exact_unit",
+      "query": "Retrieve the boundary-controlled evidence for EU_AI_ACT ARTICLE_5.",
+      "target": {
+        "domain": "LAW",
+        "jurisdiction": "EU",
+        "corpus": "EU_AI_ACT",
+        "unit": "ARTICLE_5"
+      },
+      "expected_behavior": "ALLOW",
+      "rq7_full_expansion": true
+    },
+    {
+      "query_id": "rq7_full_extra_0018",
+      "query_class": "exact_unit",
+      "query": "Retrieve the boundary-controlled evidence for EU_AI_ACT ARTICLE_5.",
+      "target": {
+        "domain": "LAW",
+        "jurisdiction": "EU",
+        "corpus": "EU_AI_ACT",
+        "unit": "ARTICLE_5"
+      },
+      "expected_behavior": "ALLOW",
+      "rq7_full_expansion": true
+    }
+  ],
+  "description": "RQ7 full benchmark expanded query seed. Built from query_seed.example.json.",
+  "base_query_count": 3,
+  "added_query_count": 18,
+  "query_count": 21,
+  "claim_boundary": {
+    "query_expansion_only": true,
+    "full_scale_benchmark": false,
+    "vector_hybrid_baselines": false
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "schema": "HSRAG_RQ7_CONFIG_V0_1",
+  "run_name": "RQ7_SCALE_MAINSTREAM_VS_CTHC_VS_UNIQUE",
+  "seed": 20260520,
+  "local_only": true,
+  "claim_boundary": {
+    "production_ready": false,
+    "replaces_all_rag": false,
+    "legal_advice": false
+  },
+  "scale_tiers": [
+    {
+      "id": "S1",
+      "chunk_count": 1000
+    },
+    {
+      "id": "S2",
+      "chunk_count": 5000
+    },
+    {
+      "id": "S3",
+      "chunk_count": 10000
+    },
+    {
+      "id": "S4",
+      "chunk_count": 50000
+    }
+  ],
+  "modes": [
+    "BM25_GLOBAL",
+    "TFIDF_GLOBAL",
+    "CTHC_PRUNED_BM25",
+    "CTHC_PRUNED_TFIDF",
+    "UNIQUE_ADDRESS"
+  ],
+  "query_classes": [
+    "exact_address",
+    "exact_unit",
+    "exact_chunk",
+    "single_domain_concept",
+    "cross_domain_compare",
+    "ambiguous_cross_domain",
+    "no_evidence",
+    "mismatch_trap",
+    "typo_abbreviation",
+    "jurisdiction_distractor",
+    "scale_noise_query"
+  ],
+  "required_metrics": [
+    "target_correct_rate",
+    "wrong_corpus_collision_rate",
+    "wrong_jurisdiction_collision_rate",
+    "wrong_unit_collision_rate",
+    "mismatch_escape_rate",
+    "no_evidence_false_allow_rate",
+    "ambiguous_false_allow_rate",
+    "correct_block_rate",
+    "candidate_count_before_mean",
+    "candidate_count_after_mean",
+    "candidate_reduction_ratio",
+    "retrieved_token_count_mean",
+    "estimated_token_cost_usd_per_1k_queries",
+    "token_reduction_ratio",
+    "latency_p50_ms",
+    "latency_p95_ms",
+    "latency_p99_ms",
+    "esi_mean",
+    "replay_success_rate",
+    "audit_hash_complete_rate",
+    "route_determinism_rate"
+  ],
+  "_rq7_base_dir": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale",
+  "query_seed_path": "02_input/query_seed.full.example.json",
+  "rq7_full_query_expansion": true
+}
