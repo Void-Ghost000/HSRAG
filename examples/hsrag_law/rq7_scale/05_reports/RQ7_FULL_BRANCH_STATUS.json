@@ -1,0 +1,47 @@
+{
+  "schema": "HSRAG_RQ7_FULL_BRANCH_STATUS_V0_1",
+  "status": "OK",
+  "checked_at_utc": "2026-05-21T15:22:12.761152Z",
+  "branch_scope": "rq7-full-benchmark",
+  "missing_files": [],
+  "full_query_seed": {
+    "path": "examples\\hsrag_law\\rq7_scale\\02_input\\query_seed.full.example.json",
+    "query_count": 21,
+    "added_query_count": 18
+  },
+  "diagnostics": {
+    "path_md": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_FULL_QUERY_DIAGNOSTICS.md",
+    "path_json": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_FULL_QUERY_DIAGNOSTICS.json",
+    "diagnostic_status": "DIAGNOSTIC_WARN",
+    "acceptance_passed": false,
+    "raw_result_count": 420,
+    "query_class_count": 6
+  },
+  "triage": {
+    "path_md": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_FULL_QUERY_TRIAGE.md",
+    "path_json": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_FULL_QUERY_TRIAGE.json",
+    "raw_result_count": 420,
+    "triage_summary": {
+      "ALLOW_MATCHED_TARGET": 124,
+      "EXPECTED_GUARD_BLOCK": 64,
+      "FALSE_ALLOW_RISK": 96,
+      "TARGET_BLOCKED": 136
+    }
+  },
+  "claim_boundary": {
+    "full_query_expansion": true,
+    "diagnostic_only": true,
+    "triage_only": true,
+    "acceptance_failure_allowed_for_diagnostics": true,
+    "full_scale_benchmark": false,
+    "vector_hybrid_baselines": false,
+    "legal_advice": false
+  },
+  "next_branches": [
+    "expanded real corpus",
+    "1k/5k/10k scale after corpus expansion",
+    "vector baseline",
+    "hybrid baseline",
+    "paper-grade report"
+  ]
+}
