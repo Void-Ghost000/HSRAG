@@ -1,0 +1,20 @@
+{
+  "schema": "HSRAG_RQ7_FULL_QUERY_DIAGNOSTICS_PUBLISH_V0_1",
+  "status": "OK",
+  "published_at_utc": "2026-05-21T14:13:35.586537Z",
+  "diagnostic_id": "rq7_full_query_diagnostics_20260521T141409109680z",
+  "diagnostic_status": "DIAGNOSTIC_WARN",
+  "acceptance_passed": false,
+  "raw_result_count": 420,
+  "query_class_count": 6,
+  "published_json": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_FULL_QUERY_DIAGNOSTICS.json",
+  "published_md": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_FULL_QUERY_DIAGNOSTICS.md",
+  "published_summary": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_FULL_QUERY_DIAGNOSTICS_SUMMARY.json",
+  "claim_boundary": {
+    "diagnostic_only": true,
+    "full_query_expansion": true,
+    "acceptance_failure_allowed_for_diagnostics": true,
+    "full_scale_benchmark": false,
+    "vector_hybrid_baselines": false
+  }
+}

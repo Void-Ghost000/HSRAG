@@ -1,0 +1,110 @@
+{
+  "schema": "HSRAG_RQ7_FULL_QUERY_DIAGNOSTICS_V0_1",
+  "status": "OK",
+  "diagnostic_status": "DIAGNOSTIC_WARN",
+  "diagnostic_id": "rq7_full_query_diagnostics_20260521T141409109680z",
+  "run_started_at_utc": "2026-05-21T14:14:09.109680Z",
+  "build_summary": {
+    "added_query_count": 18,
+    "base_query_count": 3,
+    "output_config": "examples\\hsrag_law\\rq7_scale\\config.rq7.full_queries.json",
+    "output_seed": "examples\\hsrag_law\\rq7_scale\\02_input\\query_seed.full.example.json",
+    "query_count": 21,
+    "query_seed_path": "02_input/query_seed.full.example.json",
+    "status": "OK"
+  },
+  "runner": {
+    "acceptance_gates": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T141335927677z\\acceptance_gates.json",
+    "audit_chain": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T141335927677z\\audit_chain.jsonl",
+    "latest_report": null,
+    "metrics_by_query_class": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T141335927677z\\metrics_by_query_class.csv",
+    "metrics_summary": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T141335927677z\\metrics_summary.csv",
+    "passed": false,
+    "raw_results": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T141335927677z\\raw_results.jsonl",
+    "report": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T141335927677z\\RQ7_REPORT.md",
+    "run_dir": "C:\\Users\\himit\\Desktop\\HSRAG\\examples\\hsrag_law\\rq7_scale\\04_runs\\rq7_salted_toyreal_20260521T141335927677z",
+    "run_id": "rq7_salted_toyreal_20260521T141335927677z",
+    "salted_domain_gate": true,
+    "status": "OK",
+    "synthetic_dry_run": false,
+    "toy_retrieval": true
+  },
+  "acceptance_passed": false,
+  "gate_results": {
+    "result_contract_required": true,
+    "audit_hash_complete_rate_min_1_0": true,
+    "route_determinism_rate_min_1_0": true,
+    "unique_address_exact_target_correct_rate_min_1_0": false,
+    "hsrag_no_evidence_false_allow_rate_max_0": true,
+    "p99_required_for_every_mode": true,
+    "token_cost_required_for_every_mode": true,
+    "esi_required_for_every_mode": true,
+    "returned_domain_salt_valid_rate_reported": true,
+    "actual_elapsed_ms_reported_for_every_row": true,
+    "actual_elapsed_p99_reported_for_every_mode": true,
+    "global_search_does_not_use_salt_for_pruning": true,
+    "cthc_pruned_uses_salted_domain_boundary": true
+  },
+  "raw_result_count": 420,
+  "query_class_count": 6,
+  "query_class_summary": {
+    "ambiguous_cross_domain": {
+      "ALLOW": 48,
+      "BLOCK": 12
+    },
+    "exact_unit": {
+      "ALLOW": 100,
+      "BLOCK": 120
+    },
+    "jurisdiction_distractor": {
+      "ALLOW": 8,
+      "BLOCK": 12
+    },
+    "mismatch_trap": {
+      "ALLOW": 24,
+      "BLOCK": 16
+    },
+    "no_evidence": {
+      "ALLOW": 24,
+      "BLOCK": 36
+    },
+    "typo_abbreviation": {
+      "ALLOW": 16,
+      "BLOCK": 4
+    }
+  },
+  "mode_summary": {
+    "BM25_GLOBAL": {
+      "ALLOW": 84
+    },
+    "CTHC_PRUNED_BM25": {
+      "ALLOW": 24,
+      "BLOCK": 60
+    },
+    "CTHC_PRUNED_TFIDF": {
+      "ALLOW": 24,
+      "BLOCK": 60
+    },
+    "TFIDF_GLOBAL": {
+      "ALLOW": 84
+    },
+    "UNIQUE_ADDRESS": {
+      "ALLOW": 4,
+      "BLOCK": 80
+    }
+  },
+  "reason_code_summary": {
+    "FOUND": 220,
+    "NO_EVIDENCE": 152,
+    "AMBIGUOUS_ROUTE": 8,
+    "UNIQUE_ADDRESS_NOT_FOUND": 40
+  },
+  "metrics_by_query_class_rows": 120,
+  "claim_boundary": {
+    "diagnostic_only": true,
+    "full_query_expansion": true,
+    "acceptance_failure_allowed_for_diagnostics": true,
+    "full_scale_benchmark": false,
+    "vector_hybrid_baselines": false
+  }
+}
