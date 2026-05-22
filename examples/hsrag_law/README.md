@@ -1087,3 +1087,31 @@ Run vector baseline report:
 
     python examples/hsrag_law/rq7_scale/scripts/build_rq7_vector_baseline_report.py
 
+
+## RQ7 Hybrid Baseline Report
+
+RQ7 hybrid baseline branch includes a local deterministic hybrid baseline report:
+
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_HYBRID_BASELINE_REPORT.md`
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_HYBRID_BASELINE_REPORT_SUMMARY.json`
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_HYBRID_BASELINE_REPORT.csv`
+
+Current hybrid modes:
+
+- HYBRID_BM25_VECTOR
+- CTHC_PRUNED_HYBRID
+
+Claim boundary:
+
+- Local deterministic hybrid baseline only.
+- No external embedding API.
+- No network access required.
+- No secrets required.
+- Not a state-of-the-art hybrid search engine.
+- Not a production vector database benchmark.
+- This does not provide legal advice.
+
+Run hybrid baseline report:
+
+    python examples/hsrag_law/rq7_scale/scripts/build_rq7_hybrid_baseline_report.py
+
