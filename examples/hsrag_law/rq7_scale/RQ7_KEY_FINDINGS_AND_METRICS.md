@@ -35,10 +35,8 @@ RQ7 does **not** evaluate LLM reasoning.
 
 RQ7 does **not** evaluate generated answer quality.
 
-RQ7 does **not** evaluate:
+RQ7 also does **not** evaluate:
 
-- LLM reasoning quality
-- generated answer quality
 - legal reasoning by an attorney
 - end-to-end chatbot behavior
 - production RAG service performance
@@ -161,4 +159,3 @@ RQ7 does not claim:
 RQ7 evaluates Hash-Structured RAG with deterministic addressing at the retrieval / routing / evidence-selection layer.
 
 The current result is not mainly “higher answer intelligence.” It is that deterministic addressing and CTHC-style boundary filtering can preserve target correctness while reducing candidate search space, local measured p99 latency, estimated evidence-token cost, and evidence-alignment ambiguity.
-

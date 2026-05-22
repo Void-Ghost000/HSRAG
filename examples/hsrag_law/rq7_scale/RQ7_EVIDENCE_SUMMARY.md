@@ -185,7 +185,7 @@ Current claim boundary:
 - RQ4 scale tiers available: 100 / 300 / 600 / 889
 - Actual elapsed timing available
 - Full-scale benchmark pending
-- Vector / hybrid baselines pending
+- Local deterministic vector / hybrid baselines available; production embedding / vector database baselines pending
 - Unit derivation remains heuristic
 - Not legal advice
 
@@ -299,7 +299,7 @@ Claim boundary:
 - No secrets required.
 - Not a state-of-the-art vector search engine.
 - Not a production vector database benchmark.
-- Hybrid ranking is not included yet.
+- Hybrid baseline is available in the RQ7 Hybrid Baseline Report.
 - This does not provide legal advice.
 
 Run vector baseline report:
@@ -346,5 +346,6 @@ Current RQ7 results do not primarily show higher target correctness than BM25 / 
 Detailed explanation:
 
 - `examples/hsrag_law/rq7_scale/RQ7_KEY_FINDINGS_AND_METRICS.md`
+
 
 

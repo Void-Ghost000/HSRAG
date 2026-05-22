@@ -1124,8 +1124,12 @@ RQ7 measures the retrieval, routing, and evidence-selection layer. It does **not
 
 Current RQ7 results do not primarily show higher target correctness than BM25 / TF-IDF on the current easy query set. They show that deterministic addressing and CTHC-style boundary filtering can preserve correctness while reducing candidate search space, local measured p99 latency, estimated evidence-token cost, and evidence-alignment ambiguity.
 
+Current RQ7 also includes local deterministic vector / hybrid baselines. Production embedding / vector database baselines remain pending.
+
 Detailed explanation:
 
 - `examples/hsrag_law/rq7_scale/RQ7_KEY_FINDINGS_AND_METRICS.md`
+
+
 
 
