@@ -13,5 +13,7 @@ def test_rq7_evidence_summary_mentions_rq4_snapshot_and_boundaries() -> None:
     assert "examples/hsrag_law/results/rq4_rebuilt_chunks.csv" in text
     assert "Unit derivation is heuristic" in text
     assert "full-scale RQ7 benchmark completion" in text
-    assert "Vector and hybrid baselines are not implemented yet" in text
+    assert "Local deterministic vector and hybrid baselines are implemented" in text
+    assert "external embedding APIs and production vector database benchmarks are not implemented" in text
     assert "RQ7.14 — Real Scale Tier Runner" in text
+

@@ -1479,3 +1479,16 @@ Run hybrid baseline report:
 
     python examples/hsrag_law/rq7_scale/scripts/build_rq7_hybrid_baseline_report.py
 
+
+## RQ7 Scope and Key Findings
+
+RQ7 evaluates HSRAG as **Hash-Structured RAG with deterministic addressing**.
+
+RQ7 measures the retrieval, routing, and evidence-selection layer. It does **not** call an LLM, does **not** evaluate LLM reasoning, and does **not** evaluate generated-answer quality.
+
+Current RQ7 results do not primarily show higher target correctness than BM25 / TF-IDF on the current easy query set. They show that deterministic addressing and CTHC-style boundary filtering can preserve correctness while reducing candidate search space, local measured p99 latency, estimated evidence-token cost, and evidence-alignment ambiguity.
+
+Detailed explanation:
+
+- `examples/hsrag_law/rq7_scale/RQ7_KEY_FINDINGS_AND_METRICS.md`
+

@@ -30,4 +30,5 @@ def test_rq7_synthetic_scale_benchmark_indexed_from_evidence_summary() -> None:
     assert "RQ7_SYNTHETIC_SCALE_BENCHMARK.csv" in text
     assert "Synthetic chunks are explicitly labeled." in text
     assert "This is a scale stress benchmark only." in text
-    assert "Vector / hybrid baselines are still pending." in text
+    assert "Local deterministic vector / hybrid baselines are available; production embedding / vector database baselines are still pending." in text
+

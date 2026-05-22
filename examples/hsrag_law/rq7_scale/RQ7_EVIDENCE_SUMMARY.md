@@ -108,7 +108,7 @@ RQ7 currently does not claim:
 - full-scale RQ7 benchmark completion
 - production retrieval performance
 - legal advice
-- vector / hybrid baseline coverage
+- production external embedding / vector database baseline coverage
 - real API billing cost
 - production latency measurement
 - perfect legal unit parsing
@@ -121,8 +121,8 @@ Current RQ7 validates pipeline integrity, artifact generation, salted-domain rou
 - Latency is still estimated by deterministic local formulas.
 - Token cost is estimated, not actual API billing.
 - ESI is rule-based.
-- Vector and hybrid baselines are not implemented yet.
-- Full-scale RQ7 benchmark is pending.
+- Local deterministic vector and hybrid baselines are implemented; external embedding APIs and production vector database benchmarks are not implemented.
+- Real-law full-scale RQ7 benchmark is pending; synthetic scale-stress benchmark is available.
 - Production retrieval timing is not measured yet.
 - This does not provide legal advice.
 
@@ -208,7 +208,7 @@ Current claim boundary:
 - Full query expansion is diagnostic-only.
 - Acceptance failure is allowed for diagnostics.
 - Full-scale benchmark is still pending.
-- Vector / hybrid baselines are still pending.
+- Local deterministic vector / hybrid baselines are available; production embedding / vector database baselines are still pending.
 - This does not provide legal advice.
 
 Run diagnostics:
@@ -242,7 +242,7 @@ Current claim boundary:
 - Triage is diagnostic-only.
 - Acceptance failure is allowed for diagnostics.
 - Full-scale benchmark is still pending.
-- Vector / hybrid baselines are still pending.
+- Local deterministic vector / hybrid baselines are available; production embedding / vector database baselines are still pending.
 - This does not provide legal advice.
 
 Build triage report:
@@ -270,7 +270,7 @@ Claim boundary:
 - Synthetic expansion is not new legal corpus.
 - This is a scale stress benchmark only.
 - This is not a full-scale real-law corpus benchmark.
-- Vector / hybrid baselines are still pending.
+- Local deterministic vector / hybrid baselines are available; production embedding / vector database baselines are still pending.
 - This does not provide legal advice.
 
 Run benchmark:
@@ -333,4 +333,18 @@ Claim boundary:
 Run hybrid baseline report:
 
     python examples/hsrag_law/rq7_scale/scripts/build_rq7_hybrid_baseline_report.py
+
+
+## RQ7 Scope and Key Findings
+
+RQ7 evaluates HSRAG as **Hash-Structured RAG with deterministic addressing**.
+
+RQ7 measures the retrieval, routing, and evidence-selection layer. It does **not** call an LLM, does **not** evaluate LLM reasoning, and does **not** evaluate generated-answer quality.
+
+Current RQ7 results do not primarily show higher target correctness than BM25 / TF-IDF on the current easy query set. They show that deterministic addressing and CTHC-style boundary filtering can preserve correctness while reducing candidate search space, local measured p99 latency, estimated evidence-token cost, and evidence-alignment ambiguity.
+
+Detailed explanation:
+
+- `examples/hsrag_law/rq7_scale/RQ7_KEY_FINDINGS_AND_METRICS.md`
+
 
