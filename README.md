@@ -1503,3 +1503,10 @@ Detailed explanation:
 
 
 
+
+
+## 快速連結
+
+- [RQ7 關鍵發現與指標](examples/hsrag_law/rq7_scale/RQ7_KEY_FINDINGS_AND_METRICS.md) — RQ7 範圍、指標、LLM 邊界、vector/hybrid baseline 狀態與 claim limits。
+- [RQ7 證據摘要](examples/hsrag_law/rq7_scale/RQ7_EVIDENCE_SUMMARY.md) — RQ7 artifact map and report index for public, synthetic scale, vector, and hybrid reports。
+
