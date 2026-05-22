@@ -277,3 +277,32 @@ Run benchmark:
 
     python examples/hsrag_law/rq7_scale/scripts/run_rq7_synthetic_scale_benchmark.py --target-sizes 1000,5000,10000
 
+
+## RQ7 Vector Baseline Report
+
+RQ7 vector baseline branch includes a local deterministic vector-style baseline report:
+
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_VECTOR_BASELINE_REPORT.md`
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_VECTOR_BASELINE_REPORT_SUMMARY.json`
+- `examples/hsrag_law/rq7_scale/05_reports/RQ7_VECTOR_BASELINE_REPORT.csv`
+
+Current vector modes:
+
+- VECTOR_GLOBAL
+- CTHC_PRUNED_VECTOR
+
+Claim boundary:
+
+- Local deterministic vector-style baseline only.
+- No external embedding API.
+- No network access required.
+- No secrets required.
+- Not a state-of-the-art vector search engine.
+- Not a production vector database benchmark.
+- Hybrid ranking is not included yet.
+- This does not provide legal advice.
+
+Run vector baseline report:
+
+    python examples/hsrag_law/rq7_scale/scripts/build_rq7_vector_baseline_report.py
+
