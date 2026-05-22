@@ -1,0 +1,56 @@
+{
+  "schema": "HSRAG_RQ7_FULL_PUBLIC_REPORT_SUMMARY_V0_1",
+  "status": "OK",
+  "generated_at_utc": "2026-05-22T04:45:49.641861Z",
+  "report": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_FULL_PUBLIC_REPORT.md",
+  "full_branch_status": {
+    "status": "OK",
+    "query_count": 21,
+    "added_query_count": 18
+  },
+  "diagnostics": {
+    "diagnostic_status": "DIAGNOSTIC_WARN",
+    "acceptance_passed": false,
+    "raw_result_count": 420,
+    "query_class_count": 6
+  },
+  "triage": {
+    "raw_result_count": 420,
+    "triage_summary": {
+      "ALLOW_MATCHED_TARGET": 124,
+      "EXPECTED_GUARD_BLOCK": 64,
+      "FALSE_ALLOW_RISK": 96,
+      "TARGET_BLOCKED": 136
+    }
+  },
+  "corpus_inventory": {
+    "artifact_count": 26,
+    "text_corpus_candidate_count": 4,
+    "kind_summary": {
+      "RESULT_LOG": 6,
+      "NON_CORPUS_ARTIFACT": 13,
+      "TEXT_CORPUS_CANDIDATE": 4,
+      "METRICS_OR_SUMMARY": 3
+    }
+  },
+  "synthetic_scale": {
+    "status": "OK",
+    "target_sizes": [
+      1000,
+      5000,
+      10000
+    ],
+    "metric_csv": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_SYNTHETIC_SCALE_BENCHMARK.csv"
+  },
+  "claim_boundary": {
+    "full_query_expansion": true,
+    "diagnostic_only": true,
+    "triage_only": true,
+    "synthetic_expansion": true,
+    "synthetic_scale_stress_only": true,
+    "synthetic_expansion_is_not_new_legal_corpus": true,
+    "full_scale_real_corpus_benchmark": false,
+    "vector_hybrid_baselines": false,
+    "legal_advice": false
+  }
+}
