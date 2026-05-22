@@ -1,0 +1,40 @@
+{
+  "schema": "HSRAG_RQ7_HYBRID_BRANCH_STATUS_V0_1",
+  "status": "OK",
+  "checked_at_utc": "2026-05-22T13:06:32.687942Z",
+  "branch_scope": "rq7-hybrid-baseline",
+  "missing_files": [],
+  "config_modes": [
+    "BM25_GLOBAL",
+    "TFIDF_GLOBAL",
+    "CTHC_PRUNED_BM25",
+    "CTHC_PRUNED_TFIDF",
+    "UNIQUE_ADDRESS",
+    "VECTOR_GLOBAL",
+    "CTHC_PRUNED_VECTOR",
+    "HYBRID_BM25_VECTOR",
+    "CTHC_PRUNED_HYBRID"
+  ],
+  "hybrid_modes": [
+    "CTHC_PRUNED_HYBRID",
+    "HYBRID_BM25_VECTOR"
+  ],
+  "published_files": {
+    "design": "examples\\hsrag_law\\rq7_scale\\RQ7_HYBRID_BASELINE_DESIGN.md",
+    "scorer": "examples\\hsrag_law\\rq7_scale\\scripts\\local_hybrid_scorer.py",
+    "config": "examples\\hsrag_law\\rq7_scale\\config.rq7.hybrid.json",
+    "report_md": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_HYBRID_BASELINE_REPORT.md",
+    "report_json": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_HYBRID_BASELINE_REPORT_SUMMARY.json",
+    "report_csv": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_HYBRID_BASELINE_REPORT.csv"
+  },
+  "claim_boundary": {
+    "local_deterministic_hybrid_baseline": true,
+    "external_embedding_api": false,
+    "network_required": false,
+    "secret_required": false,
+    "state_of_the_art_hybrid_search": false,
+    "production_vector_database": false,
+    "legal_advice": false
+  },
+  "final_checkpoint_ready": true
+}
