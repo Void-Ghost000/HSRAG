@@ -1076,6 +1076,12 @@ It is not a production API registry, API gateway, cloud service, or LLM API wrap
 The goal is to show how API specs can be resolved through deterministic identity, authority layers, and auditable result contracts instead of vague semantic guessing.
 <!-- /HSRAG_API_SQLITE_SECTION -->
 
+
+## RQ7 Quick Links
+
+- [RQ7 Key Findings and Metrics](examples/hsrag_law/rq7_scale/RQ7_KEY_FINDINGS_AND_METRICS.md) — explains the RQ7 benchmark scope, metrics, LLM boundary, vector/hybrid baseline status, and claim limits.
+- [RQ7 Evidence Summary](examples/hsrag_law/rq7_scale/RQ7_EVIDENCE_SUMMARY.md) — artifact map for RQ7 public, synthetic scale, vector, and hybrid reports.
+
 ## Documentation Map
 
 | Document | Purpose |
@@ -1491,6 +1497,7 @@ Current RQ7 results do not primarily show higher target correctness than BM25 / 
 Detailed explanation:
 
 - `examples/hsrag_law/rq7_scale/RQ7_KEY_FINDINGS_AND_METRICS.md`
+
 
 
 
