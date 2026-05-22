@@ -318,6 +318,8 @@ def retrieve(
         candidates = filter_by_route(chunks, route)
         if mode == "CTHC_PRUNED_VECTOR":
             best, _score = vector_search_best(query_text, candidates)
+        elif mode == "CTHC_PRUNED_HYBRID":
+            best, _score = hybrid_search_best(query_text, candidates)
         else:
             best, _score = search_best(query_text, candidates)
         if best is None:

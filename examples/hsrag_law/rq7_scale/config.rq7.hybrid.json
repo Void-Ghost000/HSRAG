@@ -12,7 +12,8 @@
     "network_required": false,
     "secret_required": false,
     "local_deterministic_hybrid_baseline": true,
-    "hybrid_ranking": true
+    "hybrid_ranking": true,
+    "cthc_pruned_hybrid_available": true
   },
   "scale_tiers": [
     {
@@ -40,7 +41,8 @@
     "UNIQUE_ADDRESS",
     "VECTOR_GLOBAL",
     "CTHC_PRUNED_VECTOR",
-    "HYBRID_BM25_VECTOR"
+    "HYBRID_BM25_VECTOR",
+    "CTHC_PRUNED_HYBRID"
   ],
   "query_classes": [
     "exact_address",
