@@ -1,7 +1,7 @@
 {
-  "schema": "HSRAG_RQ7_FULL_BRANCH_STATUS_V0_1",
+  "schema": "HSRAG_RQ7_FULL_BRANCH_STATUS_V0_2",
   "status": "OK",
-  "checked_at_utc": "2026-05-21T15:22:12.761152Z",
+  "checked_at_utc": "2026-05-22T04:23:58.942673Z",
   "branch_scope": "rq7-full-benchmark",
   "missing_files": [],
   "full_query_seed": {
@@ -28,20 +28,47 @@
       "TARGET_BLOCKED": 136
     }
   },
+  "corpus_inventory": {
+    "path_md": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_CORPUS_EXPANSION_INVENTORY.md",
+    "path_json": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_CORPUS_EXPANSION_INVENTORY.json",
+    "artifact_count": 26,
+    "text_corpus_candidate_count": 4,
+    "kind_summary": {
+      "RESULT_LOG": 6,
+      "NON_CORPUS_ARTIFACT": 13,
+      "TEXT_CORPUS_CANDIDATE": 4,
+      "METRICS_OR_SUMMARY": 3
+    }
+  },
+  "synthetic_scale_benchmark": {
+    "path_md": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_SYNTHETIC_SCALE_BENCHMARK.md",
+    "path_json": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_SYNTHETIC_SCALE_BENCHMARK.json",
+    "path_csv": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_SYNTHETIC_SCALE_BENCHMARK.csv",
+    "target_sizes": [
+      1000,
+      5000,
+      10000
+    ],
+    "status": "OK"
+  },
   "claim_boundary": {
     "full_query_expansion": true,
     "diagnostic_only": true,
     "triage_only": true,
+    "corpus_inventory_only": true,
+    "synthetic_expansion": true,
+    "synthetic_scale_stress_only": true,
+    "synthetic_expansion_is_not_new_legal_corpus": true,
     "acceptance_failure_allowed_for_diagnostics": true,
-    "full_scale_benchmark": false,
+    "full_scale_real_corpus_benchmark": false,
     "vector_hybrid_baselines": false,
     "legal_advice": false
   },
   "next_branches": [
-    "expanded real corpus",
-    "1k/5k/10k scale after corpus expansion",
+    "full public benchmark report",
+    "final full synthetic checkpoint verify",
     "vector baseline",
     "hybrid baseline",
-    "paper-grade report"
+    "real multi-corpus expansion"
   ]
 }
