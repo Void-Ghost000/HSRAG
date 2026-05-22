@@ -39,6 +39,8 @@ Instead, it adds a **boundary and audit layer before retrieval**, so retrieval c
 - [HSRAG LAW demo](examples/hsrag_law/)
 - [RQ6 Conversational Legal Collision Benchmark](examples/hsrag_law/rq6/)
 - [RQ6 Smoke / Stress Report](examples/hsrag_law/rq6/RQ6_SMOKE_REPORT.md)
+- [RQ7 Key Findings and Metrics](examples/hsrag_law/rq7_scale/RQ7_KEY_FINDINGS_AND_METRICS.md) — explains the RQ7 benchmark scope, metrics, LLM boundary, vector/hybrid baseline status, and claim limits.
+- [RQ7 Evidence Summary](examples/hsrag_law/rq7_scale/RQ7_EVIDENCE_SUMMARY.md) — RQ7 artifact map and report index for public, synthetic scale, vector, and hybrid reports.
 - [Custom corpus template](examples/hsrag_law/custom_template/)
 - [FAQ](docs/FAQ.md)
 - [Project Manifesto](docs/project_manifesto.md)
@@ -1077,10 +1079,6 @@ The goal is to show how API specs can be resolved through deterministic identity
 <!-- /HSRAG_API_SQLITE_SECTION -->
 
 
-## RQ7 Quick Links
-
-- [RQ7 Key Findings and Metrics](examples/hsrag_law/rq7_scale/RQ7_KEY_FINDINGS_AND_METRICS.md) — explains the RQ7 benchmark scope, metrics, LLM boundary, vector/hybrid baseline status, and claim limits.
-- [RQ7 Evidence Summary](examples/hsrag_law/rq7_scale/RQ7_EVIDENCE_SUMMARY.md) — RQ7 artifact map and report index for public, synthetic scale, vector, and hybrid reports.
 
 ## Documentation Map
 
@@ -1505,8 +1503,4 @@ Detailed explanation:
 
 
 
-## 快速連結
-
-- [RQ7 關鍵發現與指標](examples/hsrag_law/rq7_scale/RQ7_KEY_FINDINGS_AND_METRICS.md) — RQ7 範圍、指標、LLM 邊界、vector/hybrid baseline 狀態與 claim limits。
-- [RQ7 證據摘要](examples/hsrag_law/rq7_scale/RQ7_EVIDENCE_SUMMARY.md) — RQ7 artifact map and report index for public, synthetic scale, vector, and hybrid reports。
 
