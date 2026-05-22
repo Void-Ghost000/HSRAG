@@ -966,7 +966,7 @@ Current claim boundary:
 - RQ4 scale tiers available: 100 / 300 / 600 / 889
 - Actual elapsed timing available
 - Full-scale benchmark pending
-- Vector / hybrid baselines pending
+- Local deterministic vector / hybrid baselines available; production embedding / vector database baselines pending
 - Unit derivation remains heuristic
 - Not legal advice
 
@@ -989,7 +989,7 @@ Current claim boundary:
 - Full query expansion is diagnostic-only.
 - Acceptance failure is allowed for diagnostics.
 - Full-scale benchmark is still pending.
-- Vector / hybrid baselines are still pending.
+- Local deterministic vector / hybrid baselines are available; production embedding / vector database baselines are still pending.
 - This does not provide legal advice.
 
 Run diagnostics:
@@ -1023,7 +1023,7 @@ Current claim boundary:
 - Triage is diagnostic-only.
 - Acceptance failure is allowed for diagnostics.
 - Full-scale benchmark is still pending.
-- Vector / hybrid baselines are still pending.
+- Local deterministic vector / hybrid baselines are available; production embedding / vector database baselines are still pending.
 - This does not provide legal advice.
 
 Build triage report:
@@ -1051,7 +1051,7 @@ Claim boundary:
 - Synthetic expansion is not new legal corpus.
 - This is a scale stress benchmark only.
 - This is not a full-scale real-law corpus benchmark.
-- Vector / hybrid baselines are still pending.
+- Local deterministic vector / hybrid baselines are available; production embedding / vector database baselines are still pending.
 - This does not provide legal advice.
 
 Run benchmark:
@@ -1080,7 +1080,7 @@ Claim boundary:
 - No secrets required.
 - Not a state-of-the-art vector search engine.
 - Not a production vector database benchmark.
-- Hybrid ranking is not included yet.
+- Hybrid ranking is covered by the RQ7 Hybrid Baseline Report.
 - This does not provide legal advice.
 
 Run vector baseline report:
@@ -1127,4 +1127,5 @@ Current RQ7 results do not primarily show higher target correctness than BM25 / 
 Detailed explanation:
 
 - `examples/hsrag_law/rq7_scale/RQ7_KEY_FINDINGS_AND_METRICS.md`
+
 
