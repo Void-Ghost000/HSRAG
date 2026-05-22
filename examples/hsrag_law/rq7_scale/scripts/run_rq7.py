@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import csv
 import hashlib
 import json
@@ -235,6 +236,23 @@ def chunk_to_result(chunk: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def vector_search_best(query_text: str, candidates: list[dict[str, Any]]) -> tuple[dict[str, Any] | None, float]:
+    script_path = Path(__file__).resolve().parent / "local_hash_vector.py"
+    spec = importlib.util.spec_from_file_location("local_hash_vector", script_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError("LOCAL_HASH_VECTOR_LOAD_FAILED")
+
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+
+    ranked = module.rank_documents(query_text, candidates, top_k=1)
+    if not ranked:
+        return None, 0.0
+
+    top = ranked[0]
+    return top["document"], float(top["score"])
+
+
 def retrieve(
     mode: str,
     query: dict[str, Any],
@@ -260,6 +278,13 @@ def retrieve(
 
         candidates.sort(key=lambda chunk: str(chunk.get("cthc_address_hash", "")))
         return "ALLOW", "FOUND", chunk_to_result(candidates[0]), candidate_before, 1, make_route_boundary(mode, route, salt_id)
+
+    if mode == "VECTOR_GLOBAL":
+        best, _score = vector_search_best(query_text, chunks)
+        if best is None:
+            return "BLOCK", "NO_EVIDENCE", None, candidate_before, len(chunks), make_route_boundary(mode, None, salt_id)
+
+        return "ALLOW", "FOUND", chunk_to_result(best), candidate_before, len(chunks), make_route_boundary(mode, None, salt_id)
 
     if kind == "CTHC_PRUNED":
         route_status, route = detect_cthc_route(query_text)
