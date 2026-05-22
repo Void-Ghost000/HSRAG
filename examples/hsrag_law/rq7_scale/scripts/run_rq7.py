@@ -253,6 +253,23 @@ def vector_search_best(query_text: str, candidates: list[dict[str, Any]]) -> tup
     return top["document"], float(top["score"])
 
 
+def hybrid_search_best(query_text: str, candidates: list[dict[str, Any]]) -> tuple[dict[str, Any] | None, float]:
+    script_path = Path(__file__).resolve().parent / "local_hybrid_scorer.py"
+    spec = importlib.util.spec_from_file_location("local_hybrid_scorer", script_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError("LOCAL_HYBRID_SCORER_LOAD_FAILED")
+
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+
+    ranked = module.rank_documents(query_text, candidates, top_k=1)
+    if not ranked:
+        return None, 0.0
+
+    top = ranked[0]
+    return top["document"], float(top["score"])
+
+
 def retrieve(
     mode: str,
     query: dict[str, Any],
@@ -281,6 +298,13 @@ def retrieve(
 
     if mode == "VECTOR_GLOBAL":
         best, _score = vector_search_best(query_text, chunks)
+        if best is None:
+            return "BLOCK", "NO_EVIDENCE", None, candidate_before, len(chunks), make_route_boundary(mode, None, salt_id)
+
+        return "ALLOW", "FOUND", chunk_to_result(best), candidate_before, len(chunks), make_route_boundary(mode, None, salt_id)
+
+    if mode == "HYBRID_BM25_VECTOR":
+        best, _score = hybrid_search_best(query_text, chunks)
         if best is None:
             return "BLOCK", "NO_EVIDENCE", None, candidate_before, len(chunks), make_route_boundary(mode, None, salt_id)
 

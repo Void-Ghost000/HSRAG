@@ -1,0 +1,83 @@
+{
+  "schema": "HSRAG_RQ7_CONFIG_V0_1",
+  "run_name": "RQ7_HYBRID_BASELINE",
+  "seed": 20260520,
+  "local_only": true,
+  "claim_boundary": {
+    "production_ready": false,
+    "replaces_all_rag": false,
+    "legal_advice": false,
+    "local_deterministic_vector_baseline": true,
+    "external_embedding_api": false,
+    "network_required": false,
+    "secret_required": false,
+    "local_deterministic_hybrid_baseline": true,
+    "hybrid_ranking": true
+  },
+  "scale_tiers": [
+    {
+      "id": "S1",
+      "chunk_count": 1000
+    },
+    {
+      "id": "S2",
+      "chunk_count": 5000
+    },
+    {
+      "id": "S3",
+      "chunk_count": 10000
+    },
+    {
+      "id": "S4",
+      "chunk_count": 50000
+    }
+  ],
+  "modes": [
+    "BM25_GLOBAL",
+    "TFIDF_GLOBAL",
+    "CTHC_PRUNED_BM25",
+    "CTHC_PRUNED_TFIDF",
+    "UNIQUE_ADDRESS",
+    "VECTOR_GLOBAL",
+    "CTHC_PRUNED_VECTOR",
+    "HYBRID_BM25_VECTOR"
+  ],
+  "query_classes": [
+    "exact_address",
+    "exact_unit",
+    "exact_chunk",
+    "single_domain_concept",
+    "cross_domain_compare",
+    "ambiguous_cross_domain",
+    "no_evidence",
+    "mismatch_trap",
+    "typo_abbreviation",
+    "jurisdiction_distractor",
+    "scale_noise_query"
+  ],
+  "required_metrics": [
+    "target_correct_rate",
+    "wrong_corpus_collision_rate",
+    "wrong_jurisdiction_collision_rate",
+    "wrong_unit_collision_rate",
+    "mismatch_escape_rate",
+    "no_evidence_false_allow_rate",
+    "ambiguous_false_allow_rate",
+    "correct_block_rate",
+    "candidate_count_before_mean",
+    "candidate_count_after_mean",
+    "candidate_reduction_ratio",
+    "retrieved_token_count_mean",
+    "estimated_token_cost_usd_per_1k_queries",
+    "token_reduction_ratio",
+    "latency_p50_ms",
+    "latency_p95_ms",
+    "latency_p99_ms",
+    "esi_mean",
+    "replay_success_rate",
+    "audit_hash_complete_rate",
+    "route_determinism_rate"
+  ],
+  "rq7_vector_baseline": true,
+  "rq7_hybrid_baseline": true
+}
