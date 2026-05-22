@@ -292,7 +292,10 @@ def retrieve(
             return "BLOCK", route_status, None, candidate_before, 0, make_route_boundary(mode, route, salt_id)
 
         candidates = filter_by_route(chunks, route)
-        best, _score = search_best(query_text, candidates)
+        if mode == "CTHC_PRUNED_VECTOR":
+            best, _score = vector_search_best(query_text, candidates)
+        else:
+            best, _score = search_best(query_text, candidates)
         if best is None:
             return "BLOCK", "NO_EVIDENCE", None, candidate_before, len(candidates), make_route_boundary(mode, route, salt_id)
 

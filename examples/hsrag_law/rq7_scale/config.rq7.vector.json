@@ -36,7 +36,8 @@
     "CTHC_PRUNED_BM25",
     "CTHC_PRUNED_TFIDF",
     "UNIQUE_ADDRESS",
-    "VECTOR_GLOBAL"
+    "VECTOR_GLOBAL",
+    "CTHC_PRUNED_VECTOR"
   ],
   "query_classes": [
     "exact_address",
