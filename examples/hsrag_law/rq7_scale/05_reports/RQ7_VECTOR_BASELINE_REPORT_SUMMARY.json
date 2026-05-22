@@ -1,0 +1,26 @@
+{
+  "schema": "HSRAG_RQ7_VECTOR_BASELINE_REPORT_V0_1",
+  "status": "OK",
+  "generated_at_utc": "2026-05-22T07:19:31.003903Z",
+  "runner_status": "OK",
+  "runner_passed": true,
+  "config": "examples\\hsrag_law\\rq7_scale\\config.rq7.vector.json",
+  "report_md": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_VECTOR_BASELINE_REPORT.md",
+  "report_json": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_VECTOR_BASELINE_REPORT_SUMMARY.json",
+  "report_csv": "examples\\hsrag_law\\rq7_scale\\05_reports\\RQ7_VECTOR_BASELINE_REPORT.csv",
+  "vector_modes": [
+    "CTHC_PRUNED_VECTOR",
+    "VECTOR_GLOBAL"
+  ],
+  "vector_metric_row_count": 8,
+  "vector_query_class_row_count": 24,
+  "claim_boundary": {
+    "local_deterministic_vector_baseline": true,
+    "external_embedding_api": false,
+    "network_required": false,
+    "secret_required": false,
+    "state_of_the_art_vector_search": false,
+    "production_vector_database": false,
+    "legal_advice": false
+  }
+}
