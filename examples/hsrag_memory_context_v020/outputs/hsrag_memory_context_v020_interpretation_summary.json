@@ -1,0 +1,212 @@
+{
+  "acceptance_gates": {
+    "baseline_runner_passed": true,
+    "best_governed_strategy_identified": true,
+    "known_limits_declared": true,
+    "loaded_5_strategy_rows": true,
+    "pointer_resolve_clean_governance_pass": true,
+    "public_claim_is_bounded": true
+  },
+  "best_by_category": [
+    {
+      "category": "Best token cost",
+      "reason": "Highest token reduction vs full raw: 79.92%.",
+      "strategy": "C_SUMMARY_MEMORY"
+    },
+    {
+      "category": "Best answer completeness",
+      "reason": "Answer contains expected rate: 100.00%.",
+      "strategy": "B_TOPK_RAW_CHUNKS"
+    },
+    {
+      "category": "Best traceability",
+      "reason": "Highest combined traceability/source_hash/pointer presence.",
+      "strategy": "E_POINTER_ON_DEMAND_RESOLVE"
+    },
+    {
+      "category": "Best governed balance",
+      "reason": "Best composite governance score across answer completeness, leakage, traceability, and token reduction.",
+      "strategy": "E_POINTER_ON_DEMAND_RESOLVE"
+    }
+  ],
+  "decision": "PASS_INTERPRETATION_REPORT",
+  "generated_at_utc": "2026-05-26T13:51:21Z",
+  "governed_score_ranking": [
+    {
+      "governed_score": 0.933477,
+      "interpretation": "Best governed balance: correct, traceable, zero sensitive leak, zero forbidden leak. Moderate token reduction. Traceability present. Tail latency needs optimization.",
+      "strategy": "E_POINTER_ON_DEMAND_RESOLVE"
+    },
+    {
+      "governed_score": 0.765852,
+      "interpretation": "Strong traceability, but metadata overhead dominates short records and answer completeness drops. Moderate token reduction. Not all expected answer terms are preserved. Leakage risk remains. Traceability present.",
+      "strategy": "D_POINTER_METADATA_ONLY"
+    },
+    {
+      "governed_score": 0.725536,
+      "interpretation": "Strong cost reduction, but raw chunks can still leak irrelevant or sensitive memories. High token reduction. Leakage risk remains. Traceability present.",
+      "strategy": "B_TOPK_RAW_CHUNKS"
+    },
+    {
+      "governed_score": 0.662904,
+      "interpretation": "Best compression in this run, but answer completeness drops due to summary detail loss. High token reduction. Not all expected answer terms are preserved. Leakage risk remains. Traceability present.",
+      "strategy": "C_SUMMARY_MEMORY"
+    },
+    {
+      "governed_score": 0.463507,
+      "interpretation": "Cost/leakage baseline; answers correctly because all memory is exposed. Low token reduction. Leakage risk remains.",
+      "strategy": "A_FULL_RAW_CONTEXT"
+    }
+  ],
+  "headline": "Pointer on-demand resolve is the best governed strategy in this deterministic run: it preserves answer completeness while achieving zero sensitive leakage, zero forbidden leakage, and full pointer/source-hash traceability. Summary memory is cheaper, but loses expected answer details.",
+  "known_limits": [
+    "Synthetic data only; not real personal data.",
+    "Deterministic evaluator only; no real LLM answer quality is measured.",
+    "Token count is estimated by character length, not a model tokenizer.",
+    "Latency measures local strategy construction only, not LLM latency.",
+    "Dataset is intentionally small; results are not scale evidence yet.",
+    "Governed score is an interpretation helper, not a formal metric.",
+    "Content guard is placeholder logic, not production privacy protection."
+  ],
+  "main_tradeoff": "The experiment separates raw accuracy from governed usefulness. Full raw context and top-k raw chunks can answer correctly, but they expose irrelevant and sensitive memory. Summary memory is cheaper, but loses detail. Pointer metadata is traceable, but metadata overhead is large for short records. Pointer on-demand resolve is not the cheapest or fastest, but it is the only strategy in this run that combines complete expected answers with zero sensitive/forbidden leakage and full pointer/source-hash traceability.",
+  "poc_version": "HSRAG_MEMORY_CONTEXT_BASELINE_V0_2_0_STEP3_2_INTERPRETATION",
+  "public_claim": "In a deterministic synthetic v0.2.0 memory-context baseline with 20 memory records and 12 queries, Pointer On-Demand Resolve preserved expected answer coverage while achieving zero forbidden-memory leaks, zero unexpected high-sensitivity leaks, and full pointer/source-hash traceability. This does not measure real LLM answer quality.",
+  "source_version": "HSRAG_MEMORY_CONTEXT_BASELINE_V0_2_0_STEP3",
+  "strategy_rows": [
+    {
+      "accuracy_released_correct_rate": "1",
+      "accuracy_retrieved_correct_rate": "1",
+      "answer_contains_expected_rate": "1",
+      "context_bytes_avg": "1999",
+      "context_tokens_avg": "500",
+      "context_tokens_p50": "500.0",
+      "context_tokens_p95": "500.0",
+      "context_tokens_p99": "500.0",
+      "forbidden_memory_leak_count": "27",
+      "irrelevant_memory_leak_rate_per_released": "0.945833",
+      "latency_ms_avg": "0.020208",
+      "latency_ms_p50": "0.0125",
+      "latency_ms_p95": "0.052855",
+      "latency_ms_p99": "0.070411",
+      "local_storage_bytes": "7519",
+      "pointer_present_rate": "0",
+      "query_count": "12",
+      "runtime_peak_memory_bytes": "27124",
+      "sensitive_memory_leak_rate_per_released": "0.195833",
+      "source_hash_present_rate": "0",
+      "strategy": "A_FULL_RAW_CONTEXT",
+      "strategy_index_size_bytes": "2601",
+      "token_reduction_vs_full_raw_avg_pct": "0.0",
+      "traceability_rate": "0",
+      "wrong_memory_rate_per_released": "0.945833"
+    },
+    {
+      "accuracy_released_correct_rate": "1",
+      "accuracy_retrieved_correct_rate": "1",
+      "answer_contains_expected_rate": "1",
+      "context_bytes_avg": "549",
+      "context_tokens_avg": "137.75",
+      "context_tokens_p50": "140.0",
+      "context_tokens_p95": "161.5",
+      "context_tokens_p99": "165.9",
+      "forbidden_memory_leak_count": "4",
+      "irrelevant_memory_leak_rate_per_released": "0.767857",
+      "latency_ms_avg": "2.150183",
+      "latency_ms_p50": "1.796",
+      "latency_ms_p95": "3.45791",
+      "latency_ms_p99": "3.572222",
+      "local_storage_bytes": "7519",
+      "pointer_present_rate": "0",
+      "query_count": "12",
+      "runtime_peak_memory_bytes": "19779",
+      "sensitive_memory_leak_rate_per_released": "0.125",
+      "source_hash_present_rate": "0",
+      "strategy": "B_TOPK_RAW_CHUNKS",
+      "strategy_index_size_bytes": "3463",
+      "token_reduction_vs_full_raw_avg_pct": "72.45",
+      "traceability_rate": "1",
+      "wrong_memory_rate_per_released": "0.767857"
+    },
+    {
+      "accuracy_released_correct_rate": "1",
+      "accuracy_retrieved_correct_rate": "1",
+      "answer_contains_expected_rate": "0.666667",
+      "context_bytes_avg": "400.1667",
+      "context_tokens_avg": "100.4167",
+      "context_tokens_p50": "104.0",
+      "context_tokens_p95": "118.0",
+      "context_tokens_p99": "118.0",
+      "forbidden_memory_leak_count": "4",
+      "irrelevant_memory_leak_rate_per_released": "0.767857",
+      "latency_ms_avg": "2.402533",
+      "latency_ms_p50": "1.68415",
+      "latency_ms_p95": "5.00859",
+      "latency_ms_p99": "5.957318",
+      "local_storage_bytes": "7519",
+      "pointer_present_rate": "0",
+      "query_count": "12",
+      "runtime_peak_memory_bytes": "17563",
+      "sensitive_memory_leak_rate_per_released": "0.125",
+      "source_hash_present_rate": "0",
+      "strategy": "C_SUMMARY_MEMORY",
+      "strategy_index_size_bytes": "2887",
+      "token_reduction_vs_full_raw_avg_pct": "79.9167",
+      "traceability_rate": "1",
+      "wrong_memory_rate_per_released": "0.767857"
+    },
+    {
+      "accuracy_released_correct_rate": "1",
+      "accuracy_retrieved_correct_rate": "1",
+      "answer_contains_expected_rate": "0.666667",
+      "context_bytes_avg": "1183.5",
+      "context_tokens_avg": "296.25",
+      "context_tokens_p50": "315.0",
+      "context_tokens_p95": "327.0",
+      "context_tokens_p99": "327.0",
+      "forbidden_memory_leak_count": "4",
+      "irrelevant_memory_leak_rate_per_released": "0.767857",
+      "latency_ms_avg": "1.979183",
+      "latency_ms_p50": "1.548",
+      "latency_ms_p95": "4.096935",
+      "latency_ms_p99": "5.227867",
+      "local_storage_bytes": "7519",
+      "pointer_present_rate": "1",
+      "query_count": "12",
+      "runtime_peak_memory_bytes": "17883",
+      "sensitive_memory_leak_rate_per_released": "0.125",
+      "source_hash_present_rate": "1",
+      "strategy": "D_POINTER_METADATA_ONLY",
+      "strategy_index_size_bytes": "5729",
+      "token_reduction_vs_full_raw_avg_pct": "40.75",
+      "traceability_rate": "1",
+      "wrong_memory_rate_per_released": "0.767857"
+    },
+    {
+      "accuracy_released_correct_rate": "1",
+      "accuracy_retrieved_correct_rate": "1",
+      "answer_contains_expected_rate": "1",
+      "context_bytes_avg": "614.0833",
+      "context_tokens_avg": "153.8333",
+      "context_tokens_p50": "162.5",
+      "context_tokens_p95": "181.35",
+      "context_tokens_p99": "182.67",
+      "forbidden_memory_leak_count": "0",
+      "irrelevant_memory_leak_rate_per_released": "0.59375",
+      "latency_ms_avg": "7.5204",
+      "latency_ms_p50": "3.8136",
+      "latency_ms_p95": "22.300265",
+      "latency_ms_p99": "30.598533",
+      "local_storage_bytes": "7519",
+      "pointer_present_rate": "1",
+      "query_count": "12",
+      "runtime_peak_memory_bytes": "18654",
+      "sensitive_memory_leak_rate_per_released": "0.0",
+      "source_hash_present_rate": "1",
+      "strategy": "E_POINTER_ON_DEMAND_RESOLVE",
+      "strategy_index_size_bytes": "4685",
+      "token_reduction_vs_full_raw_avg_pct": "69.2333",
+      "traceability_rate": "1",
+      "wrong_memory_rate_per_released": "0.59375"
+    }
+  ]
+}

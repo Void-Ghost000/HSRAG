@@ -1,0 +1,17 @@
+{
+  "memory_count": 20,
+  "poc_version": "HSRAG_MEMORY_CONTEXT_BASELINE_V0_2_0_DATASET_STEP2",
+  "query_count": 12,
+  "run_created_at_utc": "2026-05-26T13:40:56Z",
+  "sensitivities": [
+    "high",
+    "low",
+    "medium"
+  ],
+  "tiers": [
+    "CHS",
+    "EHS",
+    "FHS"
+  ],
+  "validation": "PASS"
+}

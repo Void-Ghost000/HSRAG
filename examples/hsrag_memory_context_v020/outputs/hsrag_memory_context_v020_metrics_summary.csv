@@ -1,0 +1,6 @@
+strategy,query_count,context_tokens_avg,context_tokens_p50,context_tokens_p95,context_tokens_p99,token_reduction_vs_full_raw_avg_pct,latency_ms_avg,latency_ms_p50,latency_ms_p95,latency_ms_p99,accuracy_retrieved_correct_rate,accuracy_released_correct_rate,answer_contains_expected_rate,wrong_memory_rate_per_released,sensitive_memory_leak_rate_per_released,irrelevant_memory_leak_rate_per_released,forbidden_memory_leak_count,traceability_rate,source_hash_present_rate,pointer_present_rate,context_bytes_avg,local_storage_bytes,strategy_index_size_bytes,runtime_peak_memory_bytes
+A_FULL_RAW_CONTEXT,12,500,500.0,500.0,500.0,0.0,0.020208,0.0125,0.052855,0.070411,1,1,1,0.945833,0.195833,0.945833,27,0,0,0,1999,7519,2601,27124
+B_TOPK_RAW_CHUNKS,12,137.75,140.0,161.5,165.9,72.45,2.150183,1.796,3.45791,3.572222,1,1,1,0.767857,0.125,0.767857,4,1,0,0,549,7519,3463,19779
+C_SUMMARY_MEMORY,12,100.4167,104.0,118.0,118.0,79.9167,2.402533,1.68415,5.00859,5.957318,1,1,0.666667,0.767857,0.125,0.767857,4,1,0,0,400.1667,7519,2887,17563
+D_POINTER_METADATA_ONLY,12,296.25,315.0,327.0,327.0,40.75,1.979183,1.548,4.096935,5.227867,1,1,0.666667,0.767857,0.125,0.767857,4,1,1,1,1183.5,7519,5729,17883
+E_POINTER_ON_DEMAND_RESOLVE,12,153.8333,162.5,181.35,182.67,69.2333,7.5204,3.8136,22.300265,30.598533,1,1,1,0.59375,0.0,0.59375,0,1,1,1,614.0833,7519,4685,18654

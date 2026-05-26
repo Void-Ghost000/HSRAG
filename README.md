@@ -1504,3 +1504,31 @@ Detailed explanation:
 
 
 
+
+<!-- HSRAG_MEMORY_CONTEXT_V020_START -->
+## HSRAG Memory Context Baseline v0.2.0
+
+A deterministic benchmark comparing five memory-context strategies:
+
+- Full Raw Context
+- Top-K Raw Chunks
+- Summary Memory
+- Pointer Metadata Only
+- Pointer On-Demand Resolve
+
+Current result: PASS_INTERPRETATION_REPORT.
+
+Key finding: E_POINTER_ON_DEMAND_RESOLVE is the best governed balance in this run. It preserves expected answer coverage while achieving zero forbidden-memory leaks, zero unexpected high-sensitivity leaks, and full pointer/source-hash traceability.
+
+Artifacts:
+
+- examples/hsrag_memory_context_v020/README.md
+- examples/hsrag_memory_context_v020/V020_EVIDENCE_SUMMARY.md
+- examples/hsrag_memory_context_v020/README_TESTING.md
+- examples/hsrag_memory_context_v020/reports/hsrag_memory_context_v020_interpretation_report.md
+
+Boundary: synthetic deterministic benchmark only; no real LLM call and no real personal data.
+<!-- HSRAG_MEMORY_CONTEXT_V020_END -->
+
+
+
