@@ -29,3 +29,11 @@ examples/hsrag_law/rq7_scale/02_input/chunk_registry.from_csv*.json
 examples/hsrag_law/rq7_scale/02_input/chunk_registry.auto*.json
 examples/hsrag_law/rq7_scale/02_input/chunk_registry.rq4_rebuilt*.json
 examples/hsrag_law/rq7_scale/02_input/chunk_registry.synthetic*.json
+
+# HSRAG Personal Memory Pointer v0.1.x generated local DB
+examples/hsrag_memory_pointer_v01x/outputs/*.sqlite3
+examples/hsrag_memory_pointer_v01x/outputs/*.sqlite3-*
+examples/hsrag_memory_pointer_v01x/outputs/*.db
+
+# HSRAG Memory Context v0.2.1 generated scale dataset
+examples/hsrag_memory_context_v021_scale/data/*.jsonl

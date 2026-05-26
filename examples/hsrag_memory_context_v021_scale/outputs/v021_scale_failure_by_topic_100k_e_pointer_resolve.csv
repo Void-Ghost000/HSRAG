@@ -1,0 +1,2 @@
+topic,total_count,failure_count,answer_rate,top_missing_terms,top_inferred_reasons,A_answer_rate,B_answer_rate,C_answer_rate,D_answer_rate,E_answer_rate
+audit_chain,15,15,0.0,"{""traceability"": 15}","{""EXPECTED_MEMORY_NOT_SELECTED_BUT_TOPIC_CONTEXT_PRESENT"": 15}",1.0,0.0,1.0,1.0,0.0

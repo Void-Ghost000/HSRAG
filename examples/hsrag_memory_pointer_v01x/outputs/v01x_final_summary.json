@@ -1,0 +1,62 @@
+{
+  "acceptance_gates": {
+    "active_pointer_collision_zero": true,
+    "audit_tamper_detected": true,
+    "compact_pointer_reduction_100k_gt_60pct": true,
+    "measured_max_n_100k": true,
+    "scale_std_under_0_1pct": true,
+    "sqlite_reload_attack_reject_rate_1": true,
+    "sqlite_reload_structured_reason_rate_1": true,
+    "sqlite_reload_wrong_release_zero": true,
+    "sqlite_reload_wrong_resolve_zero": true,
+    "sqlite_state_fingerprint_match": true,
+    "tombstone_missing_zero": true,
+    "ultra_pointer_reduction_100k_gt_75pct": true
+  },
+  "decision": "PASS_V01X_LOCAL_REPRO_PACK",
+  "generated_at_utc": "2026-05-26T14:42:46Z",
+  "measured_max_n": 100000,
+  "poc_version": "HSRAG_PERSONAL_MEMORY_POINTER_V01X_LOCAL_REPRO_PACK",
+  "runtime_seconds": 12.809,
+  "scale_repro": {
+    "compact_pointer_100k_50_chars_reduction_pct": 68.3417,
+    "max_scale_std_pct_compact_ultra": 0.000173,
+    "ultra_pointer_100k_50_chars_reduction_pct": 87.2088
+  },
+  "scope": "local_repro_pack_for_core_v01x_personal_memory_pointer_claims",
+  "sqlite_repro": {
+    "active_after_sqlite_reload": 97000,
+    "audit_chain_valid_after_sqlite_reload": true,
+    "audit_tamper_detected": true,
+    "current_collision_count": 0,
+    "min_sqlite_reload_attack_reject_rate": 1.0,
+    "min_sqlite_reload_structured_reason_rate": 1.0,
+    "rotated_bucket_count": 192,
+    "sqlite_db_path": "examples\\hsrag_memory_pointer_v01x\\outputs\\v01x_local_repro.sqlite3",
+    "sqlite_db_size_bytes": 39387136,
+    "sqlite_reload_tombstone_missing": 0,
+    "sqlite_state_fingerprint_before": "6c80969f62b1d419911fbdfed635bb4d5e3677e1e45f2791696ff96af41162ec",
+    "sqlite_state_fingerprint_loaded": "6c80969f62b1d419911fbdfed635bb4d5e3677e1e45f2791696ff96af41162ec",
+    "sqlite_state_fingerprint_match": true,
+    "sqlite_table_counts": {
+      "audit_chain": 5,
+      "bucket_epochs": 192,
+      "memories": 100000,
+      "pointer_index": 97000,
+      "revoked_pointers": 105000,
+      "test_vectors": 7,
+      "tombstones": 3000
+    },
+    "tamper_reason": "EVENT_HASH_MISMATCH",
+    "total_sqlite_reload_attack_checked": 18000,
+    "total_sqlite_reload_wrong_release": 0,
+    "total_sqlite_reload_wrong_resolve": 0
+  },
+  "warnings": [
+    "Synthetic only; not real personal data.",
+    "Not GDPR proof.",
+    "Benchmark HMAC key is public and deterministic; not a production secret.",
+    "SQLite database is not encrypted in this PoC.",
+    "Production needs secure key management and stronger local policy classifier."
+  ]
+}

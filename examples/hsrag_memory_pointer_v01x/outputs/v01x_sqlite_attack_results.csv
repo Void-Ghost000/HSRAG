@@ -1,0 +1,8 @@
+case,checked,expect_resolve,wrong_resolve_count,wrong_release_count,content_guard_blocked_count,reject_rate,resolve_pass_rate,structured_reason_rate,top_reasons
+current_valid_pointer_control,3000,True,0,0,300,,1.0,1.0,"{""CURRENT_ACTIVE_POINTER"": 3000}"
+replay_updated_old_pointer,3000,False,0,0,,1.0,,1.0,"{""REVOKED_BY_UPDATE"": 3000}"
+replay_deleted_pointer,3000,False,0,0,,1.0,,1.0,"{""REVOKED_BY_DELETE"": 3000}"
+replay_pre_rotation_pointer,3000,False,0,0,,1.0,,1.0,"{""REVOKED_BY_BUCKET_ROTATION"": 3000}"
+cross_purpose_training_export,3000,False,0,0,,1.0,,1.0,"{""PURPOSE_MISMATCH"": 3000}"
+forged_pointer_lookup,3000,False,0,0,,1.0,,1.0,"{""UNKNOWN_POINTER"": 3000}"
+tier_confusion_attempt,3000,False,0,0,,1.0,,1.0,"{""TIER_MISMATCH"": 3000}"

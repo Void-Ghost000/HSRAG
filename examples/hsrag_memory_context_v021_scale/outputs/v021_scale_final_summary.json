@@ -1,0 +1,68 @@
+{
+  "acceptance_gates": {
+    "accuracy_present": true,
+    "all_scales_executed": true,
+    "five_strategies_executed": true,
+    "latency_present": true,
+    "leakage_present": true,
+    "max_n_is_100000": true,
+    "memory_footprint_present": true,
+    "pointer_resolve_answer_rate_100k_is_1": true,
+    "pointer_resolve_sensitive_leak_100k_is_0": true,
+    "pointer_resolve_traceability_100k_is_1": true,
+    "result_rows_present": true,
+    "token_cost_present": true,
+    "traceability_present": true
+  },
+  "decision": "PASS_SCALE_BENCHMARK_RUNNER",
+  "highlight_100k_pointer_resolve": {
+    "answer_contains_expected_rate": 1.0,
+    "context_tokens_avg": 869.04,
+    "context_tokens_p50": 869.0,
+    "context_tokens_p95": 916.0,
+    "context_tokens_p99": 916.0,
+    "exact_memory_hit_rate": 0.0,
+    "forbidden_memory_leak_rate_avg": 0.0,
+    "latency_ms_p50": 0.0981,
+    "latency_ms_p95": 0.161835,
+    "latency_ms_p99": 0.20809,
+    "memory_footprint_bytes_avg": 3474.15,
+    "memory_footprint_bytes_p95": 3662.0,
+    "memory_footprint_bytes_p99": 3662.0,
+    "n_memories": 100000,
+    "query_count": 100,
+    "sensitive_memory_leak_rate_avg": 0.0,
+    "strategy": "E_POINTER_ON_DEMAND_RESOLVE",
+    "token_reduction_vs_full_raw_avg_pct": 99.9941,
+    "topic_hit_rate": 1.0,
+    "traceability_rate": 1.0
+  },
+  "metric_row_count": 20,
+  "n_list": [
+    1000,
+    10000,
+    50000,
+    100000
+  ],
+  "outputs": [
+    "examples\\hsrag_memory_context_v021_scale\\outputs\\v021_scale_strategy_results.csv",
+    "examples\\hsrag_memory_context_v021_scale\\outputs\\v021_scale_metrics_summary.csv",
+    "examples\\hsrag_memory_context_v021_scale\\outputs\\v021_scale_final_summary.json",
+    "examples\\hsrag_memory_context_v021_scale\\reports\\v021_scale_benchmark_report.md"
+  ],
+  "poc_version": "HSRAG_MEMORY_CONTEXT_SCALE_BASELINE_V0_2_1_BENCHMARK",
+  "query_count_per_n": 100,
+  "result_row_count": 2000,
+  "run_created_at_utc": "2026-05-26T15:41:58Z",
+  "runtime_seconds": 10.084,
+  "scope": "synthetic_deterministic_scale_benchmark_for_memory_context_strategies",
+  "strategy_count": 5,
+  "warnings": [
+    "Synthetic only.",
+    "No real LLM call.",
+    "Deterministic evaluator only.",
+    "Local latency measures context construction, not model inference.",
+    "No real personal data.",
+    "No GDPR claim."
+  ]
+}

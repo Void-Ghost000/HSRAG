@@ -1504,3 +1504,69 @@ Detailed explanation:
 
 
 
+
+<!-- HSRAG_MEMORY_CONTEXT_V020_START -->
+## HSRAG Memory Context Baseline v0.2.0
+
+A deterministic benchmark comparing five memory-context strategies:
+
+- Full Raw Context
+- Top-K Raw Chunks
+- Summary Memory
+- Pointer Metadata Only
+- Pointer On-Demand Resolve
+
+Current result: PASS_INTERPRETATION_REPORT.
+
+Key finding: E_POINTER_ON_DEMAND_RESOLVE is the best governed balance in this run. It preserves expected answer coverage while achieving zero forbidden-memory leaks, zero unexpected high-sensitivity leaks, and full pointer/source-hash traceability.
+
+Artifacts:
+
+- examples/hsrag_memory_context_v020/README.md
+- examples/hsrag_memory_context_v020/V020_EVIDENCE_SUMMARY.md
+- examples/hsrag_memory_context_v020/README_TESTING.md
+- examples/hsrag_memory_context_v020/reports/hsrag_memory_context_v020_interpretation_report.md
+
+Boundary: synthetic deterministic benchmark only; no real LLM call and no real personal data.
+<!-- HSRAG_MEMORY_CONTEXT_V020_END -->
+
+<!-- HSRAG_MEMORY_POINTER_V01X_START -->
+## HSRAG Personal Memory Pointer v0.1.x Local Repro Pack
+
+Current decision: PASS_V01X_LOCAL_REPRO_PACK.
+
+Key result: the local repro pack measures 100k-scale pointer compression and verifies SQLite reload safety, tombstones, stale pointer rejection, purpose-boundary rejection, and audit-chain tamper detection.
+
+Artifacts:
+
+- examples/hsrag_memory_pointer_v01x/README.md
+- examples/hsrag_memory_pointer_v01x/README_TESTING.md
+- examples/hsrag_memory_pointer_v01x/V01X_LOCAL_REPRO_REPORT.md
+- examples/hsrag_memory_pointer_v01x/outputs/v01x_final_summary.json
+
+Boundary: synthetic local repro benchmark only; not real personal data and not GDPR proof.
+<!-- HSRAG_MEMORY_POINTER_V01X_END -->
+
+<!-- HSRAG_MEMORY_CONTEXT_V021_START -->
+
+## HSRAG Memory Context v0.2.1 Scale Baseline
+
+The repository includes a frozen synthetic scale benchmark for memory-context construction strategies:
+
+- Path: examples/hsrag_memory_context_v021_scale/
+- Freeze: FREEZE_CONFIRMED_V0_2_1_SCALE_BASELINE
+- Scale: 1k, 10k, 50k, 100k synthetic memories
+- Strategies: full raw context, top-k raw chunks, summary memory, pointer metadata only, pointer on-demand resolve
+
+100k highlight for E_POINTER_ON_DEMAND_RESOLVE:
+
+- Token reduction vs full raw context: 99.9941%
+- P99 local context construction latency: 0.20809 ms
+- Answer coverage: 1
+- Sensitive memory leak rate: 0
+- Traceability rate: 1
+
+Boundary: synthetic benchmark only; no real LLM call, no real personal data, no GDPR claim.
+
+<!-- HSRAG_MEMORY_CONTEXT_V021_END -->
+

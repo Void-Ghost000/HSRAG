@@ -1,0 +1,148 @@
+{
+  "acceptance_gates": {
+    "all_memory_files_created": true,
+    "all_query_files_created": true,
+    "max_n_is_100000": true,
+    "queries_all_created": true,
+    "query_count_per_n_ok": true,
+    "sensitivities_present": true,
+    "tiers_present": true
+  },
+  "datasets": [
+    {
+      "memory_count": 1000,
+      "memory_file": "examples\\hsrag_memory_context_v021_scale\\data\\memory_items_1000.jsonl",
+      "memory_file_bytes": 602960,
+      "n_memories": 1000,
+      "query_count": 100,
+      "query_file": "examples\\hsrag_memory_context_v021_scale\\data\\queries_1000.jsonl",
+      "query_file_bytes": 40146,
+      "sensitivity_counts": {
+        "high": 225,
+        "low": 665,
+        "medium": 110
+      },
+      "tier_counts": {
+        "CHS": 517,
+        "EHS": 258,
+        "FHS": 225
+      },
+      "topic_counts": {
+        "audit_chain": 125,
+        "cafe_work": 125,
+        "coding_preference": 125,
+        "food_preference": 125,
+        "memory_pointer": 125,
+        "project_storage": 125,
+        "quiet_schedule": 125,
+        "security_boundary": 125
+      }
+    },
+    {
+      "memory_count": 10000,
+      "memory_file": "examples\\hsrag_memory_context_v021_scale\\data\\memory_items_10000.jsonl",
+      "memory_file_bytes": 6079601,
+      "n_memories": 10000,
+      "query_count": 100,
+      "query_file": "examples\\hsrag_memory_context_v021_scale\\data\\queries_10000.jsonl",
+      "query_file_bytes": 40921,
+      "sensitivity_counts": {
+        "high": 2250,
+        "low": 6643,
+        "medium": 1107
+      },
+      "tier_counts": {
+        "CHS": 5167,
+        "EHS": 2583,
+        "FHS": 2250
+      },
+      "topic_counts": {
+        "audit_chain": 1250,
+        "cafe_work": 1250,
+        "coding_preference": 1250,
+        "food_preference": 1250,
+        "memory_pointer": 1250,
+        "project_storage": 1250,
+        "quiet_schedule": 1250,
+        "security_boundary": 1250
+      }
+    },
+    {
+      "memory_count": 50000,
+      "memory_file": "examples\\hsrag_memory_context_v021_scale\\data\\memory_items_50000.jsonl",
+      "memory_file_bytes": 30486885,
+      "n_memories": 50000,
+      "query_count": 100,
+      "query_file": "examples\\hsrag_memory_context_v021_scale\\data\\queries_50000.jsonl",
+      "query_file_bytes": 40921,
+      "sensitivity_counts": {
+        "high": 11250,
+        "low": 33215,
+        "medium": 5535
+      },
+      "tier_counts": {
+        "CHS": 25833,
+        "EHS": 12917,
+        "FHS": 11250
+      },
+      "topic_counts": {
+        "audit_chain": 6250,
+        "cafe_work": 6250,
+        "coding_preference": 6250,
+        "food_preference": 6250,
+        "memory_pointer": 6250,
+        "project_storage": 6250,
+        "quiet_schedule": 6250,
+        "security_boundary": 6250
+      }
+    },
+    {
+      "memory_count": 100000,
+      "memory_file": "examples\\hsrag_memory_context_v021_scale\\data\\memory_items_100000.jsonl",
+      "memory_file_bytes": 61295993,
+      "n_memories": 100000,
+      "query_count": 100,
+      "query_file": "examples\\hsrag_memory_context_v021_scale\\data\\queries_100000.jsonl",
+      "query_file_bytes": 41696,
+      "sensitivity_counts": {
+        "high": 22500,
+        "low": 66429,
+        "medium": 11071
+      },
+      "tier_counts": {
+        "CHS": 51667,
+        "EHS": 25833,
+        "FHS": 22500
+      },
+      "topic_counts": {
+        "audit_chain": 12500,
+        "cafe_work": 12500,
+        "coding_preference": 12500,
+        "food_preference": 12500,
+        "memory_pointer": 12500,
+        "project_storage": 12500,
+        "quiet_schedule": 12500,
+        "security_boundary": 12500
+      }
+    }
+  ],
+  "decision": "PASS_SCALE_DATASET_GENERATED",
+  "n_list": [
+    1000,
+    10000,
+    50000,
+    100000
+  ],
+  "poc_version": "HSRAG_MEMORY_CONTEXT_SCALE_BASELINE_V0_2_1_DATASET",
+  "query_count_per_n": 100,
+  "run_created_at_utc": "2026-05-26T15:08:52Z",
+  "scope": "synthetic_scale_dataset_generation_only",
+  "total_query_count": 400,
+  "warnings": [
+    "Synthetic only.",
+    "No benchmark executed yet.",
+    "No real LLM call.",
+    "No real personal data.",
+    "Token, latency, accuracy, leakage metrics will be produced in Step 9."
+  ]
+}

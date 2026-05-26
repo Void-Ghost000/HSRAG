@@ -1,0 +1,13 @@
+{
+  "bad_files": [],
+  "decision": "PASS_DOCS_FULL_REWRITE",
+  "generated_at_utc": "2026-05-26T14:23:37Z",
+  "outputs": [
+    "examples\\hsrag_memory_context_v020\\README.md",
+    "examples\\hsrag_memory_context_v020\\V020_EVIDENCE_SUMMARY.md",
+    "examples\\hsrag_memory_context_v020\\README_TESTING.md",
+    "README.md"
+  ],
+  "poc_version": "HSRAG_MEMORY_CONTEXT_BASELINE_V0_2_0_STEP4_2_PYTHON_FULL_REWRITE",
+  "root_readme_action": "updated_existing_block"
+}
