@@ -34,3 +34,6 @@ examples/hsrag_law/rq7_scale/02_input/chunk_registry.synthetic*.json
 examples/hsrag_memory_pointer_v01x/outputs/*.sqlite3
 examples/hsrag_memory_pointer_v01x/outputs/*.sqlite3-*
 examples/hsrag_memory_pointer_v01x/outputs/*.db
+
+# HSRAG Memory Context v0.2.1 generated scale dataset
+examples/hsrag_memory_context_v021_scale/data/*.jsonl

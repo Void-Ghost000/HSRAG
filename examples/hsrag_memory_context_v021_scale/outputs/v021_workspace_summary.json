@@ -1,0 +1,24 @@
+{
+  "poc_version": "HSRAG_MEMORY_CONTEXT_SCALE_BASELINE_V0_2_1_WORKSPACE",
+  "decision": "PASS_WORKSPACE_INITIALIZED",
+  "scope": "workspace_initialization_only",
+  "planned_n_list": [
+    1000,
+    10000,
+    50000,
+    100000
+  ],
+  "planned_metrics": [
+    "token_cost",
+    "latency_p50_p95_p99",
+    "accuracy",
+    "memory_footprint",
+    "leakage",
+    "traceability"
+  ],
+  "warnings": [
+    "No dataset generated yet.",
+    "No benchmark executed yet.",
+    "Synthetic only."
+  ]
+}
