@@ -1,0 +1,38 @@
+{
+  "acceptance_gates": {
+    "case_rows_written": true,
+    "e_100k_failures_identified": true,
+    "e_100k_rows_present": true,
+    "failure_topic_breakdown_present": true,
+    "metrics_csv_present": true,
+    "results_csv_present": true,
+    "topic_rows_written": true
+  },
+  "decision": "PASS_FAILURE_DIAGNOSIS",
+  "e_100k_answer_rate": 0.85,
+  "e_100k_failure_count": 15,
+  "e_100k_sensitive_leak_rate": 0.0,
+  "e_100k_total_rows": 100,
+  "e_100k_traceability_rate": 1.0,
+  "likely_root_cause": "SYNTHETIC_EXPECTED_TERM_MISMATCH_SUMMARY_VS_RAW_TEXT",
+  "outputs": [
+    "examples\\hsrag_memory_context_v021_scale\\outputs\\v021_scale_failure_cases_100k_e_pointer_resolve.csv",
+    "examples\\hsrag_memory_context_v021_scale\\outputs\\v021_scale_failure_by_topic_100k_e_pointer_resolve.csv",
+    "examples\\hsrag_memory_context_v021_scale\\outputs\\v021_scale_failure_diagnosis_summary.json",
+    "examples\\hsrag_memory_context_v021_scale\\reports\\v021_scale_failure_diagnosis_report.md"
+  ],
+  "poc_version": "HSRAG_MEMORY_CONTEXT_SCALE_V0_2_1_FAILURE_DIAGNOSIS",
+  "recommended_fix": "Align audit_chain raw text with expected term traceability, or include summary metadata in E resolved context. Do not lower the gate.",
+  "scope": "diagnose_100k_E_pointer_on_demand_resolve_answer_coverage_failure",
+  "target_n": 100000,
+  "target_strategy": "E_POINTER_ON_DEMAND_RESOLVE",
+  "top_fail_count": 15,
+  "top_fail_topic": "audit_chain",
+  "top_inferred_reasons": "{\"EXPECTED_MEMORY_NOT_SELECTED_BUT_TOPIC_CONTEXT_PRESENT\": 15}",
+  "top_missing_terms": "{\"traceability\": 15}",
+  "warnings": [
+    "Diagnosis only; no benchmark gate was changed.",
+    "Synthetic deterministic evaluator only.",
+    "Do not claim PASS_SCALE_BENCHMARK until Step 9 is rerun after fix."
+  ]
+}
