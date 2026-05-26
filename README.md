@@ -1530,5 +1530,19 @@ Artifacts:
 Boundary: synthetic deterministic benchmark only; no real LLM call and no real personal data.
 <!-- HSRAG_MEMORY_CONTEXT_V020_END -->
 
+<!-- HSRAG_MEMORY_POINTER_V01X_START -->
+## HSRAG Personal Memory Pointer v0.1.x Local Repro Pack
 
+Current decision: PASS_V01X_LOCAL_REPRO_PACK.
 
+Key result: the local repro pack measures 100k-scale pointer compression and verifies SQLite reload safety, tombstones, stale pointer rejection, purpose-boundary rejection, and audit-chain tamper detection.
+
+Artifacts:
+
+- examples/hsrag_memory_pointer_v01x/README.md
+- examples/hsrag_memory_pointer_v01x/README_TESTING.md
+- examples/hsrag_memory_pointer_v01x/V01X_LOCAL_REPRO_REPORT.md
+- examples/hsrag_memory_pointer_v01x/outputs/v01x_final_summary.json
+
+Boundary: synthetic local repro benchmark only; not real personal data and not GDPR proof.
+<!-- HSRAG_MEMORY_POINTER_V01X_END -->
