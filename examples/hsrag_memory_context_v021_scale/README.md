@@ -38,3 +38,26 @@ No real LLM call.
 No real personal data.
 
 No GDPR claim.
+
+<!-- V021_RESULTS_START -->
+
+## Frozen v0.2.1 Scale Baseline
+
+v0.2.1 is frozen as a synthetic deterministic memory-context scale benchmark.
+
+At 100k synthetic memories, E_POINTER_ON_DEMAND_RESOLVE achieved:
+
+- Token reduction vs full raw context: 99.9941%
+- P99 local context construction latency: 0.20809 ms
+- Answer coverage: 1
+- Sensitive memory leak rate: 0
+- Traceability rate: 1
+
+Evidence files:
+
+- V021_EVIDENCE_SUMMARY.md
+- V021_FREEZE_SUMMARY.md
+- reports/v021_scale_public_summary.md
+
+<!-- V021_RESULTS_END -->
+

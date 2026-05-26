@@ -1546,3 +1546,27 @@ Artifacts:
 
 Boundary: synthetic local repro benchmark only; not real personal data and not GDPR proof.
 <!-- HSRAG_MEMORY_POINTER_V01X_END -->
+
+<!-- HSRAG_MEMORY_CONTEXT_V021_START -->
+
+## HSRAG Memory Context v0.2.1 Scale Baseline
+
+The repository includes a frozen synthetic scale benchmark for memory-context construction strategies:
+
+- Path: examples/hsrag_memory_context_v021_scale/
+- Freeze: FREEZE_CONFIRMED_V0_2_1_SCALE_BASELINE
+- Scale: 1k, 10k, 50k, 100k synthetic memories
+- Strategies: full raw context, top-k raw chunks, summary memory, pointer metadata only, pointer on-demand resolve
+
+100k highlight for E_POINTER_ON_DEMAND_RESOLVE:
+
+- Token reduction vs full raw context: 99.9941%
+- P99 local context construction latency: 0.20809 ms
+- Answer coverage: 1
+- Sensitive memory leak rate: 0
+- Traceability rate: 1
+
+Boundary: synthetic benchmark only; no real LLM call, no real personal data, no GDPR claim.
+
+<!-- HSRAG_MEMORY_CONTEXT_V021_END -->
+
